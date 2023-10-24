@@ -7,6 +7,15 @@
 
 > *TODO*: Realiza una breve descripción del proyecto. No menos de 100 palabras y no más de 300. Resalta lo fundamental **con tus propias palabras**. Utiliza un lenguaje correcto, **pero natural**, que lo entienda todo el mundo, incluso y en especial, las personas que no tengan un conocimiento técnico avanzado. Puede ser un estracto o resumen de apartados que ya contemples en otros ficheros.
 
+> Voi a realizar un proyecto de gestion de mantenimiento de maquinas/instalaciones donde a traves de una interface web vamos a poder gestionar, todo lo referiodo a su mantenimiento.
+	
+	- Control de las maquinas/instalaciones, uso y ubicacion si fuera preciso.
+	- Los operarios que ejecuntan los mantenimientos.
+	- Las averias de las maquinas/instalicones y sus soluciones.
+	- Consumo de repuestos y consumibles por el uso. 
+	- Toda la documentacion referente a la maquina en cuestión planos, manuales...
+	   
+
 ## Instalación / Puesta en marcha
 
 > *TODO*: En este apartado describe con toda precisión y a poder ser con la mayor simplicidad/facilidad posible, cómo poner en marcha tu aplicación para probarla (en un ambiente local). Se valorará muy positivamente que este proceso sea lo más fácil posible, con una simple instrucción (p. e. un script de instalación).
