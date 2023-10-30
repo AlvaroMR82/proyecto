@@ -7,13 +7,14 @@
 
 > *TODO*: Realiza una breve descripción del proyecto. No menos de 100 palabras y no más de 300. Resalta lo fundamental **con tus propias palabras**. Utiliza un lenguaje correcto, **pero natural**, que lo entienda todo el mundo, incluso y en especial, las personas que no tengan un conocimiento técnico avanzado. Puede ser un estracto o resumen de apartados que ya contemples en otros ficheros.
 
-> Voi a realizar un proyecto de gestion de mantenimiento de maquinas/instalaciones donde a traves de una interface web vamos a poder gestionar, todo lo referiodo a su mantenimiento.
+> Voy a realizar un proyecto de gestión de mantenimiento de máquinas/instalaciones donde a traves de una interface web vamos a poder gestionar, todo lo referiodo a su mantenimiento.
 	
 	- Control de las maquinas/instalaciones, uso y ubicacion si fuera preciso.
 	- Los operarios que ejecuntan los mantenimientos.
-	- Las averias de las maquinas/instalicones y sus soluciones.
+	- Las averias de las maquinas/instaliciones y sus soluciones.
 	- Consumo de repuestos y consumibles por el uso. 
 	- Toda la documentacion referente a la maquina en cuestión planos, manuales...
+	- Gestion del almacen de repuestos
 	   
 
 ## Instalación / Puesta en marcha
@@ -29,6 +30,26 @@
 ## Sobre el autor
 
 > *TODO*: Realiza una breve descripción de quien eres (perfil profesional), tus puntos fuertes, o tecnologías que más dominas... y porqué te has decantado por este proyecto. **No más de 200 palabras**. Indica la forma fiable de contactar contigo en el presente y en el futuro.
+
+> Tecnico de instalaciones y mantenimiento industrial desde 2004. Con una amplia experiencia en el sector industrial en 2020 inicio una nueva etapa como programador web. 
+> Gracias a mis conocimientos en el entorno industrial y a mis nuevas aptitudes de programación creo que este va a ser el proyecto que mejor fusione los conocimientos de las dos ramas en las que estoy especializado.
+
+> Tecnologias que domino.
+
+	- HTML
+	- CSS
+	- JAVASCRIPT
+	- SQL
+	- JAVA
+	- PHP
+	
+> Tecnologias que estoy aprendiendo.
+
+	- c# asp.net	
+	
+> Correo electronico
+	alvaromosquerarial@hotmail.com 
+	
 
 ## Licencia
 
