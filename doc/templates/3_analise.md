@@ -26,11 +26,17 @@ Exemplo:
   * Usuario xerente, que terá acceso a ...
   * Usuario técnico, que poderá...
 
+  > - Tecnico de sitemas/administrador
+  > - Director de mantemento
+  > - Tecnicos de mantemento
+  > - Operarios clientes
 
 ## Avaliación da viabilidade técnica do proxecto
 
 ### Hardware requerido
 Analizar as opcións hardware existentes e xustificar a idoneidade dos compoñentes seleccionados.
+
+  Servidor web conectado a rede das instalacions e se e neceasio a iternete.
 
 ### Software
 Analizar as opcións software existentes e xustificar a idoneidade dos compoñentes seleccionados.

@@ -68,14 +68,27 @@
     1.1	Viabilidade técnica.
     
         1.1.a) Será posible dispoñer dos recursos humanos e medios de produción necesarios (materias primas, maquinaria, instalacións…)?
+			
+				Seria posible xa que os medios humanos dun equipo de varis persoas para o desño e a posteriori algun para o mantemento do software,
+				e os custes dun sevidor quedarian compensados cas optimización da producción debido o menor numero de incidencias e o control do estocaxe dos repostos.
         
         1.1.b) Existe algún impedimento técnico que dificulte o proceso produtivo?
+
+				O sofware esta deseñado para pequena es medianas empresas. Empresas de maior tamaño e numero de ususarios requeriria dun desprege mais amplo de servidores e equipos nas platas que poderian chegar a supoñer un custe inicial mais elevado.
         
     1.2	Viabilidade económica
     
         1.2.a) Os beneficios do proyecto son superiores aos costes?
+				
+				Os custes iniciais son importantes, pero unha vez o sofware estea adaptado o seu entorno e o persoal formado, a optimización dos procesos e da xestión dos repostos xunto ca mellora na resolución das averias compensara gran parte deste gasto.
         
         1.2.b) As perdas poden cubrirse vía financiamento (por parte da administración pública, con subvencións, etc)?
+
+				Dende a administración hai gran numero de subección para as pymes en axudas as dicxitalización e a industria 4.0.
+				Unha delas e a "RESOLUCIÓN de 18 de mayo de 2023 por la que se da publicidad del Acuerdo del Consejo de Dirección que aprueba las bases reguladoras de las ayudas a la digitalización Industria 4.0 para el año 2023, susceptibles de ser cofinanciadas en el marco del programa operativo Feder Galicia 2021-2027, y se procede a su convocatoria en régimen de concurrencia competitiva (código de procedimiento IG300C)."
+				na que se otorgan ata 5.000.000€.
+
+				https://www.xunta.gal/dog/Publicados/2023/20230605/AnuncioO92-220523-0001_es.html#:~:text=selecci%C3%B3n%20de%20proyectos-,1.,de%20empresa%2C%20peque%C3%B1as%20y%20medianas.
 
         
 2.	Competencia.
@@ -88,14 +101,20 @@
 1.	Promoción.
 
     1.1.	Técnicas elixidas (redes sociais, plataformas multimedia, páxina web, posicionamento web SEO, patrocinios, participación en eventos, prácticas de responsabilidade social corporativa, outras).
+
     
     1.2.	Xustifica a elección.
     
 2.	Modelo de negocio.
 
-    2.1.Modelo elixido (Modelo de pago / Freemium (é de balde pero as funcionalidades extras son de pago) / In house (desenvolvementos a medida para contornos empresariais / De subscrición / Por publicidade / Outros)
+    2.1.Modelo elixido (Modelo de pago / Freemium (é de balde pero as funcionalidades extras son de pago) / In house (desenvolvementos a medida para contornos empresariais / De subscrición / Por publicidade / Outros).
+
+		Usariamos un modelo In house.
     
     2.2. Xustifica a elección.
+
+			Este tipo de sofware necesita un grado de persoalizacion moi alto, donde cada entorno de traballo ten as suas particularidades.
+			polo tanto e case imprescindible un modelo que abarque todas esta caracteristicas e satisfaga os clientes.
 
 # Webgrafía
 
