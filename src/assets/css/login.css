@@ -1,0 +1,14 @@
+.container{
+    margin-top: 12%;
+}
+
+.principal{
+width: 30%;
+border-radius: 8px;
+backdrop-filter: blur(10px);
+}
+
+body{
+    background-image: url(../imagenes/fondo-icono-herramientas-herramientas-reparacion-fondo-icono-vector_645658-723.avif);
+    background-size: cover;
+}
