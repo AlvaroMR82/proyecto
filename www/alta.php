@@ -1,5 +1,4 @@
 <?php 
-session_start();
 if($_SERVER["REQUEST_METHOD"]=="POST"){ 
 
     $servername ="db";
@@ -11,40 +10,30 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
         $conPDO = new PDO("mysql:host=$servername;dbname=mantenimiento", $username, $password);
         //2. Forzar excepciones
         $conPDO->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        echo "La conexión correcta";
     } catch (PDOException $ex) {
         die("Erro na conexión mensaxe: " . $ex->getMessage());
     }
+    $nombre = $_POST["nombre"];
     // COMPROBAMOS SE EXISTE O USUARIO, E RECOLLEMOS O PASSWORD GARDADO NA BD
     //Para instertar la contraseña usaríamos esta función
-    /*$hasheado = password_hash("abc123.", PASSWORD_DEFAULT);
-    $sql = "INSERT INTO usuario (nombre, pass) VALUES ('Sabela','".$hasheado."')";
-    echo $sql;
-    $conPDO->exec($sql);*/
-
-    $consulta = "select pass from usuarios where usuario=:nomeTecleado";
-    $stmt = $conPDO->prepare($consulta);
+    $hasheado = password_hash($_POST["pass"], PASSWORD_DEFAULT);
+    $stmt= $conPDO->prepare("INSERT INTO usuarios(usuario, pass) VALUES (:nombre,:pass)");
+    $stmt->bindParam(':nombre',$nombre);
+    $stmt->bindParam(':pass',$hasheado);
+    $stmt->execute();
+    
+    
+   
+   // $consulta = "select pass from usuarios where usuario=:nomeTecleado";
+   // $stmt = $conPDO->prepare($consulta);
+   /*
     try {
-        $stmt->execute(array('nomeTecleado' => $_POST['nombre']));
+        $stmt->execute();
     } catch (PDOException $ex) {
         $conPDO = null;
         die("Erro recuperando os datos da BD: " . $ex->getMessage());
     }
-    $fila=$stmt->fetch();
-    if($stmt->rowCount() == 1 ) //HAI UN USUARIO
-        $contrasinalBD=$fila[0];
-        $passTecleado=$_POST['pass'];
-        //COMPROBAMOS QUE O HASH GARDADO É COMPATIBLE CO TECLEADO.
-        //TEMOS QUE COMPROBAR ANTES QUE HAI ALGÚN USUARIO:
-        if ($stmt->rowCount() == 0 || !password_verify($passTecleado,$contrasinalBD)) {
-            $stmt = null;
-            $conProyecto = null;
-            echo "Error de usuario";
-        }else{
-
-            $_SESSION['usuario'] = $_POST['usuario'];
-            header('location: Login.php');
-        }
+   */
     $stmt = null;
     $conPDO = null;
 }
@@ -56,7 +45,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Log in</title>
+    <title>Alta de usuarios</title>
     <link rel="stylesheet" href="css/login.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
