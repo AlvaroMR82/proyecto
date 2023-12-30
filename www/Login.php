@@ -1,5 +1,6 @@
 <?php 
 session_start();
+$_SESSION["usuario"]="alvaro";
 if($_SERVER["REQUEST_METHOD"]=="POST"){ 
 
     $servername ="db";
@@ -11,7 +12,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
         $conPDO = new PDO("mysql:host=$servername;dbname=mantenimiento", $username, $password);
         //2. Forzar excepciones
         $conPDO->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        echo "La conexión correcta";
+       
     } catch (PDOException $ex) {
         die("Erro na conexión mensaxe: " . $ex->getMessage());
     }
@@ -42,8 +43,8 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
             echo "Error de usuario";
         }else{
 
-            $_SESSION['usuario'] = $_POST['usuario'];
-            header('location: Login.php');
+            $_SESSION["usuario"] = $_POST['nombre'];
+            header('location: index.php');
         }
     $stmt = null;
     $conPDO = null;
