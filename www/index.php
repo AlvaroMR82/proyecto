@@ -23,9 +23,6 @@ if(!isset($_SESSION['usuario'])){
 include ("php/libreria/libreria.php");
 
   ?>
-
-
-  <div class="container-fluid d-flex mt-5">
   <?php
 
 menuNav();
