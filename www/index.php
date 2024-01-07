@@ -43,9 +43,8 @@ menuNav();
                   <div class="card-body">
                     <h5 class="card-title">Operarios en activo</h5>
                     <div class="d-flex justify-content-around">
-                    <?php operario1();
-                          operario2();
-                          operario3();?>
+                    <?php operarios();
+                          ?>
                   </div>
                   </div>
                 </div>
@@ -57,7 +56,7 @@ menuNav();
               <div class="row g-0">
                 <div class="col-md-12">
                   <div class="card-body">
-                    <h5 class="card-title">Maquinas en activo</h5>
+                    <h5 class="card-title">Máquinas en activo</h5>
                     <div class="d-flex justify-content-around ">
                       <div class="row">
                         <h5 class="card-title ms-3">Lacados</h5>
@@ -133,7 +132,7 @@ menuNav();
                           <div class="card m-2" >
                             <div class="card-body d-flex justify-content-around ">
                               <div>
-                                Fundicion <br>
+                                Fundición <br>
                             </div>
                             <img src="imagenes/vertical.jpg" alt="" class="img-fluid" style="width: 30%; height: 60%;">
                             </div>
@@ -161,12 +160,12 @@ menuNav();
               <div class="row g-0">
                 <div class="col-md-12">
                   <div class="card-body">
-                    <h5 class="card-title">Numero de incidecias en activo</h5>
+                    <h5 class="card-title">Número de incidecias en activo.</h5>
                     <p>Incidencias resueltas sobre el total</p>
                     <div class="progress">
                       <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 70%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">70%</div>
                     </div>
-                    <p class="mt-3">Incidencias Pendientes por repuestos</p>
+                    <p class="mt-3">Incidencias Pendientes por repuestos.</p>
                     <div class="progress">
                       <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 20%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">20%</div>
                     </div>

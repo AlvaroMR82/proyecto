@@ -20,6 +20,7 @@ include ("php/libreria/libreria.php");
     <?php
 
 menuNav();
+
   ?>
         <article class="col-7 bg-light ms-2 me-3">
             <div class="row">
@@ -40,24 +41,7 @@ menuNav();
                           </tr>
                         </thead>
                         <tbody>
-                          <tr>
-                            <th scope="row">1</th>
-                            <td>Ramon</td>
-                            <td>Garcia</td>
-                            <td>123456789</td>
-                          </tr>
-                          <tr>
-                            <th scope="row">2</th>
-                            <td>Juan</td>
-                            <td>Magan</td>
-                            <td>123456789</td>
-                          </tr>
-                          <tr>
-                            <th scope="row">3</th>
-                            <td >Pepe </td>
-                            <td >Prado</td>
-                            <td>123456789</td>
-                          </tr>
+                         <?php telOperarios();?>
                         </tbody>
                       </table>
                     
@@ -68,32 +52,11 @@ menuNav();
 
         </article>
         <div class="col-3 bg-light ms-2 ">
-            <h5 class="m-3">Mensajes Generales</h5>
-            <div class="container ">
-                <div class="card text-dark bg-light mb-3" style="max-width: 18rem;">
-                    <div class="card-header">Alvaro</div>
-                    <div class="card-body">
-                        <h5 class="card-title">Horno secado L3</h5>
-                        <p class="card-text">El quemador del lado del almacen se bloqueo en el primer arranque.</p>
-                    </div>
-                </div>
-                <div class="card text-dark bg-light mb-3" style="max-width: 18rem;">
-                    <div class="card-header">Juan</div>
-                    <div class="card-body">
-                        <h5 class="card-title">Gratadora L2 </h5>
-                        <p class="card-text">Guardamotor del motor de lodos salta sin motivo aparente.</p>
-                    </div>
-                </div>
-                <div class="card text-dark bg-light mb-3" style="max-width: 18rem;">
-                    <div class="card-header">Seguridad</div>
-                    <div class="card-body">
-                        <h5 class="card-title">Naves de lacados</h5>
-                        <p class="card-text">Precaución al transitar las naves de lacados debido a las obras, maquinaria
-                            pesada en continuo movimiento.</p>
-                    </div>
-                </div>
-            </div>
+        <?php
 
+mensajesGenerales();
+  ?>
+           
         </div>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
             integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
