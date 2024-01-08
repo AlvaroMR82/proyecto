@@ -42,6 +42,7 @@
 	- SQL
 	- JAVA
 	- PHP
+	- Dockers
 	
 > Tecnologias que estoy aprendiendo.
 
