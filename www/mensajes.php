@@ -77,7 +77,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                             <select class="form-select" aria-label="Default select example" name="prioridad">
                                                 <option selected>Selecciona la prioridad del mensaje</option>
                                                 <option value="success">Normal</option>
-                                                <option evalue="warning">advertencia</option>
+                                                <option value="warning">advertencia</option>
                                                 <option value="danger">peligro</option>
                                             </select>
                                         </div>
