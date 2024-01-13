@@ -37,7 +37,7 @@ menuNav();
                                         <h5 class="card-title">Operarios en activo</h5>
                                         <div class="mt-5">
                                             <div class="row d-flex justify-content-around mt-2">
-                                            <?php operarios();?>                                                                                     
+                                            <?php maquinas();?>                                                                                     
                                             </div>
                                         </div>
                                     </div>

@@ -1,8 +1,10 @@
 <?php 
 session_start();
 $_SESSION["usuario"]="alvaro";
+include ("php/libreria/libreria.php");
 if($_SERVER["REQUEST_METHOD"]=="POST"){ 
-
+    $conPDO = conexion();
+/*
     $servername ="db";
     $username = "root";
     $password = "test";  
