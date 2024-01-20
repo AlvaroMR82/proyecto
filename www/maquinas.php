@@ -24,7 +24,7 @@ menuNav();
         <article class="col-7 bg-light ms-2 me-3">
             <div class="row">
                 <div class="col-12 m-3">
-                    <h5>Pagina Principal</h5>
+                    <h5>Lista de maquinas</h5>
                 </div>
             </div>
             <div class="row">

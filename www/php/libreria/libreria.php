@@ -308,7 +308,7 @@ function maquinas()
       " . $row['nombreMaquina'] . " <br>
       <strong>Sección:</strong> " . $row['Zona'] . "
   </div>
-  <img src=". $row['foto'] ." alt=''>
+  <img src=". $row['foto'] ." alt='' style ='width: 30%; height: 60%;'>
   </div>
 </div></a>";
   }
