@@ -329,7 +329,7 @@ function maquinas()
 
     echo " 
 <div class='col-6'>
-  <a href='maquina.php' class='text-dark' >
+  <a href='maquina.php?id=".$row['id']."' class='text-dark' >
   <div class='card'>
   <div class='card-body d-flex justify-content-around'>
     <div>
@@ -343,6 +343,33 @@ function maquinas()
 
   }
  
+}
+function maquina(){
+  
+  $id =$_GET["id"];
+  $conPDO = conexion();
+  $stmt = $conPDO->prepare("SELECT * FROM maquinas where id=:id ");
+  $stmt ->bindParam(':id',$id);
+  $stmt->execute();
+  $stmt->setFetchMode(PDO::FETCH_ASSOC);
+
+  while ($row = $stmt->fetch()) {
+
+    echo " 
+<div class='col-6'>
+  <a href='maquina.php?id=".$row['id']."' class='text-dark' >
+  <div class='card'>
+  <div class='card-body d-flex justify-content-around'>
+    <div>
+      " . $row['nombreMaquina'] . " <br>
+      <strong>Sección:</strong> " . $row['Zona'] . "
+  </div>
+  <img src=". $row['foto'] ." alt='' style ='width: 30%; height: 60%;'>
+  </div>
+</div></a>
+</div>";
+
+  }
 }
 function maquinasEmpleado()
 {

@@ -41,15 +41,7 @@ menuNav();
                                             <div class="row">
 
                                                 <div class="col">
-                                                    <div class="card m-2 ">
-                                                        <div class="card-body d-flex justify-content-around ">
-                                                            <div class="mt-4">
-                                                                <h3> Lacado Vertical</h3> <br>
-                                                            </div>
-                                                            <img src="imagenes/vertical.jpg" alt="" class="img-fluid"
-                                                                style="width: 30%; height: 60%;">
-                                                        </div>
-                                                    </div>
+                                                    <?php maquina();?>
                                                 </div>
                                             </div>
                                         </div>
