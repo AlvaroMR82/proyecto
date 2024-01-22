@@ -346,9 +346,16 @@ function maquinas()
 }
 function maquinasEmpleado()
 {
-
+  $id =$_GET["id"];
   $conPDO = conexion();
-  $stmt = $conPDO->prepare("SELECT * FROM maquinas where Zona='lacados'");//primero saber seccion despues preguntar por maquina
+  $sql = $conPDO->prepare('SELECT seccion from operarios where id =:id ');
+  $sql->bindParam(':id', $id);
+  $sql->execute();
+  $sql->setFetchMode(PDO::FETCH_ASSOC);
+  while($row = $sql->fetch()){
+    $seccion = $row['seccion'];
+  }
+  $stmt = $conPDO->prepare("SELECT * FROM maquinas where Zona='".$seccion."'");
   //$stmt->bindParam(':zona','lacados');
   $stmt->execute();
   $stmt->setFetchMode(PDO::FETCH_ASSOC);
