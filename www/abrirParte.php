@@ -3,20 +3,26 @@ session_start();
 if (!isset($_SESSION['usuario'])) {
     header('location: Login.php');
 }
+include ("php/libreria/libreria.php");
 //falta completar la orde de sql y que los datos de abrir el parte sean suficientes.
-if( isset($_POST['averia'])){
+$conPDO=conexion();
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if( isset($_POST['nombre']) &&  isset($_POST['averia']) &&  isset($_POST['zona']) ){
 $nombre = $_POST["nombre"];
 $averia = $_POST["averia"];
 $zona = $_POST["zona"];
-$fecha = getdate();
+$fecha = getdate("d/m/Y");
 
-$hasheado = password_hash($_POST["pass"], PASSWORD_DEFAULT);
-$stmt= $conPDO->prepare("INSERT INTO parteAveria(incidencia,fecha) VALUES (:incidencia,:fecha)");
+$stmt= $conPDO->prepare("INSERT INTO parteAveria(Zona,incidencia,fecha) VALUES (:Zona,:incidencia,:fecha)");
+$stmt->bindParam(':Zona',$zona);
 $stmt->bindParam(':incidencia',$averia);
 $stmt->bindParam(':fecha',$fecha);
 
-$stmt->execute();
+if($stmt->execute()){
 
+    echo 'Averia insertada correctamente';
+}
+}
 }
 
 ?>
@@ -33,10 +39,6 @@ $stmt->execute();
 </head>
 
 <body>
-    <?php
-    include("php/libreria/libreria.php");
-
-    ?>
     <?php
 
     menuNav();
@@ -72,7 +74,7 @@ $stmt->execute();
                                         </div>
                                         <div class="mb-3">
                                             <label for="exampleFormControlTextarea1" class="form-label">Descripción del problema</label>
-                                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" nombre="averia" ></textarea>
+                                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="averia" ></textarea>
                                         </div>
 
                                            <div class="d-flex justify-content-start mb-5">

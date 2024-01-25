@@ -3,8 +3,30 @@ session_start();
 if (!isset($_SESSION['usuario'])) {
     header('location: Login.php');
 }
+include("php/libreria/libreria.php");
+$conPDO = conexion();
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (isset($_POST['mensaje']) &&  isset($_POST['prioridad']) &&  isset($_POST['nombre']) &&  isset($_POST['zona'])) {
+        $mensaje = $_POST['mensaje'];
+        $prioridad = $_POST['prioridad'];
+        $nombre = $_POST['nombre']; 
+        $zona = $_POST['zona'];
+        
 
+        $stmt = $conPDO->prepare("INSERT INTO mensajes(mensaje, prioridad, nombre, zona) VALUES (:mensaje,:prioridad,:nombre,:zona)");
+        $stmt->bindParam(':mensaje', $mensaje);
+        $stmt->bindParam(':prioridad', $prioridad);
+        $stmt->bindParam(':nombre', $nombre);
+        $stmt->bindParam(':zona', $zona);
+        $stmt->execute();
 
+        $stmt = null;
+        $conPDO = null;
+    } else {
+        echo "algo falla";
+    }
+}
+?>
 ?>
 
 <!DOCTYPE html>
@@ -41,20 +63,21 @@ if (!isset($_SESSION['usuario'])) {
                         <div class="row g-0">
                             <div class="col-md-12">
                                 <div class="card-body">
-                                    <h5 class="card-title">descipcion de la averia</h5>
-                                        <div class="mb-3">
-                                            <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
-                                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                                        </div>
-                                        <button type="button" class="btn btn-primary">Guardar Parte</button>
-                                        <button type="button" class="btn btn-success">Finalizar parte</button>
-                                        <button type="button" class="btn btn-danger">Borrar parte</button>
+                                    <h5 class="card-title">Descipcion de la averia</h5>
+                                    <div class="mb-3">
+                                        <label for="exampleFormControlTextarea1" class="form-label">Pon aqui tu problema</label>
+                                        <textarea class="form-control" id="exampleFormControlTextarea1" name="mensaje" rows="3"></textarea>
+                                    </div>
+                                    <div class="d-flex justify-content-center mb-5">
+                                        <input type="submit" value="Enviar " class="btn btn-primary col-3" />
+                                    </div>
+
                                 </div>
                             </div>
                         </div>
                     </div>
-                  
-                  
+
+
                 </div>
 
 

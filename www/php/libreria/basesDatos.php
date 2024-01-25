@@ -106,5 +106,19 @@ function tablaPartes()
 
     $conPDO = null;
 }
+function tablaClientes()
+{
+    $conPDO = conexion();
+
+    $sql = " CREATE TABLE clientes (
+        id_cliente INT(6) AUTO_INCREMENT PRIMARY KEY,
+        nombre_cliente VARCHAR(50),
+        zona VARCHAR(50)
+    );";
+
+    $conPDO->exec($sql);
+
+    $conPDO = null;
+}
 
 //todo: revisar los nombre de los ids para poner cada uno con su tabla.

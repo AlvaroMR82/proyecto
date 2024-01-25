@@ -17,7 +17,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     // COMPROBAMOS SE EXISTE O USUARIO, E RECOLLEMOS O PASSWORD GARDADO NA BD
     //Para instertar la contraseña usaríamos esta función
     $hasheado = password_hash($_POST["pass"], PASSWORD_DEFAULT);
-    $stmt= $conPDO->prepare("INSERT INTO usuarios(usuario, pass) VALUES (:nombre,:pass)");
+    $stmt= $conPDO->prepare("INSERT INTO usuarios (usuario, pass) SELECT :nombre, :pass WHERE NOT EXISTS (SELECT 1 FROM usuarios WHERE usuario = :nombre);");
     $stmt->bindParam(':nombre',$nombre);
     $stmt->bindParam(':pass',$hasheado);
     $stmt->execute();
@@ -45,7 +45,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mensajes Generales</title>
+    <title>Alta de usuarios</title>
     <link rel="stylesheet" href="css/login.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
