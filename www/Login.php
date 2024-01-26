@@ -45,7 +45,22 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
             echo "Error de usuario";
         }else{
 
+          
+    
             $_SESSION["usuario"] = $_POST['nombre'];
+            $consulta = $conPDO->prepare( "select * from usuarios where usuario = :nombre");
+            $consulta->bindParam(':nombre', $_POST['nombre']);
+
+            try {
+                $consulta->execute();
+                $rol=$consulta->fetch();
+                $_SESSION["rol"] = $rol['rol'];
+                $_SESSION["id_usuario"]= $rol['id'];
+            } catch (PDOException $ex) {
+                $conPDO = null;
+                die("Erro recuperando os datos da BD: " . $ex->getMessage());
+            }
+
             header('location: index.php');
         }
     $stmt = null;

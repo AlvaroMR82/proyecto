@@ -11,17 +11,20 @@ if( isset($_POST['nombre']) &&  isset($_POST['averia']) &&  isset($_POST['zona']
 $nombre = $_POST["nombre"];
 $averia = $_POST["averia"];
 $zona = $_POST["zona"];
-$fecha = getdate("d/m/Y");
+$fecha = date("d/m/Y");
+if($_SESSION["rol"] == 'cliente' | $_SESSION["rol"] == 'administrador' ){
 
-$stmt= $conPDO->prepare("INSERT INTO parteAveria(Zona,incidencia,fecha) VALUES (:Zona,:incidencia,:fecha)");
-$stmt->bindParam(':Zona',$zona);
-$stmt->bindParam(':incidencia',$averia);
-$stmt->bindParam(':fecha',$fecha);
-
-if($stmt->execute()){
-
-    echo 'Averia insertada correctamente';
+    $stmt= $conPDO->prepare("INSERT INTO parteAveria(Zona,incidencia,fecha) VALUES (:Zona,:incidencia,:fecha)");
+    $stmt->bindParam(':Zona',$zona);
+    $stmt->bindParam(':incidencia',$averia);
+    $stmt->bindParam(':fecha',$fecha);
+    
+    if($stmt->execute()){
+    
+        echo 'Averia insertada correctamente';
+    }
 }
+
 }
 }
 
