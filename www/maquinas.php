@@ -1,3 +1,7 @@
+<?php
+session_start();
+include ("php/libreria/libreria.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,14 +15,7 @@
 </head>
 
 <body>
-<?php
-include ("php/libreria/libreria.php");
-
-  ?>
-  <?php
-
-menuNav();
-  ?>
+  <?php menuNav();?>
 
     
         <article class="col-7 bg-light ms-2 me-3">
