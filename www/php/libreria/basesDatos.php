@@ -47,7 +47,6 @@ function tabalaOperarios()
         apellido VARCHAR(30),
         email VARCHAR(30),
         telefono int(9),
-        seccion VARCHAR(30),
         seccion VARCHAR(30) NOT NULL
         );";
 
@@ -115,6 +114,26 @@ function tablaClientes()
         nombre_cliente VARCHAR(50),
         zona VARCHAR(50)
     );";
+
+    $conPDO->exec($sql);
+
+    $conPDO = null;
+}
+function tablaUsuariosCompleta()
+{
+    $conPDO = conexion();
+
+    $sql = "CREATE TABLE _usuarios (
+        id_usuario INT(6) AUTO_INCREMENT PRIMARY KEY, 
+        nombreUsuario VARCHAR(30) NOT NULL,
+        rol VARCHAR(30) NOT NULL,
+        pass VARCHAR(500) NOT NULL,
+        nombreOperario VARCHAR(30) NOT NULL,
+        apellido VARCHAR(30),
+        email VARCHAR(30),
+        telefono int(9),
+        seccion VARCHAR(30)
+        );";
 
     $conPDO->exec($sql);
 
