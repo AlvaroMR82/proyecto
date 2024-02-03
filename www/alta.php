@@ -18,17 +18,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
            
             $hasheado = password_hash($_POST["pass"], PASSWORD_DEFAULT);
-            $stmt = $conPDO->prepare("INSERT INTO _usuarios (nombreUsuario, pass, nombreOperario, apellido, telefono, email, seccion, rol) SELECT :nombreUsuario, :pass, :nombreOperario, :apellido, :telefono, :email, :seccion , :rol WHERE NOT EXISTS (SELECT 1 FROM usuarios WHERE usuario = :usuario);");
+            $stmt = $conPDO->prepare("INSERT INTO _usuarios (nombreUsuario,rol, pass, nombreOperario, apellido, email, telefono, seccion ) values (:nombreUsuario, :rol, :pass, :nombreOperario, :apellido, :email ,:telefono, :seccion)  ;");
             $stmt->bindParam(':nombreUsuario', $usuario);
+            $stmt->bindParam(':rol', $rol);
             $stmt->bindParam(':pass', $hasheado);
             $stmt->bindParam(':nombreOperario', $nombre);
             $stmt->bindParam(':apellido', $apellido);
-            $stmt->bindParam(':telefono', $telefono);
             $stmt->bindParam(':email', $email);
+            $stmt->bindParam(':telefono', $telefono);
             $stmt->bindParam(':seccion', $zona);
-            $stmt->bindParam(':rol', $rol);
-            $stmt->bindParam(':usuario', $usuario);
             
+            
+     
             
             $stmt->execute();
         }

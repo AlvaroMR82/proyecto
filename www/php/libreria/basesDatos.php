@@ -139,5 +139,23 @@ function tablaUsuariosCompleta()
 
     $conPDO = null;
 }
+function tablaUsuariosDatos()
+{
+    $conPDO = conexion();
 
+    $sql = "INSERT INTO _usuarios (nombreUsuario, rol, pass, nombreOperario, apellido, email, telefono, seccion)
+    VALUES
+         ('alvaro', 'administrador', '$2y$10$QkGkr.AYyGsKFp3Hee5lr.UM3hFbr8kDG4SyEOeXxiqJ.K4pyVlva', 'Alvaro', 'Mosquera Rial', 'a@a.com', '123456789', 'lacados'),
+         ('ramon', 'tecnico', '$2y$10$QkGkr.AYyGsKFp3Hee5lr.UM3hFbr8kDG4SyEOeXxiqJ.K4pyVlva', 'Ramon', 'Garcia', 'a@a.com', '123456789', 'extrusion'),
+         ('juan', 'cliente', '$2y$10$QkGkr.AYyGsKFp3Hee5lr.UM3hFbr8kDG4SyEOeXxiqJ.K4pyVlva', 'Juan', 'Magan', 'juan1@example.com', '123456789', 'anodizados'),
+         ('pepe', 'tecnico', '$2y$10$QkGkr.AYyGsKFp3Hee5lr.UM3hFbr8kDG4SyEOeXxiqJ.K4pyVlva', 'Pepe', 'Prado', 'juan1@example.com', '123456789', 'anodizados'),
+         ('juan', 'tecnico', '$2y$10$QkGkr.AYyGsKFp3Hee5lr.UM3hFbr8kDG4SyEOeXxiqJ.K4pyVlva', 'Juan', 'Pérez', 'juan1@example.com', '123456789', 'lacados'),
+         ('maría', 'cliente', '$2y$10$QkGkr.AYyGsKFp3Hee5lr.UM3hFbr8kDG4SyEOeXxiqJ.K4pyVlva', 'María', 'Gómez', 'maria2@example.com', '987654321', 'anodizados'),
+         ('carlos', 'tecnico', '$2y$10$QkGkr.AYyGsKFp3Hee5lr.UM3hFbr8kDG4SyEOeXxiqJ.K4pyVlva', 'Carlos', 'Martínez', 'carlos3@example.com', '555555555', 'extrusion'),
+         ('laura', 'cliente', '$2y$10$QkGkr.AYyGsKFp3Hee5lr.UM3hFbr8kDG4SyEOeXxiqJ.K4pyVlva', 'Laura', 'Sánchez', 'laura50@example.com', '999999999', 'anodizados');";
+
+    $conPDO->exec($sql);
+
+    $conPDO = null;
+}
 //todo: revisar los nombre de los ids para poner cada uno con su tabla.

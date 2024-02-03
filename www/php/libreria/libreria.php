@@ -432,3 +432,8 @@ function maquinasEmpleado()
   }
   
 }
+
+//TODO: Pasar las tablas de operarios y usuarios a solo usuarios.
+//TODO: hacer objeto de usaurio para introducir los datos en usuarios.
+//TODO: modificar menu nava para diferenciar admin de operario de tecnico. 
+
