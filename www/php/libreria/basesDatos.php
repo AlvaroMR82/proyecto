@@ -1,9 +1,4 @@
 <?php
-include("php/libreria/libreria.php");
-
-
-
-
 
 function tabalaClientes()
 {
@@ -141,21 +136,61 @@ function tablaUsuariosCompleta()
 }
 function tablaUsuariosDatos()
 {
-    $conPDO = conexion();
+   
+    
 
-    $sql = "INSERT INTO _usuarios (nombreUsuario, rol, pass, nombreOperario, apellido, email, telefono, seccion)
-    VALUES
-         ('alvaro', 'administrador', '$2y$10$QkGkr.AYyGsKFp3Hee5lr.UM3hFbr8kDG4SyEOeXxiqJ.K4pyVlva', 'Alvaro', 'Mosquera Rial', 'a@a.com', '123456789', 'lacados'),
-         ('ramon', 'tecnico', '$2y$10$QkGkr.AYyGsKFp3Hee5lr.UM3hFbr8kDG4SyEOeXxiqJ.K4pyVlva', 'Ramon', 'Garcia', 'a@a.com', '123456789', 'extrusion'),
-         ('juan', 'cliente', '$2y$10$QkGkr.AYyGsKFp3Hee5lr.UM3hFbr8kDG4SyEOeXxiqJ.K4pyVlva', 'Juan', 'Magan', 'juan1@example.com', '123456789', 'anodizados'),
-         ('pepe', 'tecnico', '$2y$10$QkGkr.AYyGsKFp3Hee5lr.UM3hFbr8kDG4SyEOeXxiqJ.K4pyVlva', 'Pepe', 'Prado', 'juan1@example.com', '123456789', 'anodizados'),
-         ('juan', 'tecnico', '$2y$10$QkGkr.AYyGsKFp3Hee5lr.UM3hFbr8kDG4SyEOeXxiqJ.K4pyVlva', 'Juan', 'Pérez', 'juan1@example.com', '123456789', 'lacados'),
-         ('maría', 'cliente', '$2y$10$QkGkr.AYyGsKFp3Hee5lr.UM3hFbr8kDG4SyEOeXxiqJ.K4pyVlva', 'María', 'Gómez', 'maria2@example.com', '987654321', 'anodizados'),
-         ('carlos', 'tecnico', '$2y$10$QkGkr.AYyGsKFp3Hee5lr.UM3hFbr8kDG4SyEOeXxiqJ.K4pyVlva', 'Carlos', 'Martínez', 'carlos3@example.com', '555555555', 'extrusion'),
-         ('laura', 'cliente', '$2y$10$QkGkr.AYyGsKFp3Hee5lr.UM3hFbr8kDG4SyEOeXxiqJ.K4pyVlva', 'Laura', 'Sánchez', 'laura50@example.com', '999999999', 'anodizados');";
+    $operarios= [
+        ['alvaro', 'administrador', '1234', 'Alvaro', 'Mosquera Rial', 'a@a.com', '123456789', 'lacados'],
+        ['ramon', 'tecnico', '1234', 'Ramon', 'Garcia', 'a@a.com', '123456789', 'extrusion'],
+        ['juan', 'cliente', '1234', 'Juan', 'Magan', 'juan1@example.com', '123456789', 'anodizados'],
+        ['pepe', 'tecnico', '1234', 'Pepe', 'Prado', 'juan1@example.com', '123456789', 'anodizados'],
+        ['juan', 'tecnico', '1234', 'Juan', 'Pérez', 'juan1@example.com', '123456789', 'lacados'],
+        ['maría', 'cliente', '1234', 'María', 'Gómez', 'maria2@example.com', '987654321', 'anodizados'],
+        ['carlos', 'tecnico', '1234', 'Carlos', 'Martínez', 'carlos3@example.com', '555555555', 'extrusion'],
+        ['laura', 'cliente', '1234', 'Laura', 'Sánchez', 'laura50@example.com', '999999999', 'anodizados']
 
-    $conPDO->exec($sql);
+    ];
 
-    $conPDO = null;
+
+
+foreach ($operarios as $op){
+
+    $usuario = $op[1];
+    $nombre = $op[2];
+    $pass = $op[3];
+    $apellido = $op[4];
+    $telefono = $op[5];
+    $email = $op[6];
+    $zona = $op[7];
+    $rol = $op[8];
+    
+  introducirDatosUsuario($usuario,$pass,$nombre,$apellido,$telefono,$email,$zona,$rol);
+    
+   
 }
-//todo: revisar los nombre de los ids para poner cada uno con su tabla.
+
+
+   
+$conPDO = null;
+    
+}
+
+function introducirDatosUsuario($usuario,$pass,$nombre,$apellido,$telefono,$email,$zona,$rol){
+
+    $hasheado = password_hash($pass, PASSWORD_DEFAULT);
+
+    $conPDO = conexion();
+    $stmt = $conPDO->prepare("INSERT INTO _usuarios (nombreUsuario,rol, pass, nombreOperario, apellido, email, telefono, seccion ) values (:nombreUsuario, :rol, :pass, :nombreOperario, :apellido, :email ,:telefono, :seccion)  ;");
+    $stmt->bindParam(':nombreUsuario', $usuario);
+    $stmt->bindParam(':rol', $rol);
+    $stmt->bindParam(':pass', $hasheado);
+    $stmt->bindParam(':nombreOperario', $nombre);
+    $stmt->bindParam(':apellido', $apellido);
+    $stmt->bindParam(':email', $email);
+    $stmt->bindParam(':telefono', $telefono);
+    $stmt->bindParam(':seccion', $zona);
+    $stmt->execute();
+    
+    $conPDO = null;
+    
+}

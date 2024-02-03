@@ -281,17 +281,17 @@ function operarios()
 {
 
   $conPDO = conexion();
-  $stmt = $conPDO->prepare("SELECT * FROM operarios WHERE id > 1");
+  $stmt = $conPDO->prepare("SELECT * FROM _usuarios where rol= 'tecnico' ");
   $stmt->execute();
   $stmt->setFetchMode(PDO::FETCH_ASSOC);
 
   while ($row = $stmt->fetch()) {
     echo " 
-  <a href='operario.php?id=".$row['id']."' class='text-dark' >
+  <a href='operario.php?id=".$row['id_usuario']."' class='text-dark' >
   <div class='card'>
   <div class='card-body d-flex justify-content-around'>
     <div>
-      " . $row['nombre'] . " " . $row['apellido'] . " <br>
+      " . $row['nombreUsuario'] . " " . $row['apellido'] . " <br>
       <strong>Sección:</strong> " . $row['seccion'] . "
   </div>
     <svg xmlns='http://www.w3.org/2000/svg' width='50' height='50' fill='currentColor' class='bi bi-person' viewBox='0 0 16 16'>
@@ -330,15 +330,15 @@ function operario()
 function telOperarios()
 {
   $conPDO = conexion();
-  $stmt = $conPDO->prepare("SELECT * FROM operarios");
+  $stmt = $conPDO->prepare("SELECT * FROM _usuarios");
   $stmt->execute();
   $stmt->setFetchMode(PDO::FETCH_ASSOC);
 
   while ($row = $stmt->fetch()) {
     echo "
   <tr>
-  <th scope='row'>" . $row['id'] . "</th>
-  <td>".$row['nombre'] ."</td>
+  <th scope='row'>" . $row['id_usuario'] . "</th>
+  <td>".$row['nombreUsuario'] ."</td>
   <td>" . $row['apellido'] . "</td>
   <td>" . $row['telefono'] . "</td>
 </tr>";
@@ -434,6 +434,5 @@ function maquinasEmpleado()
 }
 
 //TODO: Pasar las tablas de operarios y usuarios a solo usuarios.
-//TODO: hacer objeto de usaurio para introducir los datos en usuarios.
 //TODO: modificar menu nava para diferenciar admin de operario de tecnico. 
 

@@ -53,10 +53,12 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 
             try {
                 $consulta->execute();
-                $rol=$consulta->fetch();
-                $_SESSION["rol"] = $rol['rol'];
-                $id= $rol['id_usuario'];
-                $_SESSION["id_usuario"]= $rol['id_usuario'];
+                $datos=$consulta->fetch();
+                $_SESSION["rol"] = $datos['rol'];
+                $_SESSION["id_usuario"]= $datos['id_usuario'];
+                $_SESSION["nombre"] = $datos['nombreUsuario'];
+                $_SESSION["apellido"] = $datos['apellido'];
+                $_SESSION["seccion"] = $datos['seccion'];
             } catch (PDOException $ex) {
                 $conPDO = null;
                 die("Erro recuperando os datos da BD: " . $ex->getMessage());

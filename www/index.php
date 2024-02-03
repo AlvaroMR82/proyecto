@@ -42,7 +42,7 @@ menuNav();
                 <div class="col-md-12">
                   <div class="card-body">
                     <h5 class="card-title">Operarios en activo</h5>
-                    <div class="d-flex justify-content-around">
+                    <div class="d-flex no-wrap justify-content-around">
                     <?php operarios();
                           ?>
                   </div>

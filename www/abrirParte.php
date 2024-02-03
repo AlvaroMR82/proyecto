@@ -4,7 +4,7 @@ if (!isset($_SESSION['usuario'])) {
     header('location: Login.php');
 }
 include ("php/libreria/libreria.php");
-//falta completar la orde de sql y que los datos de abrir el parte sean suficientes.
+//TODO: falta completar la orde de sql y que los datos de abrir el parte sean suficientes.
 $conPDO=conexion();
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 if( isset($_POST['nombre']) &&  isset($_POST['averia']) &&  isset($_POST['zona']) ){

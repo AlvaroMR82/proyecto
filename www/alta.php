@@ -1,6 +1,7 @@
 <?php
 session_start();
 include("php/libreria/libreria.php");
+include("php/libreria/basesDatos.php");
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $conPDO = conexion();
 
@@ -8,6 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (isset($_POST['usuario']) &&  isset($_POST['pass']) &&  isset($_POST['nombre']) &&  isset($_POST['apellido'])
          &&  isset($_POST['telefono']) &&  isset($_POST['email'])&&  isset($_POST['seccion']) &&  isset($_POST['rol'])) {
             $usuario = $_POST["usuario"];
+            $pass = $_POST['pass'];
             $nombre = $_POST["nombre"];
             $apellido = $_POST["apellido"];
             $telefono = $_POST["telefono"];
@@ -15,23 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $zona = $_POST["seccion"];
             $rol = $_POST["rol"];
 
-
-           
-            $hasheado = password_hash($_POST["pass"], PASSWORD_DEFAULT);
-            $stmt = $conPDO->prepare("INSERT INTO _usuarios (nombreUsuario,rol, pass, nombreOperario, apellido, email, telefono, seccion ) values (:nombreUsuario, :rol, :pass, :nombreOperario, :apellido, :email ,:telefono, :seccion)  ;");
-            $stmt->bindParam(':nombreUsuario', $usuario);
-            $stmt->bindParam(':rol', $rol);
-            $stmt->bindParam(':pass', $hasheado);
-            $stmt->bindParam(':nombreOperario', $nombre);
-            $stmt->bindParam(':apellido', $apellido);
-            $stmt->bindParam(':email', $email);
-            $stmt->bindParam(':telefono', $telefono);
-            $stmt->bindParam(':seccion', $zona);
-            
-            
-     
-            
-            $stmt->execute();
+            introducirDatosUsuario($usuario,$pass,$nombre,$apellido,$telefono,$email,$zona,$rol);        
         }
     }
     $stmt = null;
