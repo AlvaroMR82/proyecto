@@ -4,27 +4,6 @@ $_SESSION["usuario"]="alvaro";
 include ("php/libreria/libreria.php");
 if($_SERVER["REQUEST_METHOD"]=="POST"){ 
     $conPDO = conexion();
-/*
-    $servername ="db";
-    $username = "root";
-    $password = "test";  
-
-    try{
-        //1. Conexión a base de datos
-        $conPDO = new PDO("mysql:host=$servername;dbname=mantenimiento", $username, $password);
-        //2. Forzar excepciones
-        $conPDO->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-       
-    } catch (PDOException $ex) {
-        die("Erro na conexión mensaxe: " . $ex->getMessage());
-    }
-    // COMPROBAMOS SE EXISTE O USUARIO, E RECOLLEMOS O PASSWORD GARDADO NA BD
-    //Para instertar la contraseña usaríamos esta función
-    /*$hasheado = password_hash("abc123.", PASSWORD_DEFAULT);
-    $sql = "INSERT INTO usuario (nombre, pass) VALUES ('Sabela','".$hasheado."')";
-    echo $sql;
-    $conPDO->exec($sql);*/
-
     $consulta = "select pass from usuarios where usuario=:nomeTecleado";
     $stmt = $conPDO->prepare($consulta);
     try {
@@ -56,7 +35,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
                 $datos=$consulta->fetch();
                 $_SESSION["rol"] = $datos['rol'];
                 $_SESSION["id_usuario"]= $datos['id_usuario'];
-                $_SESSION["nombre"] = $datos['nombreUsuario'];
+                $_SESSION["nombre"] = $datos['nombreOperario'];
                 $_SESSION["apellido"] = $datos['apellido'];
                 $_SESSION["seccion"] = $datos['seccion'];
             } catch (PDOException $ex) {

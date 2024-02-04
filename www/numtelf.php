@@ -16,9 +16,6 @@ include ("php/libreria/libreria.php");
 </head>
 
 <body>
-
-
-    <div class="container-fluid d-flex mt-5">
     <?php
 
 menuNav();
