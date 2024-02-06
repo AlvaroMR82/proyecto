@@ -4,20 +4,25 @@ if (!isset($_SESSION['usuario'])) {
     header('location: Login.php');
 }
 include ("php/libreria/libreria.php");
-//TODO: falta completar la orde de sql y que los datos de abrir el parte sean suficientes.
 $conPDO=conexion();
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-if( isset($_POST['nombre']) &&  isset($_POST['averia']) &&  isset($_POST['zona']) ){
-$nombre = $_POST["nombre"];
-$averia = $_POST["averia"];
-$zona = $_POST["zona"];
+if( isset($_POST['averia']) &&  isset($_POST['maquina_id'] )){
+$nombre = $_SESSION["nombre"];
+$zona = $_SESSION['seccion'];
+$cliente = $_SESSION['id_usuario'];
 $fecha = date("d/m/Y");
+$averia = $_POST["averia"];
+$maquina_id = $_POST['maquina_id'];
+
 if($_SESSION["rol"] == 'cliente' | $_SESSION["rol"] == 'administrador' ){
 
-    $stmt= $conPDO->prepare("INSERT INTO parteAveria(Zona,incidencia,fecha) VALUES (:Zona,:incidencia,:fecha)");
+    $stmt= $conPDO->prepare("INSERT INTO parteAveria(Zona,incidencia,fecha, id_cliente, maquinas_id) VALUES (:Zona,:incidencia,:fecha,:id_cliente,:maquinas_id)");
     $stmt->bindParam(':Zona',$zona);
     $stmt->bindParam(':incidencia',$averia);
     $stmt->bindParam(':fecha',$fecha);
+    $stmt->bindParam(':id_cliente',$cliente);
+    $stmt->bindParam(':maquinas_id',$maquina_id);
+
     
     if($stmt->execute()){
     
@@ -62,22 +67,16 @@ if($_SESSION["rol"] == 'cliente' | $_SESSION["rol"] == 'administrador' ){
                         <div class="row g-0">
                             <div class="col-md-12">
                                 <div class="card-body">
-                                    <h5 class="card-title">descipcion de la averia</h5>
-                                    <div class="mb-3">
-                                            <label for="exampleFormControlInput1" class="form-label">Nombre</label>
-                                            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="" name="nombre">
-                                        </div>
+                                    <h5 class="card-title">Descipcion de la averia</h5>
                                         <div class="mb-3">
-                                            <select class="form-select" aria-label="Default select example" name="zona">
-                                                <option selected>Selecciona la zona</option>
-                                                <option value="anodizados">Anodizados</option>
-                                                <option evalue="lacados">Lacados</option>
-                                                <option value="extrusión">Extrusioón</option>
-                                            </select>
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="exampleFormControlTextarea1" class="form-label">Descripción del problema</label>
+                                            <label for="exampleFormControlTextarea1" class="form-label"></label>
                                             <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="averia" ></textarea>
+                                        </div>
+                                        <div class="mb-3">
+                                            <select class="form-select" aria-label="Default select example" name="maquina_id">
+                                                <option selected>Selecciona la maquina.</option>
+                                                <?php  maquinaSeccion($_SESSION['seccion']);?>
+                                            </select>
                                         </div>
 
                                            <div class="d-flex justify-content-start mb-5">

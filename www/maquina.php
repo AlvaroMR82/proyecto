@@ -41,7 +41,9 @@ menuNav();
                                             <div class="row">
 
                                                 <div class="col">
-                                                    <?php maquina();?>
+                                                    <?php maquina();
+                                                    //TODO: Sarcar las averias y las incidencias de la base de datos.
+                                                    ?>
                                                 </div>
                                             </div>
                                         </div>

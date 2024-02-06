@@ -23,6 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt = null;
     $conPDO = null;
 }
+//TODO: cambiar el formulario para el alta diferente al login.
 ?>
 
 <!DOCTYPE html>

@@ -194,3 +194,4 @@ function introducirDatosUsuario($usuario,$pass,$nombre,$apellido,$telefono,$emai
     $conPDO = null;
     
 }
+//TODO: preparar funciones para el inicio de la aplicación.

@@ -21,7 +21,7 @@ if(!isset($_SESSION['usuario'])){
 <body>
 <?php
 include ("php/libreria/libreria.php");
-
+//TODO: Mejorar maquetados en todas las pajinas. 
   ?>
   <?php
 

@@ -4,18 +4,20 @@ if (!isset($_SESSION['usuario'])) {
     header('location: Login.php');
 }
 include("php/libreria/libreria.php");
+//TODO: preparar este aprte como abrir incidencia por parte del tecnico. 
+//TODO: crear lista de incidencias por seccion.
+
 $conPDO = conexion();
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if (isset($_POST['mensaje']) &&  isset($_POST['prioridad']) &&  isset($_POST['nombre']) &&  isset($_POST['zona'])) {
+    if (isset($_POST['mensaje'])) {
         $mensaje = $_POST['mensaje'];
         $prioridad = $_POST['prioridad'];
-        $nombre = $_POST['nombre']; 
-        $zona = $_POST['zona'];
+        $nombre = $_SESSION['nombre']; 
+        $zona = $_SESSION['seccion'];
         
 
-        $stmt = $conPDO->prepare("INSERT INTO mensajes(mensaje, prioridad, nombre, zona) VALUES (:mensaje,:prioridad,:nombre,:zona)");
+        $stmt = $conPDO->prepare("INSERT INTO parteAveria (fecha, zona, id_cliente) VALUES (:mensaje,:prioridad,:nombre,:zona)");
         $stmt->bindParam(':mensaje', $mensaje);
-        $stmt->bindParam(':prioridad', $prioridad);
         $stmt->bindParam(':nombre', $nombre);
         $stmt->bindParam(':zona', $zona);
         $stmt->execute();
@@ -26,8 +28,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "algo falla";
     }
 }
+
 ?>
-?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -41,10 +44,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 
 <body>
-    <?php
-    include("php/libreria/libreria.php");
-
-    ?>
     <?php
 
     menuNav();

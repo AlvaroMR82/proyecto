@@ -21,7 +21,7 @@ function menuNav()
   <div class='container-fluid d-flex mt-2'>
     <nav class='col-2 bg-primary text-white ms-2 me-3'>
       <div class='ms-2 me-2 mt-2'>
-        <a href='#'>Panel de administración</a>
+        <p>Panel de administración</p>
 
         <hr class='sidebar-divider my-0'>
 
@@ -60,7 +60,7 @@ function menuNav()
               <path fill-rule='evenodd'
                 d='M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z' />
             </svg>
-            <a href=''> Lista de clientes</a>
+            <a href='listaClientes.php'> Lista de clientes</a>
           </li>
         </ul>
         <li class='nav-item active'>
@@ -316,6 +316,30 @@ function operarios()
 </div></a>";
   }
 }
+function clientes()
+{
+
+  $conPDO = conexion();
+  $stmt = $conPDO->prepare("SELECT * FROM _usuarios where rol= 'cliente' ");
+  $stmt->execute();
+  $stmt->setFetchMode(PDO::FETCH_ASSOC);
+
+  while ($row = $stmt->fetch()) {
+    echo " 
+  <a href='operario.php?id=".$row['id_usuario']."' class='text-dark' >
+  <div class='card'>
+  <div class='card-body d-flex justify-content-around'>
+    <div>
+      " . $row['nombreUsuario'] . " " . $row['apellido'] . " <br>
+      <strong>Sección:</strong> " . $row['seccion'] . "
+  </div>
+    <svg xmlns='http://www.w3.org/2000/svg' width='50' height='50' fill='currentColor' class='bi bi-person' viewBox='0 0 16 16'>
+      <path d='M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664z'/>
+    </svg>
+  </div>
+</div></a>";
+  }
+}
 function operario()
 {
 
@@ -426,7 +450,6 @@ function maquinasEmpleado()
     $seccion = $row['seccion'];
   }
   $stmt = $conPDO->prepare("SELECT * FROM maquinas where Zona='".$seccion."'");
-  //$stmt->bindParam(':zona','lacados');
   $stmt->execute();
   $stmt->setFetchMode(PDO::FETCH_ASSOC);
 
@@ -448,6 +471,20 @@ function maquinasEmpleado()
   
 }
 
+function maquinaSeccion($seccion){
+
+  $conPDO = conexion();
+  $stmt = $conPDO->prepare("SELECT * FROM maquinas where Zona='".$seccion."'");
+  $stmt->execute();
+  $stmt->setFetchMode(PDO::FETCH_ASSOC);
+  while ($row = $stmt->fetch()) {
+    echo " 
+
+    <option value=".$row['id'].">".$row['nombreMaquina']."</option>";
+  }
+}
+
+
 //TODO: Pasar las tablas de operarios y usuarios a solo _usuarios.
-//TODO: modificar menu nava para diferenciar admin de operario de tecnico. 
+//TODO: modificar menu nav para diferenciar admin de operario de tecnico. 
 
