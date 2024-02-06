@@ -4,7 +4,7 @@ if (!isset($_SESSION['usuario'])) {
     header('location: Login.php');
 }
 include("php/libreria/libreria.php");
-//TODO: preparar este aprte como abrir incidencia por parte del tecnico. 
+//TODO: preparar este parte como abrir incidencia por parte del tecnico. 
 //TODO: crear lista de incidencias por seccion.
 
 $conPDO = conexion();
@@ -52,7 +52,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <article class="col-7 bg-light ms-2 me-3">
         <div class="row">
             <div class="col-12 m-3">
-                <h5>parte de averia</h5>
+                <h5>Asignación de averia</h5>
             </div>
         </div>
         <div class="row">
@@ -63,8 +63,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <div class="col-md-12">
                                 <div class="card-body">
                                     <h5 class="card-title">Descipcion de la averia</h5>
+                                        <p><?php descipcionAveria($_GET['id_averia']); ?></p>
+
                                     <div class="mb-3">
-                                        <label for="exampleFormControlTextarea1" class="form-label">Pon aqui tu problema</label>
+                                        <label for="exampleFormControlTextarea1" class="form-label">Actuación</label>
                                         <textarea class="form-control" id="exampleFormControlTextarea1" name="mensaje" rows="3"></textarea>
                                     </div>
                                     <div class="d-flex justify-content-center mb-5">

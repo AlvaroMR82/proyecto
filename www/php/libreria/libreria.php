@@ -62,6 +62,15 @@ function menuNav()
             </svg>
             <a href='listaClientes.php'> Lista de clientes</a>
           </li>
+          <li class='nav-item active'>
+            <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor'
+              class='bi bi-person-circle' viewBox='0 0 16 16'>
+              <path d='M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z' />
+              <path fill-rule='evenodd'
+                d='M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z' />
+            </svg>
+            <a href='listaPartes.php'>Lista de incidencias</a>
+          </li>
         </ul>
         <li class='nav-item active'>
           <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-house'
@@ -119,15 +128,22 @@ function menuNav()
               d='M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z' />
           </svg>
           <a href='abrirParte.php'>Abrir parte de averia</a>
-        </li>
-       
-        ";
-
+        </li>";
+        }elseif ($_SESSION["rol"] == 'tecnico' | $_SESSION["rol"] == 'administrador'){
+          echo "
+          <li class='nav-item active'>
+          <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor'
+            class='bi bi-person-circle' viewBox='0 0 16 16'>
+            <path d='M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z' />
+            <path fill-rule='evenodd'
+              d='M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z' />
+          </svg>
+          <a href='cogerParte.php'>Coger incidencia</a>
+        </li>";
 
         }
-        echo 
-        "
-        </ul>
+
+        echo "</ul>
         <li class='nav-item active'>
           <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-house'
             viewBox='0 0 16 16'>
@@ -483,7 +499,34 @@ function maquinaSeccion($seccion){
     <option value=".$row['id'].">".$row['nombreMaquina']."</option>";
   }
 }
-
+function descipcionAveria($id_parte){
+//TODO: hacer lista de averias. 
+  $conPDO = conexion();
+  $stmt = $conPDO->prepare("SELECT * FROM parteAveria  where ID_parte='".$id_parte."'");
+  $stmt->execute();
+  $stmt->setFetchMode(PDO::FETCH_ASSOC);
+  while ($row = $stmt->fetch()) {
+    echo $row['incidencia'];
+  }
+}
+function listaAverias(){
+    $conPDO = conexion();
+    $stmt = $conPDO->prepare("SELECT * FROM parteAveria  ");
+    $stmt->execute();
+    $stmt->setFetchMode(PDO::FETCH_ASSOC);
+    while ($row = $stmt->fetch()) {
+      echo "
+    <tr>
+    
+    <th scope='row'><a href='cogerParte.php?id_averia=".$row['ID_parte']."'>" . $row['Fecha'] . "</a></th>
+    <td>".$row['Zona'] ."</td>
+    <td>" . $row['maquinas_ID'] . "</td>
+    <td>" . $row['estado'] . "</td>
+    <td>" . $row['id_cliente'] . "</td>
+    </a>
+  </tr>";
+    }
+  }
 
 //TODO: Pasar las tablas de operarios y usuarios a solo _usuarios.
 //TODO: modificar menu nav para diferenciar admin de operario de tecnico. 

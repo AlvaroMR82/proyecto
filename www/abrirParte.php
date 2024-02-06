@@ -14,7 +14,7 @@ $fecha = date("d/m/Y");
 $averia = $_POST["averia"];
 $maquina_id = $_POST['maquina_id'];
 
-if($_SESSION["rol"] == 'cliente' | $_SESSION["rol"] == 'administrador' ){
+if($_SESSION["rol"] == 'cliente' | $_SESSION["rol"] == 'administrador' && $_POST['maquina_id']!=0 ){
 
     $stmt= $conPDO->prepare("INSERT INTO parteAveria(Zona,incidencia,fecha, id_cliente, maquinas_id) VALUES (:Zona,:incidencia,:fecha,:id_cliente,:maquinas_id)");
     $stmt->bindParam(':Zona',$zona);
@@ -30,6 +30,8 @@ if($_SESSION["rol"] == 'cliente' | $_SESSION["rol"] == 'administrador' ){
     }
 }
 
+}else{
+    echo "Completa correctamente el formulario";
 }
 }
 
@@ -74,10 +76,10 @@ if($_SESSION["rol"] == 'cliente' | $_SESSION["rol"] == 'administrador' ){
                                         </div>
                                         <div class="mb-3">
                                             <select class="form-select" aria-label="Default select example" name="maquina_id">
-                                                <option selected>Selecciona la maquina.</option>
+                                                <option selected value="0">Selecciona la maquina.</option>
                                                 <?php  maquinaSeccion($_SESSION['seccion']);?>
                                             </select>
-                                        </div>
+                                        </div> 
 
                                            <div class="d-flex justify-content-start mb-5">
                                             <input type="submit" value="Abrir incidencia" class="btn btn-primary col-3" />

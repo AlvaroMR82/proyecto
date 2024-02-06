@@ -11,17 +11,19 @@ include ("php/libreria/libreria.php");
     <link rel="stylesheet" href="css/estilos.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <title>Panel de control</title>
+    <title>Partes de incidencias</title>
 </head>
 
 <body>
-  <?php menuNav();?>
+  <?php
+menuNav();
+  ?>
 
     
         <article class="col-7 bg-light ms-2 me-3">
             <div class="row">
                 <div class="col-12 m-3">
-                    <h5>Lista de maquinas</h5>
+                    <h5>Lista de Partes de incidencias</h5>
                 </div>
             </div>
             <div class="row">
@@ -31,12 +33,24 @@ include ("php/libreria/libreria.php");
                             <div class="row g-0">
                                 <div class="col-md-12">
                                     <div class="card-body">
-                                        <h5 class="card-title"></h5>
+                                        <h5 class="card-title">Operarios en activo</h5>
                                         <div class="mt-5">
                                             <div class="row d-flex justify-content-around mt-2">
-                                            <?php maquinas();
-                                            
-                                            ?>                                                                                     
+                                            <table class="table">
+                        <thead>
+                          <tr>
+                            
+                            <th scope="col">Fecha</th>
+                            <th scope="col">Seccion</th>
+                            <th scope="col">Maquina</th>
+                            <th scope="col">Estado</th>
+                            <th scope="col">Cliente</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                         <?php listaAverias();?>
+                        </tbody>
+                      </table>                                                                          
                                             </div>
                                         </div>
                                     </div>
