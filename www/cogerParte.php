@@ -6,27 +6,39 @@ if (!isset($_SESSION['usuario'])) {
 include("php/libreria/libreria.php");
 //TODO: preparar este parte como abrir incidencia por parte del tecnico. 
 //TODO: crear lista de incidencias por seccion.
-
 $conPDO = conexion();
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if (isset($_POST['mensaje'])) {
+    if (isset($_POST['mensaje']) && isset($_POST['enviar']) && $_POST['mensaje']!= "") {
         $mensaje = $_POST['mensaje'];
-        $prioridad = $_POST['prioridad'];
-        $nombre = $_SESSION['nombre']; 
-        $zona = $_SESSION['seccion'];
+        $id_usuario= $_SESSION['id_usuario'];
+        $id_averia = $_SESSION['id_averia'];
         
 
-        $stmt = $conPDO->prepare("INSERT INTO parteAveria (fecha, zona, id_cliente) VALUES (:mensaje,:prioridad,:nombre,:zona)");
+        $stmt = $conPDO->prepare("update  parteAveria SET  solucion=:mensaje WHERE ID_parte=:id_averia");
         $stmt->bindParam(':mensaje', $mensaje);
-        $stmt->bindParam(':nombre', $nombre);
-        $stmt->bindParam(':zona', $zona);
+        $stmt->bindParam(':id_averia', $id_averia );
         $stmt->execute();
 
-        $stmt = null;
-        $conPDO = null;
-    } else {
-        echo "algo falla";
+        
+    } 
+    
+    if(isset($_POST['cogerParte'])){
+        $id_usuario= $_SESSION['id_usuario'];
+        $id_averia = $_SESSION['id_averia'];
+        $stmt = $conPDO->prepare("update  parteAveria SET operarios_ID=:id_usuario WHERE ID_parte=:id_averia");
+        $stmt->bindParam(':id_usuario', $id_usuario);
+        $stmt->bindParam(':id_averia', $id_averia );
+        $stmt->execute();
     }
+    if(isset($_POST['cerrarParte'])){
+        $id_averia = $_SESSION['id_averia'];
+        $stmt = $conPDO->prepare("update  parteAveria SET estado='cerrado' WHERE ID_parte=:id_averia");
+        $stmt->bindParam(':id_averia', $id_averia );
+        $stmt->execute();
+    }
+
+    $stmt = null;
+    $conPDO = null;
 }
 
 ?>
@@ -50,12 +62,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     ?>
 
     <article class="col-7 bg-light ms-2 me-3">
+    <form method="POST" action=<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) ?>>
         <div class="row">
             <div class="col-12 m-3">
                 <h5>Asignación de averia</h5>
             </div>
         </div>
         <div class="row">
+        
             <div class="col-12 mt-2 ms-4">
                 <div class="row">
                     <div class="card mb-3 col-12 me-2" style="max-width: 850px;">
@@ -63,16 +77,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <div class="col-md-12">
                                 <div class="card-body">
                                     <h5 class="card-title">Descipcion de la averia</h5>
-                                        <p><?php descipcionAveria($_GET['id_averia']); ?></p>
+                                        <p><?php
+                                        if(isset($_GET['id_averia'])){
+                                        $_SESSION['id_averia']= $_GET['id_averia'];
+                                        }
+
+                                            descipcionAveria($_SESSION['id_averia']);
+                                        ?></p>
 
                                     <div class="mb-3">
                                         <label for="exampleFormControlTextarea1" class="form-label">Actuación</label>
                                         <textarea class="form-control" id="exampleFormControlTextarea1" name="mensaje" rows="3"></textarea>
                                     </div>
                                     <div class="d-flex justify-content-center mb-5">
-                                        <input type="submit" value="Enviar " class="btn btn-primary col-3" />
+                                        <input type="submit" value="Coger Parte " name="cogerParte" class="btn btn-success col-3 me-2" />
+                                        <input type="submit" value="Enviar" name="enviar" class="btn btn-primary col-3 me-2" />
+                                        <input type="submit" value="Enviar" name="cerrarParte" class="btn btn-warning col-3" />
                                     </div>
-
+                                    <div class="d-flex justify-content-center mb-5">
+                                      
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -82,7 +106,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
 
 
-
+</form>
     </article>
     <div class="col-3 bg-light ms-2 ">
         <?php

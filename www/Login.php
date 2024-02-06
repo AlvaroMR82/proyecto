@@ -75,7 +75,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
             </div>
             <div class="mb-5 col-12">
                 <label for="formGroupExampleInput2" class="form-label mb-3 ms-2"><strong>Password</strong></label>
-                <input type="text" class="form-control" id="formGroupExampleInput2" name="pass"
+                <input type="password" class="form-control" id="formGroupExampleInput2" name="pass"
                     placeholder="Password">
             </div>
             <div class="d-flex justify-content-center mb-5">

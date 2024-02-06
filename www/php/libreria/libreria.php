@@ -509,9 +509,10 @@ function descipcionAveria($id_parte){
     echo $row['incidencia'];
   }
 }
-function listaAverias(){
+function listaAveriasPendientes(){
+   
     $conPDO = conexion();
-    $stmt = $conPDO->prepare("SELECT * FROM parteAveria  ");
+    $stmt = $conPDO->prepare("SELECT * FROM parteAveria WHERE estado='pendiente'  ");
     $stmt->execute();
     $stmt->setFetchMode(PDO::FETCH_ASSOC);
     while ($row = $stmt->fetch()) {
@@ -523,7 +524,44 @@ function listaAverias(){
     <td>" . $row['maquinas_ID'] . "</td>
     <td>" . $row['estado'] . "</td>
     <td>" . $row['id_cliente'] . "</td>
-    </a>
+  </tr>";
+    }
+  }
+  function listaAveriasAsignadas(){
+   
+    $conPDO = conexion();
+    $stmt = $conPDO->prepare("SELECT * FROM parteAveria WHERE estado='asignado'  ");
+    $stmt->execute();
+    $stmt->setFetchMode(PDO::FETCH_ASSOC);
+    while ($row = $stmt->fetch()) {
+      echo "
+    <tr>
+    
+    <th scope='row'><a href='cogerParte.php?id_averia=".$row['ID_parte']."'>" . $row['Fecha'] . "</a></th>
+    <td>".$row['Zona'] ."</td>
+    <td>" . $row['maquinas_ID'] . "</td>
+    <td>" . $row['estado'] . "</td>
+    <td>" . $row['id_cliente'] . "</td>
+    
+  </tr>";
+    }
+  }
+  function listaAveriasCerradas(){
+    
+    $conPDO = conexion();
+    $stmt = $conPDO->prepare("SELECT * FROM parteAveria WHERE estado='cerrado'  ");
+    $stmt->execute();
+    $stmt->setFetchMode(PDO::FETCH_ASSOC);
+    while ($row = $stmt->fetch()) {
+      echo "
+    <tr>
+    
+    <th scope='row'>" . $row['Fecha'] . "</th>
+    <td>".$row['Zona'] ."</td>
+    <td>" . $row['maquinas_ID'] . "</td>
+    <td>" . $row['estado'] . "</td>
+    <td>" . $row['id_cliente'] . "</td>
+    
   </tr>";
     }
   }
