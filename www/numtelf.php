@@ -1,3 +1,8 @@
+<?php
+session_start();
+include ("php/libreria/libreria.php");
+
+  ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,12 +16,6 @@
 </head>
 
 <body>
-<?php
-include ("php/libreria/libreria.php");
-
-  ?>
-
-    <div class="container-fluid d-flex mt-5">
     <?php
 
 menuNav();

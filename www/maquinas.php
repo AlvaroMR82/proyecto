@@ -1,3 +1,7 @@
+<?php
+session_start();
+include ("php/libreria/libreria.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,14 +15,7 @@
 </head>
 
 <body>
-<?php
-include ("php/libreria/libreria.php");
-
-  ?>
-  <?php
-
-menuNav();
-  ?>
+  <?php menuNav();?>
 
     
         <article class="col-7 bg-light ms-2 me-3">
@@ -34,10 +31,12 @@ menuNav();
                             <div class="row g-0">
                                 <div class="col-md-12">
                                     <div class="card-body">
-                                        <h5 class="card-title">Operarios en activo</h5>
+                                        <h5 class="card-title"></h5>
                                         <div class="mt-5">
                                             <div class="row d-flex justify-content-around mt-2">
-                                            <?php maquinas();?>                                                                                     
+                                            <?php maquinas();
+                                            
+                                            ?>                                                                                     
                                             </div>
                                         </div>
                                     </div>

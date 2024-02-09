@@ -4,27 +4,6 @@ $_SESSION["usuario"]="alvaro";
 include ("php/libreria/libreria.php");
 if($_SERVER["REQUEST_METHOD"]=="POST"){ 
     $conPDO = conexion();
-/*
-    $servername ="db";
-    $username = "root";
-    $password = "test";  
-
-    try{
-        //1. Conexión a base de datos
-        $conPDO = new PDO("mysql:host=$servername;dbname=mantenimiento", $username, $password);
-        //2. Forzar excepciones
-        $conPDO->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-       
-    } catch (PDOException $ex) {
-        die("Erro na conexión mensaxe: " . $ex->getMessage());
-    }
-    // COMPROBAMOS SE EXISTE O USUARIO, E RECOLLEMOS O PASSWORD GARDADO NA BD
-    //Para instertar la contraseña usaríamos esta función
-    /*$hasheado = password_hash("abc123.", PASSWORD_DEFAULT);
-    $sql = "INSERT INTO usuario (nombre, pass) VALUES ('Sabela','".$hasheado."')";
-    echo $sql;
-    $conPDO->exec($sql);*/
-
     $consulta = "select pass from usuarios where usuario=:nomeTecleado";
     $stmt = $conPDO->prepare($consulta);
     try {
@@ -45,7 +24,25 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
             echo "Error de usuario";
         }else{
 
+          
+    
             $_SESSION["usuario"] = $_POST['nombre'];
+            $consulta = $conPDO->prepare( "select * from _usuarios where nombreUsuario = :nombre");
+            $consulta->bindParam(':nombre', $_POST['nombre']);
+
+            try {
+                $consulta->execute();
+                $datos=$consulta->fetch();
+                $_SESSION["rol"] = $datos['rol'];
+                $_SESSION["id_usuario"]= $datos['id_usuario'];
+                $_SESSION["nombre"] = $datos['nombreOperario'];
+                $_SESSION["apellido"] = $datos['apellido'];
+                $_SESSION["seccion"] = $datos['seccion'];
+            } catch (PDOException $ex) {
+                $conPDO = null;
+                die("Erro recuperando os datos da BD: " . $ex->getMessage());
+            }
+
             header('location: index.php');
         }
     $stmt = null;
@@ -78,7 +75,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
             </div>
             <div class="mb-5 col-12">
                 <label for="formGroupExampleInput2" class="form-label mb-3 ms-2"><strong>Password</strong></label>
-                <input type="text" class="form-control" id="formGroupExampleInput2" name="pass"
+                <input type="password" class="form-control" id="formGroupExampleInput2" name="pass"
                     placeholder="Password">
             </div>
             <div class="d-flex justify-content-center mb-5">

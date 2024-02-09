@@ -1,3 +1,8 @@
+<?php
+session_start();
+include ("php/libreria/libreria.php");
+
+  ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,11 +16,6 @@
 </head>
 
 <body>
-
-<?php
-include ("php/libreria/libreria.php");
-
-  ?>
   <?php
 
 menuNav();
@@ -41,7 +41,9 @@ menuNav();
                                             <div class="row">
 
                                                 <div class="col">
-                                                    <?php maquina();?>
+                                                    <?php maquina();
+                                                    //TODO: Sarcar las averias y las incidencias de la base de datos.
+                                                    ?>
                                                 </div>
                                             </div>
                                         </div>
