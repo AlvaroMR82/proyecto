@@ -2,9 +2,11 @@
 session_start();
 $_SESSION["usuario"]="alvaro";
 include ("php/libreria/libreria.php");
+include ("php/libreria/basesDatos.php");
+primeraConexion();
 if($_SERVER["REQUEST_METHOD"]=="POST"){ 
     $conPDO = conexion();
-    $consulta = "select pass from usuarios where usuario=:nomeTecleado";
+    $consulta = "select pass from _usuarios where nombreUsuario=:nomeTecleado";
     $stmt = $conPDO->prepare($consulta);
     try {
         $stmt->execute(array('nomeTecleado' => $_POST['nombre']));

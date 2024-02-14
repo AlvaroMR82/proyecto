@@ -1,10 +1,43 @@
 <?php
+function primeraConexion(){
+    $servername = "db";
+    $username = "root";
+    $password = "test";
+    try {
+      //1. Conexión a base de datos
+      $conPDO = new PDO("mysql:host=$servername;dbname=dbname", $username, $password);
+      //2. Forzar excepciones
+      $conPDO->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    } catch (PDOException $ex) {
+      die("Erro na conexión mensaxe: " . $ex->getMessage());
+    }
+  
+   try {
+    
+    $sql = " CREATE DATABASE IF NOT EXISTS  mantenimiento;";
+    $conPDO->exec($sql);
 
-function tabalaClientes()
+    tablaUsuariosCompleta();
+    //tablaUsuariosDatos();
+    tablaClientes();
+    tablaMaquinas();
+    tablaMensajes();
+    $conPDO = null;
+    
+   } catch (PDOException $ex) {
+    die("Erro na conexión mensaxe: " . $ex->getMessage());
+   }
+
+
+}
+
+
+
+function tablaClientes()
 {
     $conPDO = conexion();
 
-    $sql = " CREATE TABLE IF NO EXISTS  clientes (
+    $sql = " CREATE TABLE IF NOT EXISTS  clientes (
         id INT(6) AUTO_INCREMENT PRIMARY KEY, 
         nombreCliente VARCHAR(30) NOT NULL,
         seccion VARCHAR(30) NOT NULL
@@ -14,11 +47,11 @@ function tabalaClientes()
 
     $conPDO = null;
 }
-function tabalaMaquinas()
+function tablaMaquinas()
 {
     $conPDO = conexion();
 
-    $sql = " CREATE TABLE IF NO EXISTS  clientes (
+    $sql = " CREATE TABLE IF NOT EXISTS  clientes (
         id INT(6) AUTO_INCREMENT PRIMARY KEY, 
         nombreMaquina VARCHAR(30) NOT NULL,
         foto VARCHAR(30),
@@ -32,11 +65,11 @@ function tabalaMaquinas()
 
     $conPDO = null;
 }
-function tabalaOperarios()
+function tablaOperarios()
 {
     $conPDO = conexion();
 
-    $sql = " CREATE TABLE IF NO EXISTS  clientes (
+    $sql = " CREATE TABLE IF NOT EXISTS  clientes (
         id INT(6) AUTO_INCREMENT PRIMARY KEY, 
         nombreOperario VARCHAR(30) NOT NULL,
         apellido VARCHAR(30),
@@ -49,11 +82,11 @@ function tabalaOperarios()
 
     $conPDO = null;
 }
-function tabalaUsuarios()
+function tablaUsuarios()
 {
     $conPDO = conexion();
 
-    $sql = " CREATE TABLE IF NO EXISTS  clientes (
+    $sql = " CREATE TABLE IF NOT EXISTS  clientes (
         id INT(6) AUTO_INCREMENT PRIMARY KEY, 
         nombreUsuario VARCHAR(30) NOT NULL,
         rol VARCHAR(30),
@@ -64,11 +97,11 @@ function tabalaUsuarios()
 
     $conPDO = null;
 }
-function tabalaMensajes()
+function tablaMensajes()
 {
     $conPDO = conexion();
 
-    $sql = " CREATE TABLE IF NO EXISTS  clientes (
+    $sql = " CREATE TABLE IF NOT EXISTS  clientes (
         id INT(6) AUTO_INCREMENT PRIMARY KEY, 
         mensaje VARCHAR(500) NOT NULL,
         prioridad VARCHAR(30) NOT NULL,
@@ -85,7 +118,7 @@ function tablaPartes()
 {
     $conPDO = conexion();
 
-    $sql = " CREATE TABLE IF NO EXISTS  clientes (
+    $sql = " CREATE TABLE IF NOT EXISTS  clientes (
        id_ParteAveria INT PRIMARY KEY,
        Fecha_apertura DATE,
        Fecha_cierre DATE,
@@ -100,25 +133,12 @@ function tablaPartes()
 
     $conPDO = null;
 }
-function tablaClientes()
-{
-    $conPDO = conexion();
 
-    $sql = " CREATE TABLE clientes (
-        id_cliente INT(6) AUTO_INCREMENT PRIMARY KEY,
-        nombre_cliente VARCHAR(50),
-        zona VARCHAR(50)
-    );";
-
-    $conPDO->exec($sql);
-
-    $conPDO = null;
-}
 function tablaUsuariosCompleta()
 {
     $conPDO = conexion();
 
-    $sql = "CREATE TABLE _usuarios (
+    $sql = "CREATE TABLE IF NOT EXISTS _usuarios (
         id_usuario INT(6) AUTO_INCREMENT PRIMARY KEY, 
         nombreUsuario VARCHAR(30) NOT NULL,
         rol VARCHAR(30) NOT NULL,
@@ -155,14 +175,16 @@ function tablaUsuariosDatos()
 
 foreach ($operarios as $op){
 
-    $usuario = $op[1];
-    $nombre = $op[2];
-    $pass = $op[3];
+    $usuario = $op[0];
+    $rol = $op[1];
+    $pass = $op[2];
+    $nombre = $op[3];
     $apellido = $op[4];
-    $telefono = $op[5];
-    $email = $op[6];
+    $email = $op[5];
+    $telefono = $op[6];
     $zona = $op[7];
-    $rol = $op[8];
+   
+   
     
   introducirDatosUsuario($usuario,$pass,$nombre,$apellido,$telefono,$email,$zona,$rol);
     
