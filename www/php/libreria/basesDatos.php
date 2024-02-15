@@ -51,8 +51,8 @@ function tablaMaquinas()
 {
     $conPDO = conexion();
 
-    $sql = " CREATE TABLE IF NOT EXISTS  clientes (
-        id INT(6) AUTO_INCREMENT PRIMARY KEY, 
+    $sql = " CREATE TABLE IF NOT EXISTS  maquinas (
+        id_maquina INT(6) AUTO_INCREMENT PRIMARY KEY, 
         nombreMaquina VARCHAR(30) NOT NULL,
         foto VARCHAR(30),
         planos VARCHAR(30),
@@ -82,26 +82,12 @@ function tablaOperarios()
 
     $conPDO = null;
 }
-function tablaUsuarios()
-{
-    $conPDO = conexion();
 
-    $sql = " CREATE TABLE IF NOT EXISTS  clientes (
-        id INT(6) AUTO_INCREMENT PRIMARY KEY, 
-        nombreUsuario VARCHAR(30) NOT NULL,
-        rol VARCHAR(30),
-        pass VARCHAR(500) NOT NULL
-        );";
-
-    $conPDO->exec($sql);
-
-    $conPDO = null;
-}
 function tablaMensajes()
 {
     $conPDO = conexion();
 
-    $sql = " CREATE TABLE IF NOT EXISTS  clientes (
+    $sql = " CREATE TABLE IF NOT EXISTS  mensajes (
         id INT(6) AUTO_INCREMENT PRIMARY KEY, 
         mensaje VARCHAR(500) NOT NULL,
         prioridad VARCHAR(30) NOT NULL,
@@ -211,6 +197,65 @@ function introducirDatosUsuario($usuario,$pass,$nombre,$apellido,$telefono,$emai
     $stmt->bindParam(':email', $email);
     $stmt->bindParam(':telefono', $telefono);
     $stmt->bindParam(':seccion', $zona);
+    $stmt->execute();
+    
+    $conPDO = null;
+    
+}
+
+function tablaMaquinsDatos()
+{
+   
+    
+
+    $operarios= [
+        ['alvaro', 'administrador', '1234', 'Alvaro', 'Mosquera Rial', 'a@a.com', '123456789', 'lacados'],
+        ['ramon', 'tecnico', '1234', 'Ramon', 'Garcia', 'a@a.com', '123456789', 'extrusion'],
+        ['juan', 'cliente', '1234', 'Juan', 'Magan', 'juan1@example.com', '123456789', 'anodizados'],
+        ['pepe', 'tecnico', '1234', 'Pepe', 'Prado', 'juan1@example.com', '123456789', 'anodizados'],
+        ['juan', 'tecnico', '1234', 'Juan', 'Pérez', 'juan1@example.com', '123456789', 'lacados'],
+        ['maría', 'cliente', '1234', 'María', 'Gómez', 'maria2@example.com', '987654321', 'anodizados'],
+        ['carlos', 'tecnico', '1234', 'Carlos', 'Martínez', 'carlos3@example.com', '555555555', 'extrusion'],
+        ['laura', 'cliente', '1234', 'Laura', 'Sánchez', 'laura50@example.com', '999999999', 'anodizados']
+
+    ];
+
+
+
+foreach ($operarios as $op){
+
+    $usuario = $op[0];
+    $rol = $op[1];
+    $pass = $op[2];
+    $nombre = $op[3];
+    $apellido = $op[4];
+    $email = $op[5];
+    $telefono = $op[6];
+    $zona = $op[7];
+   
+   
+    
+  introducirDatosUsuario($usuario,$pass,$nombre,$apellido,$telefono,$email,$zona,$rol);
+    
+   
+}
+
+
+   
+$conPDO = null;
+    
+}
+function introducirDatosMaquinas($nombreMaquina,$foto,$planos,$manuales,$despiece,$seccion){
+
+    
+    $conPDO = conexion();
+    $stmt = $conPDO->prepare("INSERT INTO maquinas (nombreMaquina,foto, planos, manuales, despiece, seccion) values (:nombreMaquina, :foto, :planos, :manuales, :despiece, :seccion)  ;");
+    $stmt->bindParam(':nombreUsuario', $usuario);
+    $stmt->bindParam(':foto', $foto);
+    $stmt->bindParam(':planos', $planos);
+    $stmt->bindParam(':manuales', $manuales);
+    $stmt->bindParam(':despiece', $despiece);
+    $stmt->bindParam(':seccion', $seccion);
     $stmt->execute();
     
     $conPDO = null;
