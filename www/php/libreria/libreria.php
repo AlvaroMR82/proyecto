@@ -412,12 +412,12 @@ function maquinas()
 
     echo " 
 <div class='col-6'>
-  <a href='maquina.php?id=".$row['id']."' class='text-dark' >
+  <a href='maquina.php?id=".$row['id_maquina']."' class='text-dark' >
   <div class='card'>
   <div class='card-body d-flex justify-content-around'>
     <div>
       " . $row['nombreMaquina'] . " <br>
-      <strong>Sección:</strong> " . $row['Zona'] . "
+      <strong>Sección:</strong> " . $row['seccion'] . "
   </div>
   <img src=". $row['foto'] ." alt='' style ='width: 30%; height: 60%;'>
   </div>
@@ -440,12 +440,12 @@ function maquina(){
 
     echo " 
 <div class='col-6'>
-  <a href='maquina.php?id=".$row['id']."' class='text-dark' >
+  <a href='maquina.php?id=".$row['id_maquina']."' class='text-dark' >
   <div class='card'>
   <div class='card-body d-flex justify-content-around'>
     <div>
       " . $row['nombreMaquina'] . " <br>
-      <strong>Sección:</strong> " . $row['Zona'] . "
+      <strong>Sección:</strong> " . $row['seccion'] . "
   </div>
   <img src=". $row['foto'] ." alt='' style ='width: 30%; height: 60%;'>
   </div>

@@ -18,10 +18,12 @@ function primeraConexion(){
     $conPDO->exec($sql);
 
     tablaUsuariosCompleta();
+    tablaUsuariosDatos();
     tablaClientes();
     tablaMaquinas();
     tablaMensajes();
     tablaMaquinsDatos();
+
     $conPDO = null;
     
    } catch (PDOException $ex) {
@@ -144,13 +146,19 @@ function tablaUsuariosDatos()
 {
    
     
+    $conPDO = conexion();
+    $stmt = $conPDO->prepare("SELECT * FROM _usuarios");
+    $stmt->execute();
+    $stmt->setFetchMode(PDO::FETCH_ASSOC);
+  
+    if ($stmt->rowCount() == 0) {
 
     $operarios= [
         ['alvaro', 'administrador', '1234', 'Alvaro', 'Mosquera Rial', 'a@a.com', '123456789', 'lacados'],
         ['ramon', 'tecnico', '1234', 'Ramon', 'Garcia', 'a@a.com', '123456789', 'extrusion'],
         ['juan', 'cliente', '1234', 'Juan', 'Magan', 'juan1@example.com', '123456789', 'anodizados'],
         ['pepe', 'tecnico', '1234', 'Pepe', 'Prado', 'juan1@example.com', '123456789', 'anodizados'],
-        ['juan', 'tecnico', '1234', 'Juan', 'Pérez', 'juan1@example.com', '123456789', 'lacados'],
+        ['juanito', 'tecnico', '1234', 'Juan', 'Pérez', 'juan1@example.com', '123456789', 'lacados'],
         ['maría', 'cliente', '1234', 'María', 'Gómez', 'maria2@example.com', '987654321', 'anodizados'],
         ['carlos', 'tecnico', '1234', 'Carlos', 'Martínez', 'carlos3@example.com', '555555555', 'extrusion'],
         ['laura', 'cliente', '1234', 'Laura', 'Sánchez', 'laura50@example.com', '999999999', 'anodizados']
@@ -173,7 +181,8 @@ foreach ($operarios as $op){
    
     
   introducirDatosUsuario($usuario,$pass,$nombre,$apellido,$telefono,$email,$zona,$rol);
-    
+}
+
    
 }
 
