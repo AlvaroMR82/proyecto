@@ -101,6 +101,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <?php
 
         mensajesGenerales();
+        //TODO: hacer que si es un mensaje critico se mande por telefono a todos los operarios
         ?>
 
     </div>

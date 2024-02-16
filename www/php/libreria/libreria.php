@@ -6,7 +6,7 @@ function menuNav()
   echo "
   <div class='container-fluid bg-light mt-3'>
       <div class='row justify-content-end'>
-            <div class='col-3 pt-3'>
+            <div class='col-4 pt-3'>
                 <p><svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor'
                 class='bi bi-person-circle' viewBox='0 0 16 16'>
                 <path d='M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z' />
@@ -322,7 +322,7 @@ function operarios()
   <div class='card'>
   <div class='card-body d-flex justify-content-around'>
     <div>
-      " . $row['nombreUsuario'] . " " . $row['apellido'] . " <br>
+      " . $row['nombreOperario'] . " " . $row['apellido'] . " <br>
       <strong>Sección:</strong> " . $row['seccion'] . "
   </div>
     <svg xmlns='http://www.w3.org/2000/svg' width='50' height='50' fill='currentColor' class='bi bi-person' viewBox='0 0 16 16'>
@@ -346,7 +346,7 @@ function clientes()
   <div class='card'>
   <div class='card-body d-flex justify-content-around'>
     <div>
-      " . $row['nombreUsuario'] . " " . $row['apellido'] . " <br>
+      " . $row['nombreOperario'] . " " . $row['apellido'] . " <br>
       <strong>Sección:</strong> " . $row['seccion'] . "
   </div>
     <svg xmlns='http://www.w3.org/2000/svg' width='50' height='50' fill='currentColor' class='bi bi-person' viewBox='0 0 16 16'>

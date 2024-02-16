@@ -18,10 +18,10 @@ function primeraConexion(){
     $conPDO->exec($sql);
 
     tablaUsuariosCompleta();
-    //tablaUsuariosDatos();
     tablaClientes();
     tablaMaquinas();
     tablaMensajes();
+    tablaMaquinsDatos();
     $conPDO = null;
     
    } catch (PDOException $ex) {
@@ -206,40 +206,47 @@ function introducirDatosUsuario($usuario,$pass,$nombre,$apellido,$telefono,$emai
 function tablaMaquinsDatos()
 {
    
+
+    $conPDO = conexion();
+    $stmt = $conPDO->prepare("SELECT * FROM maquinas ");
+    $stmt->execute();
+    $stmt->setFetchMode(PDO::FETCH_ASSOC);
+  
+    if ($stmt->rowCount() == 0) {
+        $maquinas= [
+            ['Lacado Vertical', 'imagenes/vertical.jpg','','','', 'lacados'],
+            ['Lacado Horizontal', 'imagenes/vertical.jpg' ,'','','', 'lacados'],
+            ['Lacado Madera', 'imagenes/vertical.jpg','','','', 'lacados'],
+            ['Anodizado 1', 'imagenes/vertical.jpg','','','', 'anodizados'],
+            ['Pulidora ', 'imagenes/vertical.jpg','','','', 'anodizados'],
+            ['Granalladora', 'imagenes/vertical.jpg','','','', 'anodizados'],
+            ['Prensa 16', 'imagenes/vertical.jpg','','','', 'extrusion'],
+            ['Prensa 3', 'imagenes/vertical.jpg','','','', 'extrusion'],
+            ['fundicion','imagenes/vertical.jpg','','','', 'extrusion']
     
-
-    $operarios= [
-        ['alvaro', 'administrador', '1234', 'Alvaro', 'Mosquera Rial', 'a@a.com', '123456789', 'lacados'],
-        ['ramon', 'tecnico', '1234', 'Ramon', 'Garcia', 'a@a.com', '123456789', 'extrusion'],
-        ['juan', 'cliente', '1234', 'Juan', 'Magan', 'juan1@example.com', '123456789', 'anodizados'],
-        ['pepe', 'tecnico', '1234', 'Pepe', 'Prado', 'juan1@example.com', '123456789', 'anodizados'],
-        ['juan', 'tecnico', '1234', 'Juan', 'Pérez', 'juan1@example.com', '123456789', 'lacados'],
-        ['maría', 'cliente', '1234', 'María', 'Gómez', 'maria2@example.com', '987654321', 'anodizados'],
-        ['carlos', 'tecnico', '1234', 'Carlos', 'Martínez', 'carlos3@example.com', '555555555', 'extrusion'],
-        ['laura', 'cliente', '1234', 'Laura', 'Sánchez', 'laura50@example.com', '999999999', 'anodizados']
-
-    ];
-
-
-
-foreach ($operarios as $op){
-
-    $usuario = $op[0];
-    $rol = $op[1];
-    $pass = $op[2];
-    $nombre = $op[3];
-    $apellido = $op[4];
-    $email = $op[5];
-    $telefono = $op[6];
-    $zona = $op[7];
-   
-   
+        ];
     
-  introducirDatosUsuario($usuario,$pass,$nombre,$apellido,$telefono,$email,$zona,$rol);
     
-   
-}
+    
+    foreach ($maquinas as $op){
+    
+        $nombreMaquina = $op[0];
+        $foto = $op[1];
+        $planos = $op[2];
+        $manuales = $op[4];
+        $despiece = $op[3];
+        $seccion = $op[5];
+       
+       
+        
+      introducirDatosMaquinas($nombreMaquina,$foto,$planos,$manuales,$despiece,$seccion);
+        
+       
+    }
+    
+    }
 
+    
 
    
 $conPDO = null;
@@ -250,7 +257,7 @@ function introducirDatosMaquinas($nombreMaquina,$foto,$planos,$manuales,$despiec
     
     $conPDO = conexion();
     $stmt = $conPDO->prepare("INSERT INTO maquinas (nombreMaquina,foto, planos, manuales, despiece, seccion) values (:nombreMaquina, :foto, :planos, :manuales, :despiece, :seccion)  ;");
-    $stmt->bindParam(':nombreUsuario', $usuario);
+    $stmt->bindParam(':nombreMaquina', $nombreMaquina);
     $stmt->bindParam(':foto', $foto);
     $stmt->bindParam(':planos', $planos);
     $stmt->bindParam(':manuales', $manuales);
