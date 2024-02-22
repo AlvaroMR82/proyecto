@@ -40,6 +40,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
                 $_SESSION["nombre"] = $datos['nombreOperario'];
                 $_SESSION["apellido"] = $datos['apellido'];
                 $_SESSION["seccion"] = $datos['seccion'];
+                $_SESSION["email"]= $datos['email'];
             } catch (PDOException $ex) {
                 $conPDO = null;
                 die("Erro recuperando os datos da BD: " . $ex->getMessage());

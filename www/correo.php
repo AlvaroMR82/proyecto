@@ -6,13 +6,13 @@ if (!isset($_SESSION['usuario'])) {
 include("php/libreria/libreria.php");
 $conPDO = conexion();
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if (isset($_POST['mensaje']) &&  isset($_POST['nombre']) ) {
+    if (isset($_POST['mensaje']) &&  isset($_POST['asunto']) ) {
         $mensaje = $_POST['mensaje'];
-        $nombre = $_POST['nombre']; 
+        $nombre = $_SESSION['nombre']; 
         $email = $_POST['email'];
-       
+        $asunto = $_POST['asunto'];
         
-      $rta= mail('alvaromosquerarial@hotmail.com',$nombre,$mensaje);
+      $rta= mail($email,$_SESSION['email'],$mensaje,$nombre,$asunto);
       
 var_dump($rta);
         
@@ -55,8 +55,8 @@ var_dump($rta);
                                     <div class="card-body">
                                         <h5 class="card-title">Mensaje</h5>
                                         <div class="mb-3">
-                                            <label for="exampleFormControlInput1" class="form-label">Nombre</label>
-                                            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="" name="nombre">
+                                            <label for="exampleFormControlInput1" class="form-label">Asunto</label>
+                                            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="" name="asunto">
                                         </div>
                                         <div class="mb-3">
                                             <label for="exampleFormControlInput1" class="form-label">Correo</label>
@@ -64,7 +64,7 @@ var_dump($rta);
                                         </div>
 
                                         <div class="mb-3">
-                                            <label for="exampleFormControlTextarea1" class="form-label">Escribe aquí tu mensage</label>
+                                            <label for="exampleFormControlTextarea1" class="form-label">Escribe aquí tu mensaje</label>
                                             <textarea class="form-control" id="exampleFormControlTextarea1" name="mensaje" rows="3"></textarea>
                                         </div>
                                        

@@ -69,7 +69,7 @@ if($_SESSION["rol"] == 'cliente' | $_SESSION["rol"] == 'administrador' && $_POST
                         <div class="row g-0">
                             <div class="col-md-12">
                                 <div class="card-body">
-                                    <h5 class="card-title">Descipcion de la averia</h5>
+                                    <h5 class="card-title">Descripción de la averia</h5>
                                         <div class="mb-3">
                                             <label for="exampleFormControlTextarea1" class="form-label"></label>
                                             <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="averia" ></textarea>

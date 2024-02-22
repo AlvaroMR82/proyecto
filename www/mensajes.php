@@ -6,11 +6,11 @@ if (!isset($_SESSION['usuario'])) {
 include("php/libreria/libreria.php");
 $conPDO = conexion();
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if (isset($_POST['mensaje']) &&  isset($_POST['prioridad']) &&  isset($_POST['nombre']) &&  isset($_POST['zona'])) {
+    if (isset($_POST['mensaje']) &&  isset($_POST['prioridad'])) {
         $mensaje = $_POST['mensaje'];
         $prioridad = $_POST['prioridad'];
-        $nombre = $_POST['nombre']; 
-        $zona = $_POST['zona'];
+        $nombre = $_SESSION['nombre']; 
+        $zona = $_SESSION['seccion'];
         
 
         $stmt = $conPDO->prepare("INSERT INTO mensajes(mensaje, prioridad, nombre, zona) VALUES (:mensaje,:prioridad,:nombre,:zona)");
@@ -60,15 +60,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 <div class="col-md-12">
                                     <div class="card-body">
                                         <h5 class="card-title">Mensaje</h5>
-                                        <div class="mb-3">
-                                            <label for="exampleFormControlInput1" class="form-label">Nombre</label>
-                                            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="" name="nombre">
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="exampleFormControlInput1" class="form-label">Zona</label>
-                                            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="" name="zona">
-                                        </div>
-
                                         <div class="mb-3">
                                             <label for="exampleFormControlTextarea1" class="form-label">Escribe aquí tu mensage</label>
                                             <textarea class="form-control" id="exampleFormControlTextarea1" name="mensaje" rows="3"></textarea>

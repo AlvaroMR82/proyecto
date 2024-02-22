@@ -80,7 +80,7 @@ menuNav();
                           <div class="card m-2" >
                             <div class="card-body d-flex justify-content-around">
                               <div>
-                               Imitacion Madera <br>
+                               Imitación Madera <br>
                             </div>
                             <img src="imagenes/vertical.jpg" alt="" class="img-fluid" style="width: 30%; height: 60%;">
                             </div>
@@ -160,7 +160,7 @@ menuNav();
               <div class="row g-0">
                 <div class="col-md-12">
                   <div class="card-body">
-                    <h5 class="card-title">Número de incidecias en activo.</h5>
+                    <h5 class="card-title">Número de incidencias en activo.</h5>
                     <p>Incidencias resueltas sobre el total</p>
                     <div class="progress">
                       <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 70%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">70%</div>

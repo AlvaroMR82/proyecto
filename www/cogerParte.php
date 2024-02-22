@@ -76,7 +76,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <div class="row g-0">
                             <div class="col-md-12">
                                 <div class="card-body">
-                                    <h5 class="card-title">Descipcion de la averia</h5>
+                                    <h5 class="card-title">Descripción de la averia</h5>
                                         <p><?php
                                         if(isset($_GET['id_averia'])){
                                         $_SESSION['id_averia']= $_GET['id_averia'];
