@@ -2,7 +2,7 @@
 
 El nombre de esta app web es CWM.
 
-Abreviatura de Contol web de maquinas
+Abreviatura de Control web de maquinas.
 
 ## Descripción
 
@@ -68,9 +68,7 @@ Esta app viene acompañada de una interfaz gráfica de usuario que permite un ma
 4. [Diseño](doc/templates/5_deseño.md)
 5. [Implantación](doc/templates/6_implantacion.md)
 
-
-## Guía de contribución
-
+> *TODO*: Es este apartado describe brevemente cómo se usará el software que proyectas. Si tiene una interfaz de terminal, describe aquí su sintaxis. Si tiene una interfaz gráfica de usuario, describe aquí **sólo el uso** (a modo de sumario) **de los aspectos más relevantes de su funcionamiento** (máxima brevedad, como si fuese un anuncio reclamo o comercial).
 > *TODO*: Tratándose de un proyecto de software libre, es muy importante que expongas cómo se puede contribuir con tu proyecto. Algunos ejemplos de esto son realizar nuevas funcionalidades, corrección y/u optimización del código, realización de tests automatizados, nuevas interfaces de integración, desarrollo de plugins, etc. etc. Sé lo más conciso que puedas.
 
 ## Links
