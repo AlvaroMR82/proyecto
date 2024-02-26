@@ -88,8 +88,8 @@ menuNav();
             <label for="formGroupExampleInput" class="form-label">Rol</label>
             <select class="form-select" aria-label="Default select example" name="rol">
               <option selected>Selecciona la sección</option>
-              <option value="tecnico">técnico</option>
-              <option value="cliente">cliente</option>
+              <option value="tecnico">Técnico</option>
+              <option value="cliente">Cliente</option>
               <option value="administrador">Administrador</option>
             </select>
           </div>

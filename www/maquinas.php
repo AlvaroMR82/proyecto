@@ -34,7 +34,7 @@ include ("php/libreria/libreria.php");
                                         <h5 class="card-title"></h5>
                                         <div class="mt-5">
                                             <div class="row d-flex justify-content-around mt-2">
-                                            <?php maquinas();
+                                            <?php maquinas($_SESSION['seccion']);
                                             
                                             ?>                                                                                     
                                             </div>

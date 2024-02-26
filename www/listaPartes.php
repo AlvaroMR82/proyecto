@@ -47,7 +47,7 @@ include("php/libreria/libreria.php");
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <?php listaAveriasPendientes(); ?>
+                                                    <?php listaAveriasPendientes($_SESSION['seccion']); ?>
                                                 </tbody>
                                             </table>
                                         </div>
@@ -77,7 +77,7 @@ include("php/libreria/libreria.php");
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <?php listaAveriasAsignadas(); ?>
+                                                    <?php listaAveriasAsignadas($_SESSION['seccion']); ?>
                                                 </tbody>
                                             </table>
                                         </div>
@@ -107,7 +107,7 @@ include("php/libreria/libreria.php");
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <?php listaAveriasCerradas(); ?>
+                                                    <?php listaAveriasCerradas($_SESSION['seccion']); ?>
                                                 </tbody>
                                             </table>
                                         </div>
@@ -128,4 +128,5 @@ include("php/libreria/libreria.php");
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
 </body>
 
-</html>pedientes de asignación
+</html>
+//TODO: crear visualizador de partes para ver como van o se resolvieron las incidencias. 

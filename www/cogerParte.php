@@ -5,7 +5,6 @@ if (!isset($_SESSION['usuario'])) {
 }
 include("php/libreria/libreria.php");
 //TODO: preparar este parte como abrir incidencia por parte del tecnico. 
-//TODO: crear lista de incidencias por seccion.
 $conPDO = conexion();
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST['mensaje']) && isset($_POST['enviar']) && $_POST['mensaje']!= "") {
@@ -25,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if(isset($_POST['cogerParte'])){
         $id_usuario= $_SESSION['id_usuario'];
         $id_averia = $_SESSION['id_averia'];
-        $stmt = $conPDO->prepare("update  parteAveria SET operarios_ID=:id_usuario WHERE ID_parte=:id_averia");
+        $stmt = $conPDO->prepare("UPDATE  parteAveria SET operarios_ID = :id_usuario, estado = 'asignado' WHERE ID_parte = :id_averia");
         $stmt->bindParam(':id_usuario', $id_usuario);
         $stmt->bindParam(':id_averia', $id_averia );
         $stmt->execute();
@@ -92,7 +91,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                     <div class="d-flex justify-content-center mb-5">
                                         <input type="submit" value="Coger Parte " name="cogerParte" class="btn btn-success col-3 me-2" />
                                         <input type="submit" value="Enviar" name="enviar" class="btn btn-primary col-3 me-2" />
-                                        <input type="submit" value="Enviar" name="cerrarParte" class="btn btn-warning col-3" />
+                                        <input type="submit" value="Cerrar Parte" name="cerrarParte" class="btn btn-warning col-3" />
                                     </div>
                                     <div class="d-flex justify-content-center mb-5">
                                       

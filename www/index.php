@@ -43,7 +43,7 @@ menuNav();
                   <div class="card-body">
                     <h5 class="card-title">Operarios en activo</h5>
                     <div class="d-flex justify-content-around">
-                    <?php operarios();
+                    <?php operarios($_SESSION['seccion']);
                           ?>
                   </div>
                   </div>

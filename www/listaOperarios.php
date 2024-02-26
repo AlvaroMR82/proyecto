@@ -23,7 +23,7 @@ menuNav();
         <article class="col-7 bg-light ms-2 me-3">
             <div class="row">
                 <div class="col-12 m-3">
-                    <h5>Lista de operarios</h5>
+                    <h5>Lista de Tecnicos</h5>
                 </div>
             </div>
             <div class="row">
@@ -33,10 +33,10 @@ menuNav();
                             <div class="row g-0">
                                 <div class="col-md-12">
                                     <div class="card-body">
-                                        <h5 class="card-title">Operarios en activo</h5>
+                                        <h5 class="card-title">Técnicos en activo</h5>
                                         <div class="mt-5">
                                             <div class="row d-flex justify-content-around mt-2">
-                                            <?php operarios();?>                                                                                     
+                                            <?php operarios($_SESSION['seccion']);?>                                                                                     
                                             </div>
                                         </div>
                                     </div>
