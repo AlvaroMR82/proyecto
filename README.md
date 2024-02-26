@@ -1,20 +1,21 @@
 # Proyecto fin de ciclo
 
-> *TODO*: Este documento será la "*página de aterrizaje*" de tu proyecto. Será lo primero que vean los que se interesen por él. Cúida su redacción con todo tu mimo. Elimina posteriormente todas las lineas "*TODO*" cuando creas finalizada su redacción.
-> Puedes acompañar a la redacción de este fichero con imágenes o gifs, pero no abuses de ellos.
+El nombre de esta app web es CWM.
+
+Abreviatura de Contol web de maquinas
 
 ## Descripción
 
-> *TODO*: Realiza una breve descripción del proyecto. No menos de 100 palabras y no más de 300. Resalta lo fundamental **con tus propias palabras**. Utiliza un lenguaje correcto, **pero natural**, que lo entienda todo el mundo, incluso y en especial, las personas que no tengan un conocimiento técnico avanzado. Puede ser un estracto o resumen de apartados que ya contemples en otros ficheros.
-
-> Voy a realizar un proyecto de gestión de mantenimiento de máquinas/instalaciones donde a traves de una interface web vamos a poder gestionar, todo lo referiodo a su mantenimiento.
+> Voy a realizar un proyecto de gestión de mantenimiento de máquinas/instalaciones donde a traves de una interface web vamos a poder gestionar, todo lo referido a su mantenimiento.
 	
-	- Control de las maquinas/instalaciones, uso y ubicacion si fuera preciso.
-	- Los operarios que ejecuntan los mantenimientos.
-	- Las averias de las maquinas/instaliciones y sus soluciones.
+	- Control de las maquinas/instalaciones, uso y ubicación si fuera preciso.
+	- Los operarios que ejecutan los mantenimientos.
+	- Las averías de las maquinas/instalaciones y sus soluciones.
 	- Consumo de repuestos y consumibles por el uso. 
-	- Toda la documentacion referente a la maquina en cuestión planos, manuales...
-	- Gestion del almacen de repuestos
+	- Toda la documentación referente a la maquina en cuestión planos, manuales...
+	- Gestión del almacén de repuestos
+
+El mayor beneficio de esta app es que el tanto los técnicos como los operarios dispongan de la información necesaria a la hora de poder realizar las tareas designadas.
 	   
 
 ## Instalación / Puesta en marcha
@@ -23,18 +24,15 @@
 > Si tu proyecto es documental, realiza una especificación de cómo va a ser este proceso. En otras palabras, realiza este apartado independientemente que no haya implementación.
 
 ## Uso
-
-> *TODO*: Es este apartado describe brevemente cómo se usará el software que proyectas. Si tiene una interfaz de terminal, describe aquí su sintaxis. Si tiene una interfaz gráfica de usuario, describe aquí **sólo el uso** (a modo de sumario) **de los aspectos más relevantes de su funcionamiento** (máxima brevedad, como si fuese un anuncio reclamo o comercial).
 > Si tu proyecto es documental, realiza una especificación de cómo planteas estas interfaces, con ejemplos incluso o esquemas de diseño. En otras palabras, realiza este apartado independientemente que no haya implementación.
 
+Esta app viene acompañada de una interfaz gráfica de usuario que permite un manejo mas intuitivo de las funciones que aporta, según tu rol podrás consultar o realizar las acciones necesarias para los registros y consulta que necesites en cada momento. 
+ 
 ## Sobre el autor
-
-> *TODO*: Realiza una breve descripción de quien eres (perfil profesional), tus puntos fuertes, o tecnologías que más dominas... y porqué te has decantado por este proyecto. **No más de 200 palabras**. Indica la forma fiable de contactar contigo en el presente y en el futuro.
-
 > Tecnico de instalaciones y mantenimiento industrial desde 2004. Con una amplia experiencia en el sector industrial en 2020 inicio una nueva etapa como programador web. 
 > Gracias a mis conocimientos en el entorno industrial y a mis nuevas aptitudes de programación creo que este va a ser el proyecto que mejor fusione los conocimientos de las dos ramas en las que estoy especializado.
 
-> Tecnologias que domino.
+> Tecnologías que domino.
 
 	- HTML
 	- CSS
@@ -44,12 +42,12 @@
 	- PHP
 	- Dockers
 	
-> Tecnologias que estoy aprendiendo.
+> Tecnologías que estoy aprendiendo.
 
 	- c# asp.net	
 	
-> Correo electronico
-	alvaromosquerarial@hotmail.com 
+> Correo electrónico
+	- alvaromosquerarial@hotmail.com 
 	
 
 ## Licencia
