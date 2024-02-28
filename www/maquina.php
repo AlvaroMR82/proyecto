@@ -42,7 +42,6 @@ menuNav();
 
                                                 <div class="col">
                                                     <?php maquina();
-                                                    //TODO: Sarcar las averias y las incidencias de la base de datos.
                                                     ?>
                                                 </div>
                                             </div>
@@ -83,136 +82,67 @@ menuNav();
                                             </div>
                                         </div>
                                     </div>
-                        <div class="row d-flex justify-content-evenly">
-                            <div class="card mb-3 col-5 me-2" style="max-width: 850px;">
-                                <div class="row g-0">
-                                    <div class="col-md-12">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Ultimas incidecias</h5>
-                                            <div class="card mb-2">
-                                                <div class="card-header">
-                                                    Lacados vertical
-                                                </div>
-                                                <div class="card-body">
-                                                    <blockquote class="blockquote mb-0">
-                                                        <p>Paro del rectificador 1</p>
-                                                        <p><strong>Operario:</strong> Juan Magan</p>
-                                                    </blockquote>
-                                                </div>
-                                            </div>
-                                            <div class="card mb-2">
-                                                <div class="card-header">
-                                                    Lacados vertical
-                                                </div>
-                                                <div class="card-body">
-                                                    <blockquote class="blockquote mb-0">
-                                                        <p>Bajada de presion de aire.</p>
-                                                        <p><strong>Operario:</strong> Juan Magan</p>
-                                                    </blockquote>
-                                                </div>
-                                            </div>
-                                            <div class="card mb-2">
-                                                <div class="card-header">
-                                                    Lacados vertical
-                                                </div>
-                                                <div class="card-body">
-                                                    <blockquote class="blockquote mb-0">
-                                                        <p>Mangera suelta en pistola de pasta</p>
-                                                        <p><strong>Operario:</strong> Juan Magan</p>
-                                                    </blockquote>
-                                                </div>
-                                            </div>
-                                            <div class="card mb-2">
-                                                <div class="card-header">
-                                                    Lacados vertical
-                                                </div>
-                                                <div class="card-body">
-                                                    <blockquote class="blockquote mb-0">
-                                                        <p>Chatarrera atascada</p>
-                                                        <p><strong>Operario:</strong> Juan Magan</p>
-                                                    </blockquote>
-                                                </div>
-                                            </div>
-                                            <div class="card mb-2">
-                                                <div class="card-header">
-                                                    Lacados vertical
-                                                </div>
-                                                <div class="card-body">
-                                                    <blockquote class="blockquote mb-0">
-                                                        <p>Mesa de la pulidora no baja</p>
-                                                        <p><strong>Operario:</strong> Juan Magan</p>
-                                                    </blockquote>
-                                                </div>
-                                            </div>
-                                            <div class="card mb-2">
-                                                <div class="card-header">
-                                                    Lacados vertical
-                                                </div>
-                                                <div class="card-body">
-                                                    <blockquote class="blockquote mb-0">
-                                                        <p>Fallo quemador horno de polimerizado.</p>
-                                                        <p><strong>Operario:</strong> Juan Magan</p>
-                                                    </blockquote>
-                                                </div>
-                                            </div>
+                                    <div class="row">
+                    <div class="card mb-3 col-12 me-2" style="max-width: 1050px;">
+                        <div class="row g-0">
+                            <div class="col-md-12">
+                                <div class="card-body">
+                                    <h5 class="card-title">Incidencias resueltas</h5>
+                                    <div class="mt-5">
+                                        <div class="row d-flex justify-content-around mt-2">
+                                            <table class="table">
+                                                <thead>
+                                                    <tr>
 
-
-                                            <p class="card-text"><small class="text-muted">Last updated 3 mins
-                                                    ago</small>
-                                            </p>
+                                                        <th scope="col">Fecha</th>
+                                                        <th scope="col">Seccion</th>
+                                                        <th scope="col">Maquina</th>
+                                                        <th scope="col">Estado</th>
+                                                        <th scope="col">Cliente</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <?php listaAveriasCerradasMaquina(); ?>
+                                                </tbody>
+                                            </table>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="card mb-3 col-5 me-2" style="max-width: 850px;">
-                                <div class="row g-0">
-                                    <div class="col-md-12">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Incidecias pendientes</h5>
-                                            <div class="card mb-2">
-                                                <div class="card-header">
-                                                    Lacado Vertical
-                                                </div>
-                                                <div class="card-body">
-                                                    <blockquote class="blockquote mb-0">
-                                                        <p>Rodillo central tiene unas vibraciones inusuales.</p>
-                                                        <a href="#" class="btn btn-primary">Abrir incidencia</a>
-                                                    </blockquote>
-                                                </div>
-                                            </div>
-                                            <div class="card mb-2">
-                                                <div class="card-header">
-                                                    Lacado Vertical
-                                                </div>
-                                                <div class="card-body">
-                                                    <blockquote class="blockquote mb-0">
-                                                        <p>Rodillo central tiene unas vibraciones inusuales.</p>
-                                                        <a href="#" class="btn btn-primary">Abrir incidencia</a>
-                                                    </blockquote>
-                                                </div>
-                                            </div>
-                                            <div class="card mb-2">
-                                                <div class="card-header">
-                                                    Lacado Vertical
-                                                </div>
-                                                <div class="card-body">
-                                                    <blockquote class="blockquote mb-0">
-                                                        <p>Rodillo central tiene unas vibraciones inusuales.</p>
-                                                        <a href="#" class="btn btn-primary">Abrir incidencia</a>
-                                                    </blockquote>
-                                                </div>
-                                            </div>
-                                            <p class="card-text"><small class="text-muted">Last updated 3 mins
-                                                    ago</small>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
                         </div>
                     </div>
+                </div>
+                <div class="row">
+                    <div class="card mb-3 col-12 me-2" style="max-width: 1050px;">
+                        <div class="row g-0">
+                            <div class="col-md-12">
+                                <div class="card-body">
+                                    <h5 class="card-title">Incidencias pedientes de asignación</h5>
+                                    <div class="mt-5">
+                                        <div class="row d-flex justify-content-around mt-2">
+                                            <table class="table">
+                                                <thead>
+                                                    <tr>
 
+                                                        <th scope="col">Fecha</th>
+                                                        <th scope="col">Seccion</th>
+                                                        <th scope="col">Maquina</th>
+                                                        <th scope="col">Estado</th>
+                                                        <th scope="col">Cliente</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <?php listaAveriasPendientesMaquina(); ?>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                        
 
 
         </article>

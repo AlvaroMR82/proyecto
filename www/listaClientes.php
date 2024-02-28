@@ -56,3 +56,5 @@ menuNav();
 </body>
 
 </html>
+
+//TODO: separar clientes de técnicos.

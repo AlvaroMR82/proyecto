@@ -381,18 +381,18 @@ function operario()
 
   $conPDO = conexion();
   $id =$_GET["id"];
-  $stmt = $conPDO->prepare("SELECT * FROM operarios WHERE id =:id");
+  $stmt = $conPDO->prepare("SELECT * FROM _usuarios WHERE id_usuario =:id");
   $stmt->bindParam(':id',$id); 
   $stmt->execute();
   $stmt->setFetchMode(PDO::FETCH_ASSOC);
   
   while ($row = $stmt->fetch()) {
     echo " 
-  <a href='operario.php?id=".$row['id']."' class='text-dark' >
+  <a href='operario.php?id=".$row['id_usuario']."' class='text-dark' >
   <div class='card'>
   <div class='card-body d-flex justify-content-around'>
     <div>
-      " . $row['nombre'] . " " . $row['apellido'] . " <br>
+      " . $row['nombreOperario'] . " " . $row['apellido'] . " <br>
       <strong>Sección:</strong> " . $row['seccion'] . "
   </div>
     <svg xmlns='http://www.w3.org/2000/svg' width='50' height='50' fill='currentColor' class='bi bi-person' viewBox='0 0 16 16'>
@@ -456,7 +456,7 @@ function maquina(){
   
   $id =$_GET["id"];
   $conPDO = conexion();
-  $stmt = $conPDO->prepare("SELECT * FROM maquinas where id=:id ");
+  $stmt = $conPDO->prepare("SELECT * FROM maquinas where id_maquina = :id ");
   $stmt ->bindParam(':id',$id);
   $stmt->execute();
   $stmt->setFetchMode(PDO::FETCH_ASSOC);
@@ -483,14 +483,14 @@ function maquinasEmpleado()
 {
   $id =$_GET["id"];
   $conPDO = conexion();
-  $sql = $conPDO->prepare('SELECT seccion from operarios where id =:id ');
+  $sql = $conPDO->prepare('SELECT seccion from _usuarios where id_usuario =:id ');
   $sql->bindParam(':id', $id);
   $sql->execute();
   $sql->setFetchMode(PDO::FETCH_ASSOC);
   while($row = $sql->fetch()){
     $seccion = $row['seccion'];
   }
-  $stmt = $conPDO->prepare("SELECT * FROM maquinas where Zona='".$seccion."'");
+  $stmt = $conPDO->prepare("SELECT * FROM maquinas where seccion='".$seccion."'");
   $stmt->execute();
   $stmt->setFetchMode(PDO::FETCH_ASSOC);
 
@@ -502,7 +502,7 @@ function maquinasEmpleado()
   <div class='card-body d-flex justify-content-around'>
     <div>
       " . $row['nombreMaquina'] . " <br>
-      <strong>Sección:</strong> " . $row['Zona'] . "
+      <strong>Sección:</strong> " . $row['seccion'] . "
   </div>
   <img src=". $row['foto'] ." alt='' style ='width: 30%; height: 60%;'>
   </div>
@@ -651,8 +651,165 @@ function listaAveriasPendientes($seccion){
     return $nC['nombreOperario'];
    
   }
+  function listaAveriasPendientesMaquina(){
+    $id =$_GET["id"];
+    $conPDO = conexion();
+    $stmt = $conPDO->prepare("SELECT * FROM parteAveria WHERE estado='pendiente' AND maquinas_ID = '".$id."'");
+    $stmt->execute();
+    $stmt->setFetchMode(PDO::FETCH_ASSOC);
+
+      if($_SESSION['rol'] == 'tecnico' || $_SESSION['rol'] == 'administrador'){
+
+        while ($row = $stmt->fetch()) {
+          $nombreMaquina = nombreMaquina($row['maquinas_ID']);
+          $nombreCliente = nombreCliente($row['id_cliente']);
+         
+    
+          echo "
+        <tr>
+        
+        <th scope='row'><a href='cogerParte.php?id_averia=".$row['ID_parte']."'>" . $row['Fecha'] . "</a></th>
+        <td>".$row['Zona'] ."</td>
+        <td>" . $nombreMaquina . "</td>
+        <td>" . $row['estado'] . "</td>
+        <td>" . $nombreCliente . "</td>
+      </tr>";
+        }
+      }elseif( $_SESSION['rol']== 'cliente') {
+
+    while ($row = $stmt->fetch()) {
+      $nombreMaquina = nombreMaquina($row['maquinas_ID']);
+      $nombreCliente = nombreCliente($row['id_cliente']);
+     
+
+      echo "
+    <tr>
+    
+    <th scope='row'>".$row['Fecha']."</th>
+    <td>".$row['Zona'] ."</td>
+    <td>" . $nombreMaquina . "</td>
+    <td>" . $row['estado'] . "</td>
+    <td>" . $nombreCliente . "</td>
+  </tr>";
+    }
+  }
+  }
+  function listaAveriasCerradasMaquina(){
+    $id =$_GET["id"];
+    $conPDO = conexion();
+    $stmt = $conPDO->prepare("SELECT * FROM parteAveria WHERE estado='cerrado'  AND maquinas_ID = '".$id."'");
+    $stmt->execute();
+    $stmt->setFetchMode(PDO::FETCH_ASSOC);
+    while ($row = $stmt->fetch()) {
+      $nombreMaquina = nombreMaquina($row['maquinas_ID']);
+      $nombreCliente = nombreCliente($row['id_cliente']);
 
 
-//TODO: Pasar las tablas de operarios y usuarios a solo _usuarios.
-//TODO: modificar menu nav para diferenciar admin de operario de tecnico. 
+      echo "
+    <tr>
+    
+    <th scope='row'>" . $row['Fecha'] . "</th>
+    <td>".$row['Zona'] ."</td>
+    <td>" . $nombreMaquina . "</td>
+    <td>" . $row['estado'] . "</td>
+    <td>" . $nombreCliente . "</td>
+    
+  </tr>";
+    }
+  }
+
+  function listaAveriasPendientesTecnico($seccion){
+    $id =$_GET["id"];
+    $conPDO = conexion();
+    $stmt = $conPDO->prepare("SELECT * FROM parteAveria WHERE estado='pendiente' AND zona = '".$seccion."'");
+    $stmt->execute();
+    $stmt->setFetchMode(PDO::FETCH_ASSOC);
+
+      if($_SESSION['rol'] == 'tecnico' || $_SESSION['rol'] == 'administrador'){
+
+        while ($row = $stmt->fetch()) {
+          $nombreMaquina = nombreMaquina($row['maquinas_ID']);
+          $nombreCliente = nombreCliente($row['id_cliente']);
+         
+    
+          echo "
+        <tr>
+        
+        <th scope='row'><a href='cogerParte.php?id_averia=".$row['ID_parte']."'>" . $row['Fecha'] . "</a></th>
+        <td>".$row['Zona'] ."</td>
+        <td>" . $nombreMaquina . "</td>
+        <td>" . $row['estado'] . "</td>
+        <td>" . $nombreCliente . "</td>
+      </tr>";
+        }
+      }elseif( $_SESSION['rol']== 'cliente') {
+
+    while ($row = $stmt->fetch()) {
+      $nombreMaquina = nombreMaquina($row['maquinas_ID']);
+      $nombreCliente = nombreCliente($row['id_cliente']);
+     
+
+      echo "
+    <tr>
+    
+    <th scope='row'>".$row['Fecha']."</th>
+    <td>".$row['Zona'] ."</td>
+    <td>" . $nombreMaquina . "</td>
+    <td>" . $row['estado'] . "</td>
+    <td>" . $nombreCliente . "</td>
+  </tr>";
+    }
+  }
+  }
+  function listaAveriasCerradasTecnico(){
+    $id =$_GET["id"];
+    $conPDO = conexion();
+    $stmt = $conPDO->prepare("SELECT * FROM parteAveria WHERE estado='cerrado'  AND operarios_ID = '".$id."'");
+    $stmt->execute();
+    $stmt->setFetchMode(PDO::FETCH_ASSOC);
+    while ($row = $stmt->fetch()) {
+      $nombreMaquina = nombreMaquina($row['maquinas_ID']);
+      $nombreCliente = nombreCliente($row['id_cliente']);
+
+
+      echo "
+    <tr>
+    
+    <th scope='row'>" . $row['Fecha'] . "</th>
+    <td>".$row['Zona'] ."</td>
+    <td>" . $nombreMaquina . "</td>
+    <td>" . $row['estado'] . "</td>
+    <td>" . $nombreCliente . "</td>
+    
+  </tr>";
+    }
+  }
+  function listaAveriasAsignadasTecnico(){
+    $id =$_GET["id"];
+    $conPDO = conexion();
+    $stmt = $conPDO->prepare("SELECT * FROM parteAveria WHERE estado = 'asignado' AND operarios_ID = '".$id."'");
+    $stmt->execute();
+    $stmt->setFetchMode(PDO::FETCH_ASSOC);
+
+
+    while ($row = $stmt->fetch()) {
+      $nombreMaquina = nombreMaquina($row['maquinas_ID']);
+      $nombreCliente = nombreCliente($row['id_cliente']);
+      $nombreTecnico = nombreCliente($id);
+      echo "
+    <tr>
+    
+    <th scope='row'>".$row['Fecha']."</th>
+    <td>".$row['Zona'] ."</td>
+    <td>" . $nombreMaquina. "</td>
+    <td>" . $row['estado'] . "</td>
+    <td>" . $nombreTecnico . "</td>
+    <td>" . $nombreCliente . "</td>
+    
+  </tr>";
+    }
+  }
+
+//TODO: Pasar las tablas de operarios y usuarios a solo _usuarios pendiente poner usuarios como definitiva y ver funcionamiento en la creada de nuevo.
+
 

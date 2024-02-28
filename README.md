@@ -27,9 +27,13 @@ El mayor beneficio de esta app es que el tanto los técnicos como los operarios 
 > Si tu proyecto es documental, realiza una especificación de cómo planteas estas interfaces, con ejemplos incluso o esquemas de diseño. En otras palabras, realiza este apartado independientemente que no haya implementación.
 
 Esta app viene acompañada de una interfaz gráfica de usuario que permite un manejo mas intuitivo de las funciones que aporta, según tu rol podrás consultar o realizar las acciones necesarias para los registros y consulta que necesites en cada momento. 
+
+	- Como usuario tenderas tu propio login y contraseña y el propio programa identificara las funciones que puedes realizar.
+	- Como Técnico podrás ver las maquinas bajo tu administración, toda su documentación y gestionar los avisos e incidencia por parte de los clientes.
+	- Como Cliente podrás ver las maquinas bajo tu administración, y dar los avisos necesarios a los técnicos. 
  
 ## Sobre el autor
-> Tecnico de instalaciones y mantenimiento industrial desde 2004. Con una amplia experiencia en el sector industrial en 2020 inicio una nueva etapa como programador web. 
+> Técnico de instalaciones y mantenimiento industrial desde 2004. Con una amplia experiencia en el sector industrial en 2020 inicio una nueva etapa como programador web. 
 > Gracias a mis conocimientos en el entorno industrial y a mis nuevas aptitudes de programación creo que este va a ser el proyecto que mejor fusione los conocimientos de las dos ramas en las que estoy especializado.
 
 > Tecnologías que domino.
