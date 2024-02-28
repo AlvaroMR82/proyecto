@@ -29,7 +29,8 @@ El mayor beneficio de esta app es que el tanto los técnicos como los operarios 
 Esta app viene acompañada de una interfaz gráfica de usuario que permite un manejo mas intuitivo de las funciones que aporta, según tu rol podrás consultar o realizar las acciones necesarias para los registros y consulta que necesites en cada momento. 
 
 	- Como usuario tenderas tu propio login y contraseña y el propio programa identificara las funciones que puedes realizar.
-	- Como Técnico podrás ver las maquinas bajo tu administración, toda su documentación y gestionar los avisos e incidencia por parte de los clientes.
+	- Como Técnico podrás ver las maquinas bajo tu administración, toda su documentación 
+	  y gestionar los avisos e incidencia por parte de los clientes.
 	- Como Cliente podrás ver las maquinas bajo tu administración, y dar los avisos necesarios a los técnicos. 
  
 ## Sobre el autor

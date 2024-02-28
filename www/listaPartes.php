@@ -32,7 +32,7 @@ include("php/libreria/libreria.php");
                         <div class="row g-0">
                             <div class="col-md-12">
                                 <div class="card-body">
-                                    <h5 class="card-title">Incidencias pedientes de asignación</h5>
+                                    <h5 class="card-title">Incidencias pendientes de asignación</h5>
                                     <div class="mt-5">
                                         <div class="row d-flex justify-content-around mt-2">
                                             <table class="table">
@@ -40,10 +40,11 @@ include("php/libreria/libreria.php");
                                                     <tr>
 
                                                         <th scope="col">Fecha</th>
-                                                        <th scope="col">Seccion</th>
+                                                        <th scope="col">Sección</th>
                                                         <th scope="col">Maquina</th>
                                                         <th scope="col">Estado</th>
                                                         <th scope="col">Cliente</th>
+                                                        <th scope="col">Descripción</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -74,6 +75,7 @@ include("php/libreria/libreria.php");
                                                         <th scope="col">Maquina</th>
                                                         <th scope="col">Estado</th>
                                                         <th scope="col">Cliente</th>
+                                                        <th scope="col">Descripción</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -104,6 +106,7 @@ include("php/libreria/libreria.php");
                                                         <th scope="col">Maquina</th>
                                                         <th scope="col">Estado</th>
                                                         <th scope="col">Cliente</th>
+                                                        <th scope="col">Descripción</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>

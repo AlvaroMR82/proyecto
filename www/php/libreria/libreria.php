@@ -436,7 +436,7 @@ function maquinas($seccion)
   while ($row = $stmt->fetch()) {
 
     echo " 
-<div class='col-6'>
+<div class='col-4'>
   <a href='maquina.php?id=".$row['id_maquina']."' class='text-dark' >
   <div class='card'>
   <div class='card-body d-flex justify-content-around'>
@@ -497,7 +497,7 @@ function maquinasEmpleado()
   while ($row = $stmt->fetch()) {
     echo " 
 <div class='col-6'>
-  <a href='maquina.php' class='text-dark' >
+  <a href='maquina.php?id=".$row['id_maquina']."' class='text-dark' >
   <div class='card'>
   <div class='card-body d-flex justify-content-around'>
     <div>
@@ -539,7 +539,23 @@ function descipcionAveria($id_parte){
   while ($row = $stmt->fetch()) {
     echo $row['incidencia'];
   }
+  
 }
+function descipcionAveriaCompleta($id_parte){
+  $conPDO = conexion();
+  $stmt = $conPDO->prepare("SELECT * FROM parteAveria  where ID_parte='".$id_parte."'");
+  $stmt->execute();
+  $stmt->setFetchMode(PDO::FETCH_ASSOC);
+  while ($row = $stmt->fetch()) {
+    echo $row['incidencia']."<br>". 
+    "<strong>Estado: </strong>".$row['estado']."<br>". 
+    "<strong>Técnico asignado: </strong>". nombreCliente($row['operarios_ID'])."<br>". 
+    "<strong>Solución: </strong>". $row['solucion'];
+
+  }
+  
+}
+
 function listaAveriasPendientes($seccion){
    
     $conPDO = conexion();
@@ -562,6 +578,7 @@ function listaAveriasPendientes($seccion){
         <td>" . $nombreMaquina . "</td>
         <td>" . $row['estado'] . "</td>
         <td>" . $nombreCliente . "</td>
+        <td><a class='btn btn-primary' href=parte.php?id=".$row['ID_parte'].">Ver</a></td>
       </tr>";
         }
       }elseif( $_SESSION['rol']== 'cliente') {
@@ -579,6 +596,7 @@ function listaAveriasPendientes($seccion){
     <td>" . $nombreMaquina . "</td>
     <td>" . $row['estado'] . "</td>
     <td>" . $nombreCliente . "</td>
+    <td><a class='btn btn-primary' href=parte.php?id=".$row['ID_parte'].">Ver</a></td>
   </tr>";
     }
   }
@@ -603,7 +621,7 @@ function listaAveriasPendientes($seccion){
     <td>" . $nombreMaquina. "</td>
     <td>" . $row['estado'] . "</td>
     <td>" . $nombreCliente . "</td>
-    
+    <td><a class='btn btn-primary' href=parte.php?id=".$row['ID_parte'].">Ver</a></td>
   </tr>";
     }
   }
@@ -626,7 +644,7 @@ function listaAveriasPendientes($seccion){
     <td>" . $nombreMaquina . "</td>
     <td>" . $row['estado'] . "</td>
     <td>" . $nombreCliente . "</td>
-    
+    <td><a class='btn btn-primary' href=parte.php?id=".$row['ID_parte'].">Ver</a></td>
   </tr>";
     }
   }
