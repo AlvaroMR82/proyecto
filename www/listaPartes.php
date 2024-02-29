@@ -71,9 +71,10 @@ include("php/libreria/libreria.php");
                                                     <tr>
 
                                                         <th scope="col">Fecha</th>
-                                                        <th scope="col">Seccion</th>
+                                                        <th scope="col">Sección</th>
                                                         <th scope="col">Maquina</th>
                                                         <th scope="col">Estado</th>
+                                                        <th scope="col">Técnico</th>
                                                         <th scope="col">Cliente</th>
                                                         <th scope="col">Descripción</th>
                                                     </tr>
@@ -105,6 +106,7 @@ include("php/libreria/libreria.php");
                                                         <th scope="col">Seccion</th>
                                                         <th scope="col">Maquina</th>
                                                         <th scope="col">Estado</th>
+                                                        <th scope="col">Técnico</th>
                                                         <th scope="col">Cliente</th>
                                                         <th scope="col">Descripción</th>
                                                     </tr>
@@ -132,4 +134,5 @@ include("php/libreria/libreria.php");
 </body>
 
 </html>
-//TODO: crear visualizador de partes para ver como van o se resolvieron las incidencias. 
+
+ 

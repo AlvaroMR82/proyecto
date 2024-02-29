@@ -4,16 +4,6 @@ if (!isset($_SESSION['usuario'])) {
     header('location: Login.php');
 }
 include("php/libreria/libreria.php");
-//TODO: preparar este parte como abrir incidencia por parte del tecnico. 
-$conPDO = conexion();
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    
-    
-   
-
-    $stmt = null;
-    $conPDO = null;
-}
 
 ?>
 
@@ -57,6 +47,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                         }
 
                                             descipcionAveriaCompleta($_GET['id']);
+                                            echo "<br>";
+                                            editarParte($_GET['id']);
+
                                         ?></p>
 
                                   

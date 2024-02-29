@@ -59,11 +59,11 @@ if (!isset($_SESSION['usuario'])) {
 
               <div class="row">
                    <h5 class="card-title ms-3">Lacados</h5>
-                    <?php maquinas('Lacados'); ?>
+                    <?php maquinas('Lacados',true); ?>
                     <h5 class="card-title ms-3">Anodizados</h5>
-                    <?php maquinas('Anodizados'); ?>
+                    <?php maquinas('Anodizados', true); ?>
                     <h5 class="card-title mt-3 ms-3">Extrusión</h5>
-                    <?php maquinas('Extrusion'); ?>
+                    <?php maquinas('Extrusion', true); ?>
                 
 
                 

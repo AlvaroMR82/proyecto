@@ -105,19 +105,7 @@ function menuNav()
           </svg>
           <a href='abrirParte.php'>Abrir parte de averia</a>
         </li>";
-        }elseif ($_SESSION["rol"] == 'tecnico' ){
-          echo "
-          <li class='nav-item active'>
-          <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor'
-            class='bi bi-person-circle' viewBox='0 0 16 16'>
-            <path d='M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z' />
-            <path fill-rule='evenodd'
-              d='M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z' />
-          </svg>
-          <a href='cogerParte.php'>Coger incidencia</a>
-        </li>";
-
-        }elseif ( $_SESSION["rol"] == 'administrador'){
+               }elseif ( $_SESSION["rol"] == 'administrador'){
           echo "
           <li class='nav-item active'>
           <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor'
@@ -420,10 +408,10 @@ function telOperarios()
   }
 }
 
-function maquinas($seccion)
+function maquinas($seccion, $index)
 {
   $conPDO = conexion();
-  if($_SESSION['rol'] == "administrador"){
+  if($_SESSION['rol'] == "administrador" && !$index){
     $stmt = $conPDO->prepare("SELECT * FROM maquinas");
 
   }else{
@@ -578,7 +566,7 @@ function listaAveriasPendientes($seccion){
         <td>" . $nombreMaquina . "</td>
         <td>" . $row['estado'] . "</td>
         <td>" . $nombreCliente . "</td>
-        <td><a class='btn btn-primary' href=parte.php?id=".$row['ID_parte'].">Ver</a></td>
+        <td><a class='btn btn-primary  ms-3' href=parte.php?id=".$row['ID_parte'].">Ver</a></td>
       </tr>";
         }
       }elseif( $_SESSION['rol']== 'cliente') {
@@ -596,7 +584,7 @@ function listaAveriasPendientes($seccion){
     <td>" . $nombreMaquina . "</td>
     <td>" . $row['estado'] . "</td>
     <td>" . $nombreCliente . "</td>
-    <td><a class='btn btn-primary' href=parte.php?id=".$row['ID_parte'].">Ver</a></td>
+    <td><a class='btn btn-primary  ms-3' href=parte.php?id=".$row['ID_parte'].">Ver</a></td>
   </tr>";
     }
   }
@@ -612,6 +600,7 @@ function listaAveriasPendientes($seccion){
     while ($row = $stmt->fetch()) {
       $nombreMaquina = nombreMaquina($row['maquinas_ID']);
       $nombreCliente = nombreCliente($row['id_cliente']);
+      $nombreTecnico = nombreCliente($row['operarios_ID']);
 
       echo "
     <tr>
@@ -620,8 +609,9 @@ function listaAveriasPendientes($seccion){
     <td>".$row['Zona'] ."</td>
     <td>" . $nombreMaquina. "</td>
     <td>" . $row['estado'] . "</td>
+    <td>" . $nombreTecnico . "</td>
     <td>" . $nombreCliente . "</td>
-    <td><a class='btn btn-primary' href=parte.php?id=".$row['ID_parte'].">Ver</a></td>
+    <td><a class='btn btn-primary  ms-3' href=parte.php?id=".$row['ID_parte'].">Ver</a></td>
   </tr>";
     }
   }
@@ -634,7 +624,7 @@ function listaAveriasPendientes($seccion){
     while ($row = $stmt->fetch()) {
       $nombreMaquina = nombreMaquina($row['maquinas_ID']);
       $nombreCliente = nombreCliente($row['id_cliente']);
-
+      $nombreTecnico = nombreCliente($row['operarios_ID']);
 
       echo "
     <tr>
@@ -643,8 +633,9 @@ function listaAveriasPendientes($seccion){
     <td>".$row['Zona'] ."</td>
     <td>" . $nombreMaquina . "</td>
     <td>" . $row['estado'] . "</td>
+    <td>" . $nombreTecnico . "</td>
     <td>" . $nombreCliente . "</td>
-    <td><a class='btn btn-primary' href=parte.php?id=".$row['ID_parte'].">Ver</a></td>
+    <td><a class='btn btn-primary ms-3' href=parte.php?id=".$row['ID_parte'].">Ver</a></td>
   </tr>";
     }
   }
@@ -660,13 +651,20 @@ function listaAveriasPendientes($seccion){
   }
   function nombreCliente($id_cliente){
     
+    if($id_cliente == null){
+
+      return "";
+    }else{
+      $conPDO = conexion();
+      $nombreCliente = $conPDO->prepare("SELECT nombreOperario FROM _usuarios WHERE id_usuario='".$id_cliente." '  ");
+      $nombreCliente->execute();
+      $nombreCliente->setFetchMode(PDO::FETCH_ASSOC);
+      $nC = $nombreCliente->fetch();
+      return $nC['nombreOperario'];
+
+    }
      
-    $conPDO = conexion();
-    $nombreCliente = $conPDO->prepare("SELECT nombreOperario FROM _usuarios WHERE id_usuario='".$id_cliente." '  ");
-    $nombreCliente->execute();
-    $nombreCliente->setFetchMode(PDO::FETCH_ASSOC);
-    $nC = $nombreCliente->fetch();
-    return $nC['nombreOperario'];
+   
    
   }
   function listaAveriasPendientesMaquina(){
@@ -676,12 +674,11 @@ function listaAveriasPendientes($seccion){
     $stmt->execute();
     $stmt->setFetchMode(PDO::FETCH_ASSOC);
 
-      if($_SESSION['rol'] == 'tecnico' || $_SESSION['rol'] == 'administrador'){
-
-        while ($row = $stmt->fetch()) {
+          while ($row = $stmt->fetch()) {
           $nombreMaquina = nombreMaquina($row['maquinas_ID']);
           $nombreCliente = nombreCliente($row['id_cliente']);
          
+          if(($_SESSION['rol'] == 'tecnico' || $_SESSION['rol'] == 'administrador') && $_SESSION['seccion']==$row['Zona']){
     
           echo "
         <tr>
@@ -691,26 +688,63 @@ function listaAveriasPendientes($seccion){
         <td>" . $nombreMaquina . "</td>
         <td>" . $row['estado'] . "</td>
         <td>" . $nombreCliente . "</td>
-      </tr>";
-        }
-      }elseif( $_SESSION['rol']== 'cliente') {
+        <td><a class='btn btn-primary ms-3' href=parte.php?id=".$row['ID_parte'].">Ver</a></td>
+        </tr>";
 
+          }elseif( $_SESSION['rol']== 'tecnico') {
+
+            echo "
+            <tr>
+            
+            <th scope='row'>".$row['Fecha']."</th>
+            <td>".$row['Zona'] ."</td>
+            <td>" . $nombreMaquina . "</td>
+            <td>" . $row['estado'] . "</td>
+            <td>" . $nombreCliente . "</td>
+            <td><a class='btn btn-primary ms-3' href=parte.php?id=".$row['ID_parte'].">Ver</a></td>
+          </tr>";
+          }elseif( $_SESSION['rol']== 'cliente') {
+
+            echo "
+            <tr>
+            
+            <th scope='row'>".$row['Fecha']."</th>
+            <td>".$row['Zona'] ."</td>
+            <td>" . $nombreMaquina . "</td>
+            <td>" . $row['estado'] . "</td>
+            <td>" . $nombreCliente . "</td>
+            <td><a class='btn btn-primary ms-3' href=parte.php?id=".$row['ID_parte'].">Ver</a></td>
+          </tr>";
+          }
+
+
+        }
+     
+  }
+  function listaAveriasAsignadasMaquina(){
+    $id =$_GET["id"];
+    $conPDO = conexion();
+    $stmt = $conPDO->prepare("SELECT * FROM parteAveria WHERE estado='asignado'  AND maquinas_ID = '".$id."'");
+    $stmt->execute();
+    $stmt->setFetchMode(PDO::FETCH_ASSOC);
     while ($row = $stmt->fetch()) {
       $nombreMaquina = nombreMaquina($row['maquinas_ID']);
       $nombreCliente = nombreCliente($row['id_cliente']);
-     
+      $nombreTecnico = nombreCliente($row['operarios_ID']);
 
       echo "
     <tr>
     
-    <th scope='row'>".$row['Fecha']."</th>
+    <th scope='row'>" . $row['Fecha'] . "</th>
     <td>".$row['Zona'] ."</td>
     <td>" . $nombreMaquina . "</td>
     <td>" . $row['estado'] . "</td>
+    <td>" . $nombreTecnico . "</td>
     <td>" . $nombreCliente . "</td>
+    <td><a class='btn btn-primary ms-3' href=parte.php?id=".$row['ID_parte'].">Ver</a></td>
+    
   </tr>";
     }
-  }
   }
   function listaAveriasCerradasMaquina(){
     $id =$_GET["id"];
@@ -721,6 +755,7 @@ function listaAveriasPendientes($seccion){
     while ($row = $stmt->fetch()) {
       $nombreMaquina = nombreMaquina($row['maquinas_ID']);
       $nombreCliente = nombreCliente($row['id_cliente']);
+      $nombreTecnico = nombreCliente($row['operarios_ID']);
 
 
       echo "
@@ -730,8 +765,9 @@ function listaAveriasPendientes($seccion){
     <td>".$row['Zona'] ."</td>
     <td>" . $nombreMaquina . "</td>
     <td>" . $row['estado'] . "</td>
+    <td>" . $nombreTecnico . "</td>
     <td>" . $nombreCliente . "</td>
-    
+    <td><a class='btn btn-primary ms-3' href=parte.php?id=".$row['ID_parte'].">Ver</a></td>
   </tr>";
     }
   }
@@ -758,6 +794,7 @@ function listaAveriasPendientes($seccion){
         <td>" . $nombreMaquina . "</td>
         <td>" . $row['estado'] . "</td>
         <td>" . $nombreCliente . "</td>
+        <td><a class='btn btn-primary ms-3' href=parte.php?id=".$row['ID_parte'].">Ver</a></td>
       </tr>";
         }
       }elseif( $_SESSION['rol']== 'cliente') {
@@ -775,6 +812,7 @@ function listaAveriasPendientes($seccion){
     <td>" . $nombreMaquina . "</td>
     <td>" . $row['estado'] . "</td>
     <td>" . $nombreCliente . "</td>
+    <td><a class='btn btn-primary ms-3' href=parte.php?id=".$row['ID_parte'].">Ver</a></td>
   </tr>";
     }
   }
@@ -788,6 +826,7 @@ function listaAveriasPendientes($seccion){
     while ($row = $stmt->fetch()) {
       $nombreMaquina = nombreMaquina($row['maquinas_ID']);
       $nombreCliente = nombreCliente($row['id_cliente']);
+       $nombreTecnico = nombreCliente($id);
 
 
       echo "
@@ -797,8 +836,9 @@ function listaAveriasPendientes($seccion){
     <td>".$row['Zona'] ."</td>
     <td>" . $nombreMaquina . "</td>
     <td>" . $row['estado'] . "</td>
+     <td>" . $nombreTecnico . "</td>
     <td>" . $nombreCliente . "</td>
-    
+    <td><a class='btn btn-primary ms-3' href=parte.php?id=".$row['ID_parte'].">Ver</a></td>
   </tr>";
     }
   }
@@ -823,11 +863,27 @@ function listaAveriasPendientes($seccion){
     <td>" . $row['estado'] . "</td>
     <td>" . $nombreTecnico . "</td>
     <td>" . $nombreCliente . "</td>
-    
+    <td><a class='btn btn-primary ms-3' href=parte.php?id=".$row['ID_parte'].">Ver</a></td>
   </tr>";
     }
   }
+ function editarParte($id_parte){
+  $conPDO = conexion();
+  $stmt = $conPDO->prepare("SELECT * FROM parteAveria WHERE estado = 'asignado' AND ID_parte = '".$id_parte."'");
+  $stmt->execute();
+  $stmt->setFetchMode(PDO::FETCH_ASSOC);
+  while ($row = $stmt->fetch()) {
+   
+    if($row['operarios_ID'] == $_SESSION['id_usuario']){
 
-//TODO: Pasar las tablas de operarios y usuarios a solo _usuarios pendiente poner usuarios como definitiva y ver funcionamiento en la creada de nuevo.
+      echo"
+      <td><a class='btn btn-primary' href=cogerParte.php?id_averia=".$id_parte.">Editar Parte</a></td>
+    </tr>";
+    }
+    
+  }
+
+
+  }
 
 

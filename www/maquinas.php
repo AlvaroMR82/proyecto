@@ -27,14 +27,14 @@ include ("php/libreria/libreria.php");
             <div class="row">
                 <div class="col-12 mt-2 ms-4">
                     <div class="row">
-                        <div class="card mb-3 col-12 me-2" style="max-width: 850px;">
+                        <div class="card mb-3 col-12 me-2" style="max-width: 1050px;">
                             <div class="row g-0">
                                 <div class="col-md-12">
                                     <div class="card-body">
                                         <h5 class="card-title"></h5>
                                         <div class="mt-5">
                                             <div class="row d-flex justify-content-around mt-2">
-                                            <?php maquinas($_SESSION['seccion']);
+                                            <?php maquinas($_SESSION['seccion'], false);
                                             
                                             ?>                                                                                     
                                             </div>

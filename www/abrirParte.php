@@ -65,7 +65,7 @@ if($_SESSION["rol"] == 'cliente' | $_SESSION["rol"] == 'administrador' && $_POST
         <form method="POST" action=<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) ?>>
             <div class="col-12 mt-2 ms-4">
                 <div class="row">
-                    <div class="card mb-3 col-12 me-2" style="max-width: 850px;">
+                    <div class="card mb-3 col-12 me-2" style="max-width: 1050px;">
                         <div class="row g-0">
                             <div class="col-md-12">
                                 <div class="card-body">

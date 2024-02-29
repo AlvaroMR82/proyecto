@@ -193,20 +193,29 @@ $conPDO = null;
 }
 
 function introducirDatosUsuario($usuario,$pass,$nombre,$apellido,$telefono,$email,$zona,$rol){
+   
 
-    $hasheado = password_hash($pass, PASSWORD_DEFAULT);
+      try{
+        $hasheado = password_hash($pass, PASSWORD_DEFAULT);
 
-    $conPDO = conexion();
-    $stmt = $conPDO->prepare("INSERT INTO _usuarios (nombreUsuario,rol, pass, nombreOperario, apellido, email, telefono, seccion ) values (:nombreUsuario, :rol, :pass, :nombreOperario, :apellido, :email ,:telefono, :seccion)  ;");
-    $stmt->bindParam(':nombreUsuario', $usuario);
-    $stmt->bindParam(':rol', $rol);
-    $stmt->bindParam(':pass', $hasheado);
-    $stmt->bindParam(':nombreOperario', $nombre);
-    $stmt->bindParam(':apellido', $apellido);
-    $stmt->bindParam(':email', $email);
-    $stmt->bindParam(':telefono', $telefono);
-    $stmt->bindParam(':seccion', $zona);
-    $stmt->execute();
+        $conPDO = conexion();
+        $stmt = $conPDO->prepare("INSERT INTO _usuarios (nombreUsuario,rol, pass, nombreOperario, apellido, email, telefono, seccion ) values (:nombreUsuario, :rol, :pass, :nombreOperario, :apellido, :email ,:telefono, :seccion)  ;");
+        $stmt->bindParam(':nombreUsuario', $usuario);
+        $stmt->bindParam(':rol', $rol);
+        $stmt->bindParam(':pass', $hasheado);
+        $stmt->bindParam(':nombreOperario', $nombre);
+        $stmt->bindParam(':apellido', $apellido);
+        $stmt->bindParam(':email', $email);
+        $stmt->bindParam(':telefono', $telefono);
+        $stmt->bindParam(':seccion', $zona);
+        $stmt->execute();
+
+      }catch (PDOException $ex) {
+        echo"Completa el formulario.";
+        die("Erro na conexión mensaxe: " . $ex->getMessage());
+       
+      }
+   
     
     $conPDO = null;
     

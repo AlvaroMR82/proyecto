@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $id_averia = $_SESSION['id_averia'];
         
 
-        $stmt = $conPDO->prepare("update  parteAveria SET  solucion=:mensaje WHERE ID_parte=:id_averia");
+        $stmt = $conPDO->prepare("update  parteAveria SET solucion =CONCAT(solucion,', ',:mensaje) WHERE ID_parte=:id_averia");
         $stmt->bindParam(':mensaje', $mensaje);
         $stmt->bindParam(':id_averia', $id_averia );
         $stmt->execute();
@@ -71,7 +71,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         
             <div class="col-12 mt-2 ms-4">
                 <div class="row">
-                    <div class="card mb-3 col-12 me-2" style="max-width: 850px;">
+                    <div class="card mb-3 col-12 me-2" style="max-width: 1050px;">
                         <div class="row g-0">
                             <div class="col-md-12">
                                 <div class="card-body">

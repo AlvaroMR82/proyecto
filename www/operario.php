@@ -31,8 +31,8 @@ menuNav();
             </div>
             <div class="row d-flex">
                 <div class="col-12 mt-2 ms-4">
-                    <div class="row d-flex justify-content-evenly">
-                        <div class="card mb-3 col-12 me-2" style="max-width: 850px;">
+                    <div class="row ">
+                        <div class="card mb-3 col-12 me-2" style="max-width: 1050px;">
                             <div class="row g-0">
                                 <div class="col-md-12">
                                     <div class="card-body">
@@ -47,8 +47,8 @@ menuNav();
                             </div>
                         </div>
                     </div>
-                    <div class="row d-flex justify-content-evenly">
-                        <div class="card mb-3 col-12 me-2" style="max-width: 850px;">
+                    <div class="row ">
+                        <div class="card mb-3 col-12 me-2" style="max-width: 1050px;">
                             <div class="row g-0">
                                 <div class="col-md-12">
                                     <div class="card-body">
@@ -66,7 +66,7 @@ menuNav();
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    
                     <div class="row">
                     <div class="card mb-3 col-12 me-2" style="max-width: 1050px;">
                         <div class="row g-0">
@@ -83,7 +83,9 @@ menuNav();
                                                         <th scope="col">Sección</th>
                                                         <th scope="col">Maquina</th>
                                                         <th scope="col">Estado</th>
+                                                        <th scope="col">Técnico</th>
                                                         <th scope="col">Cliente</th>
+                                                        <th scope="col">Descripción</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -110,11 +112,12 @@ menuNav();
                                                     <tr>
 
                                                         <th scope="col">Fecha</th>
-                                                        <th scope="col">Seccion</th>
+                                                        <th scope="col">Sección</th>
                                                         <th scope="col">Maquina</th>
                                                         <th scope="col">Estado</th>
                                                         <th scope="col">Técnico</th>
                                                         <th scope="col">Cliente</th>
+                                                        <th scope="col">Descripción</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -145,6 +148,7 @@ menuNav();
                                                         <th scope="col">Maquina</th>
                                                         <th scope="col">Estado</th>
                                                         <th scope="col">Cliente</th>
+                                                        <th scope="col">Descripción</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
