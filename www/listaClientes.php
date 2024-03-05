@@ -36,6 +36,7 @@ menuNav();
                                         <h5 class="card-title">Clientes en activo</h5>
                                         <div class="mt-5">
                                             <div class="row d-flex justify-content-around mt-2">
+                                            <div class="row">
                                             <?php clientes();?>                                                                                     
                                             </div>
                                         </div>

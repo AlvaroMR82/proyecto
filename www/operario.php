@@ -49,11 +49,11 @@ menuNav();
                     </div>
                     <div class="row ">
                         <div class="card mb-3 col-12 me-2" style="max-width: 1050px;">
-                            <div class="row g-0">
+                            <div class="row ">
                                 <div class="col-md-12">
                                     <div class="card-body">
-                                        <h5 class="card-title">Maquinas en supervision</h5>
-                                        <div class="d-flex justify-content-around ">
+                                        <h5 class="card-title mb-3">Maquinas en supervision</h5>
+                                        <div class="d-flex justify-content-around">
                                             <div class="row">
                                             <?php maquinasEmpleado();?>    
 

@@ -20,7 +20,7 @@ if (!isset($_SESSION['usuario'])) {
 <body>
   <?php
   include("php/libreria/libreria.php");
-  //TODO: Mejorar maquetados en todas las pajinas. 
+ 
   ?>
   <?php
 
@@ -35,21 +35,26 @@ if (!isset($_SESSION['usuario'])) {
     </div>
     <div class="row">
       <div class="col-12 mt-2 ms-4">
-        <div class="row">
-          <div class="card mb-3 col-12 me-2" style="max-width: 1050px;">
-            <div class="row g-0">
-              <div class="col-md-12">
-                <div class="card-body">
-                  <h5 class="card-title">Operarios en activo</h5>
-                  <div class="d-flex justify-content-around">
-                    <?php operarios($_SESSION['seccion']);
-                    ?>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div class="row ">
+                        <div class="card mb-3 col-12 me-2" style="max-width: 1050px;">
+                            <div class="row ">
+                                <div class="col-md-12">
+                                    <div class="card-body">
+                                        <h5 class="card-title mb-3">Operarios en activo</h5>
+                                        <div class="d-flex justify-content-around ">
+                                            <div class="row">
+                                            <?php operarios($_SESSION['seccion']);?>
+
+
+                                                </div>
+                                            </div>
+                                           
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+       
         <div class="row">
           <div class="card mb-3 col-12 me-2" style="max-width: 1050px;">
 
@@ -62,8 +67,7 @@ if (!isset($_SESSION['usuario'])) {
                     <?php maquinas('Lacados',true); ?>
                     <h5 class="card-title ms-3">Anodizados</h5>
                     <?php maquinas('Anodizados', true); ?>
-                    <h5 class="card-title mt-3 ms-3">Extrusión</h5>
-                    <?php maquinas('Extrusion', true); ?>
+                    <h5 class="card-title mt-3 ms-3">Extrusión</h5>between
                 
 
                 

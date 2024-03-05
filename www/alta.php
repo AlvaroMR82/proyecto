@@ -56,40 +56,40 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <p> Formulario de alta de usuario</p>
         <div class="row  mb-5 mt-5 ">
           <form class="row g-3">
-            <div class="col-md-6">
-              <label for="inputEmail4" class="form-label">Nombre de usuario</label>
+            <div class="col-md-6 mb-3">
+              <label for="inputEmail4" class="form-label ms-2">Nombre de usuario</label>
               <input type="text" class="form-control" name="usuario" id="inputEmail4" required>
             </div>
-            <div class="col-md-6">
-              <label for="inputPassword4" class="form-label">Password</label>
+            <div class="col-md-6 mb-3">
+              <label for="inputPassword4" class="form-label ms-2">Password</label>
               <input type="password" class="form-control" id="inputPassword4" name="pass" required>
             </div>
-            <div class="col-md-6">
-              <label for="inputEmail4" class="form-label">Nombre</label>
+            <div class="col-md-6 mb-3">
+              <label for="inputEmail4" class="form-label ms-2">Nombre</label>
               <input type="text" class="form-control" id="inputEmail4" name="nombre" required>
             </div>
-            <div class="col-md-6">
-              <label for="inputEmail4" class="form-label">Apellidos</label>
+            <div class="col-md-6 mb-3">
+              <label for="inputEmail4" class="form-label ms-2">Apellidos</label>
               <input type="text" class="form-control" name="apellido" id="inputEmail4" required>
             </div>
-            <div class="col-md-6">
-              <label for="inputEmail4" class="form-label">Numero de teléfono</label>
+            <div class="col-md-6 mb-3">
+              <label for="inputEmail4" class="form-label ms-2 ">Numero de teléfono</label>
               <input type="text" class="form-control" id="inputEmail4" name="telefono" required>
             </div>
-            <div class="col-md-6">
-              <label for="inputEmail4" class="form-label">Email</label>
+            <div class="col-md-6 mb-3">
+              <label for="inputEmail4" class="form-label ms-2">Email</label>
               <input type="email" class="form-control" id="inputEmail4" name="email" placeholder="ejemplo@correo.com" required>
             </div>
-            <div class="col-md-6">
-              <label for="formGroupExampleInput" class="form-label">Sección</label>
+            <div class="col-md-6 mb-3">
+              <label for="formGroupExampleInput" class="form-label ms-2">Sección</label>
               <select class="form-select" aria-label="Default select example" name="seccion" required>
-                <option value="lacados">Lacados</option>
-                <option value="anodizados">Anodizados</option>
-                <option value="extrusion">Extrusión</option>
+                <option value="Lacados">Lacados</option>
+                <option value="Anodizados">Anodizados</option>
+                <option value="Extrusion">Extrusión</option>
               </select>
             </div>
-            <div class="col-md-6">
-              <label for="formGroupExampleInput" class="form-label">Rol</label>
+            <div class="col-md-6 mb-3">
+              <label for="formGroupExampleInput" class="form-label ms-2">Rol</label>
               <select class="form-select" aria-label="Default select example" name="rol" required>
                 <option value="cliente">Cliente</option>
                 <option value="tecnico">Técnico</option>
