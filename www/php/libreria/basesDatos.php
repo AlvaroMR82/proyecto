@@ -110,11 +110,13 @@ function tablaPartes()
        id_ParteAveria INT PRIMARY KEY,
        Fecha_apertura DATE,
        Fecha_cierre DATE,
-       Zona VARCHAR(50),
-       Operario_id INT,
-       Maquina_id INT,
-       FOREIGN KEY (Operario_ID) REFERENCES Operario(id),
-       FOREIGN KEY (id) REFERENCES Maquina(id)
+       seccion VARCHAR(50),
+       tecnico_id INT,
+       maquina_id INT,
+       cliente_id
+       FOREIGN KEY (tecnico_id) REFERENCES _usuario(id_usuario),
+       FOREIGN KEY (cliente_id) REFERENCES _usuario(id_usuario),
+       FOREIGN KEY (id_maquina) REFERENCES maquina(id_maquina)
         );";
 
     $conPDO->exec($sql);

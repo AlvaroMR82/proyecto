@@ -61,6 +61,6 @@ Copy code
 +----------------+
 
 Este diagrama muestra las entidades principales ("Operario", "Maquina", "Cliente" y "Parte de Avería") y sus relaciones.
-
+![diagrama base de datos](./img/Diagrama base de datos CWM.png)
 ## Diagrama de compoñentes software que constitúen o produto e de despregue.
 
