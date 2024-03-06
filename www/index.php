@@ -67,8 +67,8 @@ if (!isset($_SESSION['usuario'])) {
                     <?php maquinas('Lacados',true); ?>
                     <h5 class="card-title ms-3">Anodizados</h5>
                     <?php maquinas('Anodizados', true); ?>
-                    <h5 class="card-title mt-3 ms-3">Extrusión</h5>between
-                
+                    <h5 class="card-title mt-3 ms-3">Extrusión</h5>
+                    <?php maquinas('Extrusion', true); ?>
 
                 
               </div>

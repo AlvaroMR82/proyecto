@@ -68,9 +68,9 @@ include("php/libreria/libreria.php");
                                                                         <h3>Documentación</h3> <br>
                                                                     </div>
                                                                     <ul>
-                                                                        <li><a href="">Planos Eléctricos</a></li>
-                                                                        <li><a href="">Manuales de mantenimiento</a></li>
-                                                                        <li><a href="">Manuales de usuario</a></li>
+                                                                        <li><a href="<?php echo planoMaquina($_GET['id']);?>">Planos Eléctricos</a></li>
+                                                                        <li><a href="<?php echo manualMaquina($_GET['id']);?>">Manuales </a></li>
+                                                                        <li><a href="<?php echo despieceMaquina($_GET['id']);?>">Despiece</a></li>
                                                                     </ul>
                                                                 </div>
                                                             </div>

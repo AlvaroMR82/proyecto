@@ -51,7 +51,7 @@ function menuNav()
               <path
                 d='M11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm-9 8c0 1 1 1 1 1h5.256A4.493 4.493 0 0 1 8 12.5a4.49 4.49 0 0 1 1.544-3.393C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4Zm9.886-3.54c.18-.613 1.048-.613 1.229 0l.043.148a.64.64 0 0 0 .921.382l.136-.074c.561-.306 1.175.308.87.869l-.075.136a.64.64 0 0 0 .382.92l.149.045c.612.18.612 1.048 0 1.229l-.15.043a.64.64 0 0 0-.38.921l.074.136c.305.561-.309 1.175-.87.87l-.136-.075a.64.64 0 0 0-.92.382l-.045.149c-.18.612-1.048.612-1.229 0l-.043-.15a.64.64 0 0 0-.921-.38l-.136.074c-.561.305-1.175-.309-.87-.87l.075-.136a.64.64 0 0 0-.382-.92l-.148-.045c-.613-.18-.613-1.048 0-1.229l.148-.043a.64.64 0 0 0 .382-.921l-.074-.136c-.306-.561.308-1.175.869-.87l.136.075a.64.64 0 0 0 .92-.382l.045-.148ZM14 12.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0Z' />
             </svg>
-            <a href='listaOperarios.php'> Lista de operarios</a>
+            <a href='listaOperarios.php'> Lista de técnicos</a>
           </li>
           <li class='nav-item active'>
             <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor'
@@ -90,7 +90,7 @@ function menuNav()
               <path
                 d='M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52l-.094-.319zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115l.094-.319z' />
             </svg>
-            <a href=''> Estadísticas</a>
+            <a href='estadisticas.php'> Estadísticas</a>
           </li>";
          
           
@@ -113,23 +113,30 @@ function menuNav()
             <path
               d='M11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm-9 8c0 1 1 1 1 1h5.256A4.493 4.493 0 0 1 8 12.5a4.49 4.49 0 0 1 1.544-3.393C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4Zm9.886-3.54c.18-.613 1.048-.613 1.229 0l.043.148a.64.64 0 0 0 .921.382l.136-.074c.561-.306 1.175.308.87.869l-.075.136a.64.64 0 0 0 .382.92l.149.045c.612.18.612 1.048 0 1.229l-.15.043a.64.64 0 0 0-.38.921l.074.136c.305.561-.309 1.175-.87.87l-.136-.075a.64.64 0 0 0-.92.382l-.045.149c-.18.612-1.048.612-1.229 0l-.043-.15a.64.64 0 0 0-.921-.38l-.136.074c-.561.305-1.175-.309-.87-.87l.075-.136a.64.64 0 0 0-.382-.92l-.148-.045c-.613-.18-.613-1.048 0-1.229l.148-.043a.64.64 0 0 0 .382-.921l-.074-.136c-.306-.561.308-1.175.869-.87l.136.075a.64.64 0 0 0 .92-.382l.045-.148ZM14 12.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0Z' />
           </svg>
-          <a href=''> Actualización de máquinas</a>
+          <a href='actualizarTecnico.php'> Actualización de técnicos</a>
+        </li>
+          <li class='nav-item active'>
+          <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor'
+            class='bi bi-person-fill-gear' viewBox='0 0 16 16'>
+            <path
+              d='M11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm-9 8c0 1 1 1 1 1h5.256A4.493 4.493 0 0 1 8 12.5a4.49 4.49 0 0 1 1.544-3.393C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4Zm9.886-3.54c.18-.613 1.048-.613 1.229 0l.043.148a.64.64 0 0 0 .921.382l.136-.074c.561-.306 1.175.308.87.869l-.075.136a.64.64 0 0 0 .382.92l.149.045c.612.18.612 1.048 0 1.229l-.15.043a.64.64 0 0 0-.38.921l.074.136c.305.561-.309 1.175-.87.87l-.136-.075a.64.64 0 0 0-.92.382l-.045.149c-.18.612-1.048.612-1.229 0l-.043-.15a.64.64 0 0 0-.921-.38l-.136.074c-.561.305-1.175-.309-.87-.87l.075-.136a.64.64 0 0 0-.382-.92l-.148-.045c-.613-.18-.613-1.048 0-1.229l.148-.043a.64.64 0 0 0 .382-.921l-.074-.136c-.306-.561.308-1.175.869-.87l.136.075a.64.64 0 0 0 .92-.382l.045-.148ZM14 12.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0Z' />
+          </svg>
+          <a href='actualizarMaquina.php'> Actualización de máquinas</a>
         </li>
         <li class='nav-item active'>
-          <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor'
+        <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor'
+        class='bi bi-person-fill-gear' viewBox='0 0 16 16'>
+        <path
+          d='M11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm-9 8c0 1 1 1 1 1h5.256A4.493 4.493 0 0 1 8 12.5a4.49 4.49 0 0 1 1.544-3.393C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4Zm9.886-3.54c.18-.613 1.048-.613 1.229 0l.043.148a.64.64 0 0 0 .921.382l.136-.074c.561-.306 1.175.308.87.869l-.075.136a.64.64 0 0 0 .382.92l.149.045c.612.18.612 1.048 0 1.229l-.15.043a.64.64 0 0 0-.38.921l.074.136c.305.561-.309 1.175-.87.87l-.136-.075a.64.64 0 0 0-.92.382l-.045.149c-.18.612-1.048.612-1.229 0l-.043-.15a.64.64 0 0 0-.921-.38l-.136.074c-.561.305-1.175-.309-.87-.87l.075-.136a.64.64 0 0 0-.382-.92l-.148-.045c-.613-.18-.613-1.048 0-1.229l.148-.043a.64.64 0 0 0 .382-.921l-.074-.136c-.306-.561.308-1.175.869-.87l.136.075a.64.64 0 0 0 .92-.382l.045-.148ZM14 12.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0Z' />
+      </svg>
+          <a href='actualizarCliente.php'> Actualización de clientes</a>
+        <li class='nav-item active'>
+        <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor'
             class='bi bi-person-circle' viewBox='0 0 16 16'>
             <path d='M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z' />
             <path fill-rule='evenodd'
               d='M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z' />
           </svg>
-          <a href=''> Actualización de clientes</a>
-        <li class='nav-item active'>
-        <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor'
-          class='bi bi-person-circle' viewBox='0 0 16 16'>
-          <path d='M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z' />
-          <path fill-rule='evenodd'
-            d='M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z' />
-        </svg>
         <a href='abrirParte.php'>Abrir parte de averia</a>
       </li>
       <li class='nav-item active'>
@@ -667,6 +674,7 @@ function listaAveriasPendientes($seccion){
     return $nM['nombreMaquina'];
     
   }
+
   function nombreCliente($id_cliente){
     
     if($id_cliente == null){
@@ -903,5 +911,37 @@ function listaAveriasPendientes($seccion){
 
 
   }
+
+  function planoMaquina($id_Maquina){
+    
+    $conPDO = conexion();
+    $nombreMaquina = $conPDO->prepare("SELECT planos FROM maquinas WHERE id_maquina='".$id_Maquina." '  ");
+    $nombreMaquina->execute();
+    $nombreMaquina->setFetchMode(PDO::FETCH_ASSOC);
+    $pM = $nombreMaquina->fetch();
+    return $pM['planos'];
+    
+  }
+  function manualMaquina($id_Maquina){
+    
+    $conPDO = conexion();
+    $nombreMaquina = $conPDO->prepare("SELECT manuales FROM maquinas WHERE id_maquina='".$id_Maquina." '  ");
+    $nombreMaquina->execute();
+    $nombreMaquina->setFetchMode(PDO::FETCH_ASSOC);
+    $pM = $nombreMaquina->fetch();
+    return $pM['manuales'];
+    
+  }
+  function despieceMaquina($id_Maquina){
+    
+    $conPDO = conexion();
+    $nombreMaquina = $conPDO->prepare("SELECT despiece FROM maquinas WHERE id_maquina='".$id_Maquina." '  ");
+    $nombreMaquina->execute();
+    $nombreMaquina->setFetchMode(PDO::FETCH_ASSOC);
+    $pM = $nombreMaquina->fetch();
+    return $pM['despiece'];
+    
+  }
+
 
 
