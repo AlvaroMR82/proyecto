@@ -4,6 +4,16 @@
 
 ## Casos de uso [descritos en fichas e/ou mediante esquemas; deben incluír o(s) tipo(s) de usuario implicados en cada caso de uso].
 
+En esta aplicación hay tres roles, el administrador, el técnico, y el cliente.
+
+El administrador ademas de las funciones de técnico y cliente gestiona los usuarios las maquinas y los clientes de la aplicación.
+
+El cliente solo puede abir partes de incidencia en las maquinas de su zona.
+
+El técnico puede acceder a las maquinas bajo su gestión, acceder a la documentación de las mismas y coger las incidencias de estas.
+
+
+
 ## Deseño de interface de usuarios [mockups ou diagramas...].
 
 ## Diagrama de Base de Datos.
