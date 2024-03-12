@@ -56,4 +56,4 @@ Ser necesita un navegador web que normalmente hay en todos los sistemas operativ
 - Poder subir imágenes en los apartados de las averías para que queden en conjunto con las descripciones de las mismas.
 - programación de actividades periódicas para su activación automática, por ejemplo revisiones mensuales de niveles en los depósitos de aceite, con su correspondiente checklist para dejar constancia.
 - Localización por gps de las maquinas para que en caso de que se encuentren en lugares dispersos o en localización de clientes externos de la empresa.
-- 
+ 
