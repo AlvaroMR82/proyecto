@@ -1,8 +1,8 @@
 # FASE DE DISEÑO
 
-## Modelo conceptual de dominio de aplicación y/o diagrama de clases [usando UML, ConML o lenguaje similar].
+## Modelo conceptual
 ![alt text](<../img/Árbol de decisiones.png>)
-## Casos de uso [descritos en archivos y/o mediante diagramas; debe incluir el tipo(s) de usuario involucrado en cada caso de uso].
+## Casos de uso 
 
 En esta aplicación hay tres roles, el administrador, el técnico, y el cliente.
 
@@ -14,8 +14,8 @@ El técnico puede acceder a las maquinas bajo su gestión, acceder a la document
 
 
 
-## Diseño de interfaz de usuario [maquetas o diagramas...].
-
+## Diseño de interfaz de usuario.
+![alt text](<../img/Tablero en blanco.png>)
 ## Diagrama de base de datos.
 
 Operario:
@@ -36,3 +36,4 @@ Este diagrama muestra las entidades principales ("Operario", "Maquina", "Cliente
 ![alt text](<../img/Diagrama base de datos CWM.png>)
 ## Diagrama de componentes de software que componen el producto y su implementación.
 
+![alt text](<../img/Diagrama de sofware.png>)
