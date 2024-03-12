@@ -1,37 +1,37 @@
-# FASE DE IMPLANTACIÓN
+# FASE DE IMPLEMENTACIÓN
 
 ## Manual técnico:
 
-### Información relativa á instalación: 
+### Información de instalación:
 
-* Requirimentos de hardware, servidores na nube, etc.
-* Software necesario (S.O. válidos, software externo co que interaciona a nosa aplicación, etc.).
-* Configuración inicial seguridade: devasa, control usuarios, rede.
-* Carga inicial de datos na base de datos. Migración de datos xa existentes noutros formatos.
-* Usuarios do sistema. Usuarios da aplicación.
-* Diagrama final de despregue (se hai variacións con respecto ó realizado na anterior fase).
+*Requisitos de hardware, servidores en la nube, etc.
+* Software requerido (SO válido, software externo con el que interactúa nuestra aplicación, etc.).
+* Seguridad de configuración inicial: devasa, control de usuarios, red.
+* Carga inicial de datos a la base de datos. Migración de datos ya existentes a otros formatos.
+* Usuarios del sistema. Usuarios de la aplicación.
+* Esquema de despliegue final (si hay variaciones respecto al realizado en la fase anterior).
 
-### Información relativa á administración do sistema, é dicir, tarefas que se deberán realizar unha vez que o sistema estea funcionando, como por exemplo:
+### Información relacionada con la administración del sistema, es decir, tareas a realizar una vez que el sistema esté en funcionamiento, como por ejemplo:
 
-* Copias de seguridade do sistema.
-* Copias de seguridade da base de datos.
-* Xestión de usuarios.
-* Xestión seguridade.
-* Xestión de incidencias, que poden ser de dous tipos: de sistema (accesos non autorizados á BD, etc) ou de fallos no software.
+* Copias de seguridad del sistema.
+* Copias de seguridad de bases de datos.
+* Gestión de usuarios.
+* Gestion de seguridad.
+* Gestión de incidencias, que pueden ser de dos tipos: fallos del sistema (acceso no autorizado a la base de datos, etc.) o de software.
 
-### Información relativa ó matemento do sistema: 
+### Información de mantenimiento del sistema:
 
-* Corrixir erros.
-* Engadir novas funcionalidades.
-* Adaptación por actualizacións de software e/ou hardware.
+* Corregir errores.
+* Agregar nuevas funciones.
+* Adaptación mediante actualizaciones de software y/o hardware.
 
-## Xestión de incidencias
+## Administracion de incidentes
 
-Poden ser incidencias de dous tipos: de sistema (accesos non autorizados á BD, etc) ou de fallos no software.
+Pueden ser incidencias de dos tipos: de sistema (acceso no autorizado a la BD, etc.) o fallos de software.
 
-## Protección de datos de carácter persoal.
+## Protección de datos personales.
 
 ## Manual de usuario
 
-* Indicar se será necesario formar ós usuarios. En caso afirmativo planificar.
-* Manual de usuario, FAQ ou outro xeito que sexa o máis adecuado para que os usuarios saiban usar a nosa aplicación informática.
+* Indique si será necesario capacitar a los usuarios. Si es así, planifique.
+* Manual de usuario, preguntas frecuentes u otro medio que sea más adecuado para que los usuarios sepan cómo utilizar nuestra aplicación informática.

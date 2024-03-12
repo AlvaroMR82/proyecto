@@ -1,116 +1,114 @@
-# FASE DE PLANIFICACIÓN DO PROXECTO
+# FASE DE PLANIFICACIÓN DEL PROYECTO
 
-## Obxectivos do proxecto
+## Objetivos del proyecto
 
-## Guía de planificación do proxecto
+## Guía de planificación de proyectos
 
-### Metodoloxía
+### Metodología
 
 
 ### Fases planificadas
 
-Descríbense as fases en que se divide o proxecto e as tarefas que se han levar a cabo en cada unha destas fases.
-Pódense indicar os recursos materiais e humanos asociados a cada tarefa ou, se son os mesmos, de maneira máis xeral.
+Se describen las fases en las que se divide el proyecto y las tareas a realizar en cada una de estas fases.
+Se pueden indicar los recursos materiales y humanos asociados a cada tarea o, si son los mismos, de forma más general.
 
-#### Fase 1: Estudo de necesidades e modelo de negocio
+#### Fase 1: Estudio de necesidades y modelo de negocio
 
-##### Tarefa 1: xxxxxxxx
+##### Tarea 1: xxxxxxxx
 
-Descrición: 
+Descripción:
 
-Recursos hardware/software: 
+Recursos de hardware/software:
 
-Recursos humanos: Persoas que se encargarán de realizar esta tarefa
+Recursos humanos: Personas que serán responsables de realizar esta tarea
 
-Duración: 
+Duración:
 
-#### Tarefa 2
+#### Tarea 2
 ...
 
 #### Fase 2: xxxxx
 
-##### Tarefa 1: xxxxxxxx
+##### Tarea 1: xxxxxxxx
 
-Descrición: 
+Descripción:
 
-Recursos hardware/software: 
+Recursos de hardware/software:
 
-Recursos humanos: 
+Recursos humanos:
 
-Duración: 
+Duración:
 
-#### Tarefa 2
+#### Tarea 2
 ...
 
-### Diagrama de Gantt
-Un diagrama de Gantt é unha representación gráfica da secuenciación que tes que seguir para realizar as tarefas planificadas. Pódese usar o software "Gantt project" ou calquera outro que permita representar nun cronograma a información relativa á planificación de tarefas. 
+### Gráfico de gantt
+Un diagrama de Gantt es una representación gráfica de la secuencia que debe seguir para realizar las tareas planificadas. Puede utilizar el software "Proyecto Gantt" o cualquier otro software que le permita representar la información de planificación de tareas en un cronograma.
 
-## Orzamento
-O orzamento do proxecto será a suma do importe dos materiais que necesites para realizar o proxecto máis o importe que corresponde ao traballo realizado. 
-O importe relacionado co traballo no proxecto é relativamente fácil de obter se se elaboraron ben as etapas anteriores: definir as actividades necesarias e os recursos propios de cada actividade. Neste caso disporase dun custo por cada actividade e a suma do custo de todas as actividades será o custo total do traballo do proxecto. 
-Para establecer os custos do proxecto debes ter en conta diferentes conceptos: 
-- Materiais que se utilizan: material funxible, materias primas, materiais didácticos, roupa de traballo… 
-- Custo horario das persoas que participan directamente na actividade. 
-- Aluguer/compra de ferramentas, maquinaria, equipos informáticos e/ou audiovisuais… 
-- Aluguer/compra de locais 
-- Contratos de subministracións: auga, luz, electricidade, gas… Subcontrataciones 
-- Gastos de publicidade… 
-- Seguros ... 
+## Presupuesto
+El presupuesto del proyecto será la suma de la cantidad de materiales que necesitas para realizar el proyecto más la cantidad correspondiente al trabajo realizado.
+El importe correspondiente a las obras del proyecto es relativamente fácil de conseguir si se han trabajado bien las etapas anteriores: definir las actividades necesarias y los recursos propios de cada actividad. En este caso habrá un costo para cada actividad y la suma del costo de todas las actividades será el costo total del trabajo del proyecto.
+Para establecer los costes del proyecto debes tener en cuenta diferentes conceptos:
+- Materiales que se utilizan: material fungible, materias primas, materiales didácticos, ropa de trabajo…
+- Coste horario de las personas que participan directamente en la actividad.
+- Alquiler/compra de herramientas, maquinaria, equipos informáticos y/o audiovisuales...
+- Alquiler/compra de local
+- Contratos de suministro: agua, luz, electricidad, gas... Subcontratación
+- Gastos de publicidad...
+- Seguro...
 
-O maior custo no proxecto case sempre corresponde ás persoas, polo que é importante controlar o número de horas que se invisten en cada actividade para que non se nos desequilibre o orzamento. Tamén hai que coidar as subcontratacións; convén que traballen cun orzamento establecido.
- A continuación preséntanse dúas opción de táboa para facilitar a creación do orzamento do proxecto:
+El mayor coste del proyecto casi siempre corresponde a las personas, por lo que es importante controlar el número de horas invertidas en cada actividad para que el presupuesto no se desequilibre. También hay que cuidar la subcontratación; deben trabajar con un presupuesto establecido.
+ A continuación se muestran dos opciones de tabla para facilitar la creación del presupuesto del proyecto:
 
-### Orzamento por actividade
+### Presupuesto por actividad
 
-| ACTIVIDADE | DURACIÓN | CUSTO (EUROS) | | CUSTO TOTAL ACTIVIDADE |
+| ACTIVIDAD | DURACIÓN | COSTE (EUROS) | | COSTO TOTAL ACTIVIDAD |
 |--|--|--|--|--|
-|            |          | PERSOAS|RECURSOS MATERIAIS|
+| | | PERSONAS|RECURSOS MATERIALES|
 |||||
 |||||
 |||||
 |||||
 
-| TOTAL | PROXECTO | 
+| TOTAL | PROYECTO |
 | -- | -- |
 
-### Orzamento por partidas de inversión / gasto:
+### Presupuesto de partidas de inversión/gasto:
 
-| CONCEPTO | IMPORTE|
+| CONCEPTO | CANTIDAD|
 |--|--|
-|**A) INVERSIONS**
-|Gastos de establecemento e gastos de constitución
-|Total inmobilizacións inmateriais
-|Terreos
-|Construcións
-|Instalacións técnicas
-|Maquinaria
-|Ferramentas
-|Mobiliario e instalacións
-|Equipos informáticos
+|**A) INVERSIONES**
+|Gastos de constitución y gastos de constitución
+|Activos intangibles totales
+|Tierras
+|Construcciones
+|Instalaciones técnicas
+| Maquinaria
+|Herramientas
+|Mobiliario e instalaciones
+Equipo de computadora
 |Elementos de transporte
-|Outro inmobilizado material
-|Total inmobilizacións materiais
-|Outros gastos a distribuír en varios exercicios
-|**TOTAL INVERSIÓNS:**
+|Otro inmovilizado material
+|Activos fijos totales
+Otros gastos a distribuir en varios años
+|**INVERSIONES TOTALES:**
 |**B) GASTOS**
-|Compras de materiais
-|Arrendamentos
-|Publicidade, propaganda e relacións públicas
-|Persoal
-|Reparacións e conservación
-|Servizos de profesionais independentes
-|Outros gastos xerais
-|Gastos financeiros
-|Amortizacións
-|Gastos de xestión e administración
-|**TOTAL GASTOS:**
+|Compra de materiales
+| Arrendamientos
+|Publicidad, propaganda y relaciones públicas
+|Personal
+|Reparaciones y conservación
+|Servicios de profesionales independientes
+Otros gastos generales
+Gastos financieros
+|Depreciación
+Gastos de gestión y administración
+|**GASTOS TOTALES:**
 
-|TOTAL ORZAMENTO:
+|PRESUPUESTO TOTAL:
 |--|
 
 ### WEBGRAFÍA
-Guía para a elaboración de proyectos. Gobierno Vasco.
-https://www.pluralismoyconvivencia.es/upload/19/71/guia_elaboracion_proyectos_c.pdf  (páxina 49 e seguintes)
-
-
+Guía para la preparación de proyectos. Gobierno Vasco.
+https://www.pluralismoyconvivencia.es/upload/19/71/guia_elaboracion_proyectos_c.pdf (página 49 y siguientes)
 

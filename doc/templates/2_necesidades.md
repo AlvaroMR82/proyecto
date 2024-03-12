@@ -1,132 +1,128 @@
-# ESTUDO DE NECESIDADES E MODELO DE NEGOCIO
+# ESTUDiO DE NECESIDADES Y MODELO DE NEGOCIO
 
-## Xustificación das necesidades detectadas que cubre o sistema a desenvolver
-1.	Describe o problema ou a necesidade.
+## Justificación de las necesidades detectadas que cubre el sistema a desenvolver
+1.	Describe el problema o la necesidad.
 
-	Debido a cumprimentos das isos de fabricación que moitos productores necesitan cumprir para a   
-	homologacion dos seus productos, a necesidade de ter a xestion do mantemento completamente 
-	dixitalizada para o seu rexistro e consulta e indidspensable.
+	Debido a los obligaciones de  las isos de fabricación que muchos productores necesitan cumplir para la homologación de sus productos, la necesidad de tener la gestión del mantenimiento completamente digitalizada para o su registro y consulta es indispensable.
 	
-2.	Por que é necesaria a posta en marcha dun proxecto que aborde dita necesidade?
+2.	Por que és necesaria la puesta en marcha de un proyecto que aborde dicha necesidad?
 	
-	Por que a correcta dixitalización e funcionamento do noso sofware axudara o cumprimento normativo, ademais de supor unha optimización de costes de matemento e paradas de producción evitables.
+	Por que la correcta digitalización y funcionamiento de nuestro software ayudara al cumplimiento normativo, ademas de suponer una optimización de costes de mantenimiento e paradas de producción evitables.
 
 
-3.	Cal é o obxectivo xeral que persegue o proxecto?
+3.	Cual es el objetivo general que persigue el proyecto?
 
-	Unha resposta dixital a xestion do mantemento.
+	Una respuesta digital a la gestión del mantenimiento.
 	
 4.	Responde a estas preguntas concretas:
 
-    4.1. Como se pode responder a esta necesidade? 
+    4.1. Como se puede responder a esta necesidad? 
     	
-    	 Cun entorno web que axude o desenvolvemento do mantemento no dia a dia e ademais cree os rexistros e pedidos necesarios aforrando costes e tramites.	
+    	 Con un entorno web que ayude al desarrollo del mantenimiento en el dia a dia y ademas cree los registros y pedidos necesarios ahorrando costes y tramites.	
     	
-    4.2. Que pode facerse para cambiar este estado de cousas? 
+    4.2. ¿Qué se puede hacer para cambiar esta situación?
     		
-    	 Co noso sofware respostaremos as necesidades dos entornos de mantemento creando una ferramenta util non so para o rexistro seno que axude nas labores diarias de resolicion de averias e manteemntos.
+    	 Con nuestro software daremos respuesta a las necesidades de los entornos de mantenimiento creando una herramienta útil no sólo para el registro, sino también para ayudar en la resolución de problemas y tareas diarias de mantenimiento.
     
-    4.3. Como podemos contribuír desde a nosa situación a que o problema se resolva? 
+    4.3. ¿Cómo podemos contribuir desde nuestra situación a que el problema se resuelva?
+
+    	Desde nuestra situación, experiencia en mantenimiento y conocimiento de la programación, construiremos un programa que se adapte a las necesidades reales tanto de los técnicos de mantenimiento como de la gestión del mismo.
     	
-    	 Dende a nosa situación ca experiencia en mantemento e os coñeceemntos de programación contruiremos un programa que se adapte as necesidades reais tanto dos tecinos de mantemento como da dirección da 
-    	 mesma.	
     
-    4.4. Que medios, actividades e recursos van poñer en xogo? 
+    4.4. ¿Qué medios, actividades y recursos se pondrán en juego?
     	
-    	> -Medios:
-    		- Servidor para o aloxamento de servicio da web
-    		- Terminais fixos ou moviles para o uso do sofware
-     	
-     	> -Actividades:
-     		- Formación o persoal de mantemento para o correcto uso do sofware
-     		- Formación para os encagados do mantemento do sofware e a sua adaptación e posibles acutalizacións.
-     	> -Recursos:
-     		- Pesoal especifico para o correcto mantemento e uso do sofware.	
+    	-Medios:
+    		- Servidor para alojamiento de servicios web.
+            - Terminales fijos o móviles para utilizar el software.
+  
+     	 -Actividades:
+     		- Capacitar al personal de mantenimiento para el correcto uso del software.
+            - Formación a los responsables del mantenimiento del software, su adaptación y posibles actualizaciones.
+  
+     	 -Recursos:
+     		- Personal específico para el correcto mantenimiento y uso del software.
      		 	
     
-    4.5. Que actividades se van realizar? 
+4.5. ¿Qué actividades se realizarán?
     
-    	> - Deseño maquetación e programación da web.  
+    > - Maquetación y programación web.
     
-    4.6. Que metodoloxía se vai empregar para levar a cabo o traballo?
+    4.6. ¿Qué metodología se utilizará para realizar el trabajo?
     
-    	Usaremos unha metodolia Lean. Enfocada no cliente, cos minimos desperdicios de recursos e unha mellora continua. 
+    Utilizaremos una metodología Lean. Centrados en el cliente, con el mínimo desperdicio de recursos y la mejora continua.
     
-    4.7. Que persoas serían precisas para realizar o proxecto con éxito? 
+    4.7. ¿Qué personas serían necesarias para llevar a cabo el proyecto con éxito?
     
-    	> - Necesitariamos un equipo de 4 persoas para unha entrga do prototipo en pouco tempo (un mes).
+    > - Necesitaríamos un equipo de 4 personas para una entrega del prototipo en poco tiempo (un mes).
     
-    4.8 Con canto tempo se conta? 
-    	> - 4 meses (orientativo).
+    4.8 ¿Cuánto tiempo se cuenta?
+    > - 4 meses (indicativo).
     
-    4.9 Canto tempo se necesita?
-    	> - 3 meses.
+    4.9 ¿Cuánto tiempo se necesita?
+    > - 3 meses.
 
 ## Posibilidades de comercialización (viabilidade, competidores…).
-1.	Viabilidade.
+1. Viabilidad.
 
-    1.1	Viabilidade técnica.
+    1.1 Viabilidad técnica.
     
-        1.1.a) Será posible dispoñer dos recursos humanos e medios de produción necesarios (materias primas, maquinaria, instalacións…)?
-			
-				Seria posible xa que os medios humanos dun equipo de varis persoas para o desño e a posteriori algun para o mantemento do software,
-				e os custes dun sevidor quedarian compensados cas optimización da producción debido o menor numero de incidencias e o control do estocaxe dos repostos.
-        
-        1.1.b) Existe algún impedimento técnico que dificulte o proceso produtivo?
+        1.1.a) ¿Será posible disponer de los recursos humanos y medios de producción necesarios (materias primas, maquinaria, instalaciones…)?
 
-				O sofware esta deseñado para pequena es medianas empresas. Empresas de maior tamaño e numero de ususarios requeriria dun desprege mais amplo de servidores e equipos nas platas que poderian chegar a supoñer un custe inicial mais elevado.
+Sería posible gracias al recurso humano de un equipo de varias personas para el diseño y posteriormente algunas para el mantenimiento del software,
+y los costes de un proveedor de servicios se verían compensados ​​por la optimización de la producción por el menor número de incidencias y el control del stock de repuestos.
         
-    1.2	Viabilidade económica
+        1.1.b) ¿Existe algún impedimento técnico que dificulte el proceso productivo?
+
+El software está diseñado para pequeñas y medianas empresas. Las empresas de mayor tamaño y número de usuarios requerirían un despliegue más amplio de servidores y equipos en las plataformas que podría suponer un mayor coste inicial.
+        
+    1.2 Viabilidad económica
     
-        1.2.a) Os beneficios do proyecto son superiores aos costes?
-				
-				Os custes iniciais son importantes, pero unha vez o sofware estea adaptado o seu entorno e o persoal formado, a optimización dos procesos e da xestión dos repostos xunto ca mellora na resolución das averias compensara gran parte deste gasto.
+        1.2.a) ¿Los beneficios del proyecto son mayores que los costos?
+
+Los costes iniciales son importantes, pero una vez adaptado el software a su entorno y el personal capacitado, la optimización de los procesos y la gestión de repuestos junto con la mejora en la resolución de fallos compensarán gran parte de este gasto.
         
-        1.2.b) As perdas poden cubrirse vía financiamento (por parte da administración pública, con subvencións, etc)?
+        1.2.b) ¿Se pueden cubrir las pérdidas mediante financiación (por parte de la administración pública, con subvenciones, etc.)?
 
-				Dende a administración hai gran numero de subección para as pymes en axudas as dicxitalización e a industria 4.0.
-				Unha delas e a "RESOLUCIÓN de 18 de mayo de 2023 por la que se da publicidad del Acuerdo del Consejo de Dirección que aprueba las bases reguladoras de las ayudas a la digitalización Industria 4.0 para el año 2023, susceptibles de ser cofinanciadas en el marco del programa operativo Feder Galicia 2021-2027, y se procede a su convocatoria en régimen de concurrencia competitiva (código de procedimiento IG300C)."
-				na que se otorgan ata 5.000.000€.
-
-				https://www.xunta.gal/dog/Publicados/2023/20230605/AnuncioO92-220523-0001_es.html#:~:text=selecci%C3%B3n%20de%20proyectos-,1.,de%20empresa%2C%20peque%C3%B1as%20y%20medianas.
-
+Desde la administración hay un gran número de subapartados para pymes en ayuda de la digitalización y la Industria 4.0.
+Uno de ellos es la “RESOLUCIÓN de 18 de mayo de 2023 por la que se hace público el Acuerdo del Consejo de Administración por el que se aprueban las bases reguladoras de las ayudas a la digitalización Industria 4.0 para el año 2023, susceptibles de ser cofinanciadas en el marco del programa operativo Feder Galicia 2021-2027, y se convoca mediante licitación pública (código de procedimiento IG300C)."
+en el que se conceden hasta 5.000.000 €. [Enlace](https://www.xunta.gal/dog/Publicados/2023/20230605/AnuncioO92-220523-0001_es.html#:~:text=selecci%C3%B3n%20de%20proyectos-,1.,de%20empresa%2C%20peque%C3%B1as%20y%20medianas.
+)
         
-2.	Competencia.
+2.	competencia
 
-    2.1. Identificación da competencia, as súas características e a súa posición no mercado.
+    2.1. Identificación de la competencia, sus características y su posición en el mercado.
     
-    2.2. Existencia de productos/servizos substitutivos.
+    2.2. Existencia de productos/servicios sustitutos.
 
 ## Ideas para a súa comercialización.
-1.	Promoción.
+1.promoción
 
-    1.1.	Técnicas elixidas (redes sociais, plataformas multimedia, páxina web, posicionamento web SEO, patrocinios, participación en eventos, prácticas de responsabilidade social corporativa, outras).
-
+    1.1. Técnicas seleccionadas (redes sociales, plataformas multimedia, sitio web, posicionamiento web SEO, patrocinios, participación en eventos, prácticas de responsabilidad social corporativa, otras).
     
-    1.2.	Xustifica a elección.
     
-2.	Modelo de negocio.
-
-    2.1.Modelo elixido (Modelo de pago / Freemium (é de balde pero as funcionalidades extras son de pago) / In house (desenvolvementos a medida para contornos empresariais / De subscrición / Por publicidade / Outros).
-
-		Usariamos un modelo In house.
     
-    2.2. Xustifica a elección.
+2.Modelo de negocio.
 
-			Este tipo de sofware necesita un grado de persoalizacion moi alto, donde cada entorno de traballo ten as suas particularidades.
-			polo tanto e case imprescindible un modelo que abarque todas esta caracteristicas e satisfaga os clientes.
+    2.1.Modelo elegido (Modelo de pago / Freemium (es gratis pero las funcionalidades extra son de pago) / In house (desarrollos a medida para entornos empresariales / Suscripción / Por publicidad / Otros).
+
+Usaríamos un modelo interno.
+    
+    2.2. Justifica la elección.
+
+Este tipo de software necesita un grado muy alto de personalización, donde cada entorno de trabajo tiene sus particularidades.
+por lo tanto, un modelo que cubra todas estas características y satisfaga a los clientes es casi imprescindible.
 
 # Webgrafía
 
-Xustificación de necesidades, viabilidade:
+Justificación de necesidades, viabilidad:
 
 **Guía para a elaboración de proyectos. Gobierno Vasco.**
 
-https://www.pluralismoyconvivencia.es/upload/19/71/guia_elaboracion_proyectos_c.pdf  (páxina 26 e seguintes)
+https://www.pluralismoyconvivencia.es/upload/19/71/guia_elaboracion_proyectos_c.pdf  
 
 Competencia:
 
 **Modelo de plan de negocios. Empresa de servicios informáticos. IGAPE**
 
 http://www.igape.es/images/crear-unha-empresa/Recursos/PlansdeNegocio/16ServiciosInformaticos12_5_cas.pdf 
-(páxina 45 e seguintes)
+

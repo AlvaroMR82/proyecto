@@ -1,5 +1,9 @@
 <?php
-
+/**
+ * Esta función escribe el menu lateral de navegación  y discrimina por rol.
+ *
+ * @return void
+ */
 function menuNav()
 {
 
@@ -193,7 +197,11 @@ function menuNav()
       </div>
     </nav>";
 }
-
+/**
+ * Esta función busca los 5 últimos mensajes y los representa en el lateral izquierdo del la pantalla.
+ *
+ * @return void
+ */
 function mensajesGenerales()
 {
   $conPDO = conexion();
@@ -218,85 +226,12 @@ function mensajesGenerales()
   }
   echo "</div>"; 
 
-  /*
-  echo "     
-    <h5 class='m-3'>Mensajes Generales</h5>
-    <div class='container '>
-      <div class='card text-dark bg-light mb-3' style='max-width: 18rem;'>
-        <div class='card-header'>Alvaro</div>
-        <div class='card-body'>
-          <h5 class='card-title'>Horno secado L3</h5>
-          <p class='card-text'>El quemador del lado del almacen se bloqueo en el primer arranque.</p>
-        </div>
-      </div>
-      <div class='card text-dark bg-light mb-3' style='max-width: 18rem;'>
-        <div class='card-header'>Juan</div>
-        <div class='card-body'>
-          <h5 class='card-title'>Gratadora L2 </h5>
-          <p class='card-text'>Guardamotor del motor de lodos salta sin motivo aparente.</p>
-        </div>
-      </div>
-      <div class='card text-dark bg-light mb-3' style='max-width: 18rem;'>
-        <div class='card-header'>Seguridad</div>
-        <div class='card-body'>
-          <h5 class='card-title'>Naves de lacados</h5>
-          <p class='card-text'>Precaución al transitar las naves de lacados debido a las obras, maquinaria pesada en continuo movimiento.</p>
-        </div>
-      </div>
-    </div>";
-
-    */
 }
-
-function operario1()
-{
-
-  echo " 
-  <div class='card'>
-  <div class='card-body d-flex justify-content-around'>
-    <div>
-      Ramon Garcia <br>
-      <strong>Seccion:</strong> Lacados
-  </div>
-    <svg xmlns='http://www.w3.org/2000/svg' width='50' height='50' fill='currentColor' class='bi bi-person' viewBox='0 0 16 16'>
-      <path d='M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664z'/>
-    </svg>
-  </div>
-</div>";
-}
-function operario2()
-{
-
-  echo " 
-  <div class='card'>
-  <div class='card-body d-flex justify-content-around'>
-    <div>
-      Juan Magan <br>
-      <strong>Seccion:</strong> Extrusión
-  </div>
-    <svg xmlns='http://www.w3.org/2000/svg' width='50' height='50' fill='currentColor' class='bi bi-person' viewBox='0 0 16 16'>
-      <path d='M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664z'/>
-    </svg>
-  </div>
-</div>";
-}
-function operario3()
-{
-
-  echo " 
-  <div class='card'>
-  <div class='card-body d-flex justify-content-around'>
-    <div>
-      Pepe Prado <br>
-      <strong>Seccion:</strong> Lacados
-  </div>
-    <svg xmlns='http://www.w3.org/2000/svg' width='50' height='50' fill='currentColor' class='bi bi-person' viewBox='0 0 16 16'>
-      <path d='M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664z'/>
-    </svg>
-  </div>
-</div>";
-}
-
+/**
+ * Esta función devuelve la conexión a la base de datos.
+ *
+ * @return conexión a la base de datos
+ */
 function conexion()
 {
   $servername = "db";
@@ -314,6 +249,12 @@ function conexion()
   return $conPDO;
 }
 
+/**
+ * Esta función devuelve un los datos de un operario según la sección a la que pertenece.
+ *
+ * @param [string] $seccion
+ * @return void
+ */
 function operarios($seccion)
 {
 
@@ -362,6 +303,11 @@ if($_SESSION['rol']== 'administrador'){
 ";
   }
 }
+/**
+ * Esta función devuelve un los datos de los usuarios que son clientes  y los escribe en pantalla.
+ *
+ * @return void
+ */
 function clientes()
 {
 
@@ -389,6 +335,11 @@ function clientes()
 ";
   }
 }
+/**
+ * Esta funcion escribe en pantalla en formato card la información de un operario según su id que recoge en la propia pagina.
+ *
+ * @return void
+ */
 function operario()
 {
 
@@ -415,6 +366,11 @@ function operario()
 </div></a>";
   }
 }
+/**
+ * Esta función escribe en pantalla los teléfonos y  correos de todos los usuarios.
+ *
+ * @return void
+ */
 function telOperarios()
 {
   $conPDO = conexion();
@@ -432,7 +388,13 @@ function telOperarios()
 </tr>";
   }
 }
-
+/**
+ * Esta función escribe ne pantalla la información de una maquina según sección e indice.
+ *
+ * @param [string] $seccion
+ * @param [int] $index
+ * @return void
+ */
 function maquinas($seccion, $index)
 {
   $conPDO = conexion();
@@ -465,6 +427,11 @@ function maquinas($seccion, $index)
   }
  
 }
+/**
+ * Esta función escribe en pantalla en formato card la información de una maquina según su id que recoge en la propia pagina.
+ *
+ * @return void
+ */
 function maquina(){
   
   $id =$_GET["id"];
@@ -492,6 +459,11 @@ function maquina(){
 
   }
 }
+/**
+ * Esta función escribe en pantalla en formato card las maquinas bajo administración de un  usuario.
+ *
+ * @return void
+ */
 function maquinasEmpleado()
 {
   $id =$_GET["id"];
@@ -524,7 +496,12 @@ function maquinasEmpleado()
   }
   
 }
-
+/**
+ * Esta función escribe en pantalla en formato card las maquinas según su sección.
+ *
+ * @param [string] $seccion
+ * @return void
+ */
 function maquinaSeccion($seccion){
   $conPDO = conexion();
   if($_SESSION['rol']== "administrador"){
@@ -544,6 +521,12 @@ function maquinaSeccion($seccion){
 
 
 }
+/**
+ * Esta función escribe en pantalla la descripción de un averia según el id de la misma.
+ *
+ * @param [int] $id_parte
+ * @return void
+ */
 function descipcionAveria($id_parte){
   $conPDO = conexion();
   $stmt = $conPDO->prepare("SELECT * FROM parteAveria  where ID_parte='".$id_parte."'");
@@ -554,6 +537,12 @@ function descipcionAveria($id_parte){
   }
   
 }
+/**
+ * Esta función escribe en pantalla toda la información de una averia.
+ *
+ * @param [id] $id_parte
+ * @return void
+ */
 function descipcionAveriaCompleta($id_parte){
   $conPDO = conexion();
   $stmt = $conPDO->prepare("SELECT * FROM parteAveria  where ID_parte='".$id_parte."'");
@@ -568,7 +557,12 @@ function descipcionAveriaCompleta($id_parte){
   }
   
 }
-
+/**
+ * Esta función escribe en pantalla la lista de averías sin asignación de una sección;
+ *
+ * @param [string] $seccion
+ * @return void
+ */
 function listaAveriasPendientes($seccion){
    
     $conPDO = conexion();
@@ -614,6 +608,12 @@ function listaAveriasPendientes($seccion){
     }
   }
   }
+  /**
+   * Esta función escribe en pantalla la lista de averías asignadas de una sección;
+   *
+   * @param [type] $seccion
+   * @return void
+   */
   function listaAveriasAsignadas($seccion){
    
     $conPDO = conexion();
@@ -640,6 +640,12 @@ function listaAveriasPendientes($seccion){
   </tr>";
     }
   }
+  /**
+   * Esta función escribe en pantalla la lista de averías cerradas de una sección;
+   *
+   * @param [type] $seccion
+   * @return void
+   */
   function listaAveriasCerradas($seccion){
     
     $conPDO = conexion();
@@ -664,6 +670,12 @@ function listaAveriasPendientes($seccion){
   </tr>";
     }
   }
+  /**
+   * Esta función devuelve el nombre de una maquina según su id;
+   *
+   * @param [int] $id_Maquina
+   * @return [string]
+   */
   function nombreMaquina($id_Maquina){
     
     $conPDO = conexion();
@@ -674,7 +686,12 @@ function listaAveriasPendientes($seccion){
     return $nM['nombreMaquina'];
     
   }
-
+/**
+   * Esta función devuelve el nombre de un usuario según su id;
+   *
+   * @param [int] $id_Maquina
+   * @return [string]
+   */
   function nombreCliente($id_cliente){
     
     if($id_cliente == null){
@@ -693,6 +710,13 @@ function listaAveriasPendientes($seccion){
    
    
   }
+
+  /**
+   * Esta función escribe en pantalla la lista de averías pendientes de una maquina;
+   *
+   * @param void
+   * @return void
+   */
   function listaAveriasPendientesMaquina(){
     $id =$_GET["id"];
     $conPDO = conexion();
@@ -747,6 +771,12 @@ function listaAveriasPendientes($seccion){
         }
      
   }
+  /**
+   * Esta función escribe en pantalla la lista de averías asignadas de una maquina;
+   *
+   * @param void
+   * @return void
+   */
   function listaAveriasAsignadasMaquina(){
     $id =$_GET["id"];
     $conPDO = conexion();
@@ -772,6 +802,12 @@ function listaAveriasPendientes($seccion){
   </tr>";
     }
   }
+  /**
+   * Esta función escribe en pantalla la lista de averías cerradas de una maquina;
+   *
+   * @param void
+   * @return void
+   */
   function listaAveriasCerradasMaquina(){
     $id =$_GET["id"];
     $conPDO = conexion();
@@ -797,7 +833,12 @@ function listaAveriasPendientes($seccion){
   </tr>";
     }
   }
-
+/**
+   * Esta función escribe en pantalla la lista de averías pendientes de asignación una maquina;
+   *
+   * @param void
+   * @return void
+   */
   function listaAveriasPendientesTecnico($seccion){
     $id =$_GET["id"];
     $conPDO = conexion();
@@ -843,6 +884,12 @@ function listaAveriasPendientes($seccion){
     }
   }
   }
+  /**
+   * Esta función escribe en pantalla la lista de averías cerradas de un tecnico;
+   *
+   * @param void
+   * @return void
+   */
   function listaAveriasCerradasTecnico(){
     $id =$_GET["id"];
     $conPDO = conexion();
@@ -868,6 +915,12 @@ function listaAveriasPendientes($seccion){
   </tr>";
     }
   }
+  /**
+   * Esta función escribe en pantalla la lista de averías asignadas de un tecnico;
+   *
+   * @param void
+   * @return void
+   */
   function listaAveriasAsignadasTecnico(){
     $id =$_GET["id"];
     $conPDO = conexion();
@@ -893,6 +946,12 @@ function listaAveriasPendientes($seccion){
   </tr>";
     }
   }
+  /**
+   * Esta función escribe en pantalla un parte de averia según su id.
+   *
+   * @param [int] $id_parte
+   * @return void
+   */
  function editarParte($id_parte){
   $conPDO = conexion();
   $stmt = $conPDO->prepare("SELECT * FROM parteAveria WHERE estado = 'asignado' AND ID_parte = '".$id_parte."'");
@@ -911,7 +970,12 @@ function listaAveriasPendientes($seccion){
 
 
   }
-
+/**
+ * Esta función devuelve la dirección url del pdf que corresponde a los planos de la maquina según su id.
+ *
+ * @param [id] $id_Maquina
+ * @return [string] $pM
+ */
   function planoMaquina($id_Maquina){
     
     $conPDO = conexion();
@@ -922,6 +986,12 @@ function listaAveriasPendientes($seccion){
     return $pM['planos'];
     
   }
+  /**
+   * Esta función devuelve la dirección url del pdf que corresponde a los manuales de la maquina según su id.
+   *
+   * @param [int] $id_Maquina
+   * @return [string] $pM
+   */
   function manualMaquina($id_Maquina){
     
     $conPDO = conexion();
@@ -932,6 +1002,12 @@ function listaAveriasPendientes($seccion){
     return $pM['manuales'];
     
   }
+   /**
+   * Esta función devuelve la dirección url del pdf que corresponde a los despieces de la maquina según su id.
+   *
+   * @param [int] $id_Maquina
+   * @return [string] $pM
+   */
   function despieceMaquina($id_Maquina){
     
     $conPDO = conexion();

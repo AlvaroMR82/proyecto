@@ -1,50 +1,47 @@
 # Idea
  
- >- No meu proxecto crearemos unha  unha web para entregar. 
+ - En este proyecto crearemos una web funcional.
 
- >- Consistira nun programa  de xestion de mantementos.
+ - Consistirá en un programa  de gestión de mantenimientos.
 
- > - Esta ira destinada a entronos productivos industriais(ainda que se poderia adaptar a outros modelos).
+- Esta ira destinada a entornos productivos industriales (pero se podría adaptar a otros modelos).
 
-
-
- >- Debido a cumprimentos das isos de fabricación que moitos productores necesitan cumprir para a homologacion dos seus productos, a necesidade de ter a xestion do mantemento completamente dixitalizada para o seu rexistro e consulta. E indidspensable unha dixitalización da mesma. Este troxecto iria destinado a cubrir esas necesidades.
+ - Debido a los requerimientos de las isos de fabricación que muchos productores necesitan cumplir para la homologación dos sus productos. La necesidad de tener la gestión del mantenimiento completamente digitalizada para su registro y consulta. Es indispensable una digitalización de la misma. Este proyecto iría destinado a cubrir esas necesidades.
  
- >- A gran industria seguramente leve anos actualizandose pero pequenas e medianas empresas necesitan
- enfocar o crecemento do mantemento a traves da dixitalización, e un modelo adable, vesatil e lixeiro seria ao ideal para que puderan comenzar este crezemento. Este sofware seria o encargado de levar a cabo esa actualización.
+ - La gran industria seguramente lleve años actualizándose, pero pequeñas y medianas empresas necesitan enfocar el crecimiento del mantenimiento a traves da digitalización, y un modelo adaptabe versátil e ligero seria ideal para que pudieran comenzar este crecimiento. Este software seria el encargado de llevar a cabo esa actualización.
  
     
-Outros proxectos que cubririan esas necesidaes pero o seu coste e superior.
+## Otros proyectos que cubrirían esas necesidades pero su coste es superior.
 
-	- libra de Edisa (Ainda que tamen se ocupa de mais apartados que o mantemento)
-	- MapexMM de Mapex.
+- libra de Edisa (Aunque  tambien se ocupa de mas apartados que el mantenimiento).
+- MapexMM de Mapex.
 
- >- O obxectivo deste proxecto e ser un software funcional e completamente usable/configurable para calquer entorno industrial.
+## El objetivo de este proyecto es ser un software funcional y completamente usable/configurable para cualquier entorno industrial.
    
- >- As tecnoloxias usadas para este proxecto serian.
+ - Las tecnologías usadas para este proyecto serian.
 
-	Para o contorno do cliente.
+	Para el entorno del cliente.
 	
 		- HTML
 		- CSS
 		- JAVASCRIPT
 		
-	Para o contorno do servidor.
+	Para el entorno del servidor.
 	
 		- PHP
 		- MYSQL
 		- DOCKERS		
 		
-# Introdución
+## Introdución
 
-- Este sera un proxecto de unha web de xestion de mantementos.
-- En cada apartado xestionaremos unha maquina donde consultaremos manuais, planos, ultimas averias, ultimas revisions, repostos usados, etc...
+- Este sera un proyecto de una web de gestión de mantenimientos.
+- En cada apartado gestionaremos una maquina donde consultaremos manuales, planos, ultimas averías, ultimas revisiones, repuestos usados, etc...
 
 ## Composición
 
-- Teremos o apartado dos traballadores donde xestinonaremos 
-as suas labores e información.
+- Tendremos el apartado de los trabajadores donde gestionaremos 
+sus labores e información.
 
-- Teremos o apartado das maquinas donde xestionaremos as revisións, averias, e toda a documentacion necesaria para o seu mantemento.
+-  Tendremos el apartado de las máquinas donde gestionaremos las revisiones, averías y toda la documentación necesaria para su mantenimiento.
 
-- Teremos o apartado do almacen donde xestionaremos a cantidade de existencias, e a sua reposición se e necesario. 
+- Tendremos el apartado del almacén donde gestionaremos las cantidades de existencias y su reposición si es necesario. (Pendiente de programar)
