@@ -17,12 +17,13 @@ function primeraConexion(){
     $sql = " CREATE DATABASE IF NOT EXISTS  mantenimiento;";
     $conPDO->exec($sql);
 
-    tablaUsuariosCompleta();
+    tablaUsuarios();
     tablaUsuariosDatos();
-    tablaClientes();
     tablaMaquinas();
     tablaMensajes();
     tablaMaquinsDatos();
+    tablaPartes();
+    inttroducirPartes();
 
     $conPDO = null;
     
@@ -33,22 +34,6 @@ function primeraConexion(){
 
 }
 
-
-
-function tablaClientes()
-{
-    $conPDO = conexion();
-
-    $sql = " CREATE TABLE IF NOT EXISTS  clientes (
-        id INT(6) AUTO_INCREMENT PRIMARY KEY, 
-        nombreCliente VARCHAR(30) NOT NULL,
-        seccion VARCHAR(30) NOT NULL
-        );";
-
-    $conPDO->exec($sql);
-
-    $conPDO = null;
-}
 function tablaMaquinas()
 {
     $conPDO = conexion();
@@ -60,23 +45,6 @@ function tablaMaquinas()
         planos VARCHAR(30),
         manuales VARCHAR(30),
         despiece VARCHAR(30),
-        seccion VARCHAR(30) NOT NULL
-        );";
-
-    $conPDO->exec($sql);
-
-    $conPDO = null;
-}
-function tablaOperarios()
-{
-    $conPDO = conexion();
-
-    $sql = " CREATE TABLE IF NOT EXISTS  clientes (
-        id INT(6) AUTO_INCREMENT PRIMARY KEY, 
-        nombreOperario VARCHAR(30) NOT NULL,
-        apellido VARCHAR(30),
-        email VARCHAR(30),
-        telefono int(9),
         seccion VARCHAR(30) NOT NULL
         );";
 
@@ -105,8 +73,7 @@ function tablaMensajes()
 function tablaPartes()
 {
     $conPDO = conexion();
-
-    $sql = " CREATE TABLE IF NOT EXISTS  clientes (
+    $sql = " CREATE TABLE IF NOT EXISTS  parteAveria (
        id_ParteAveria INT PRIMARY KEY,
        Fecha_apertura DATE,
        Fecha_cierre DATE,
@@ -119,12 +86,27 @@ function tablaPartes()
        FOREIGN KEY (id_maquina) REFERENCES maquina(id_maquina)
         );";
 
-    $conPDO->exec($sql);
+
+$sql2= "CREATE TABLE IF NOT EXISTS `parteAveria` (
+    `ID_parte` int NOT NULL,
+    `Fecha` varchar(50) DEFAULT NULL,
+    `Zona` varchar(50) DEFAULT NULL,
+    `operarios_ID` int DEFAULT NULL,
+    `maquinas_ID` int DEFAULT NULL,
+    `estado` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL DEFAULT 'pendiente',
+    `incidencia` varchar(500) NOT NULL,
+    `solucion` varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+    `fecha_cierre` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+    `id_cliente` int DEFAULT NULL
+  ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;";
+
+    $conPDO->exec($sql2);
+
 
     $conPDO = null;
 }
 
-function tablaUsuariosCompleta()
+function tablaUsuarios()
 {
     $conPDO = conexion();
 
@@ -288,4 +270,39 @@ function introducirDatosMaquinas($nombreMaquina,$foto,$planos,$manuales,$despiec
     $conPDO = null;
     
 }
-//TODO: preparar funciones para el inicio de la aplicación.
+
+function inttroducirPartes(){
+
+$conPDO = conexion();
+$stmt = $conPDO->prepare("select * from parteAveria");
+$stmt->execute();
+$stmt->setFetchMode(PDO::FETCH_ASSOC);
+
+if($stmt->rowCount() == 0 ){
+
+    $sql = "INSERT INTO `parteAveria` (`ID_parte`, `Fecha`, `Zona`, `operarios_ID`, `maquinas_ID`, `estado`, `incidencia`, `solucion`, `fecha_cierre`, `id_cliente`) VALUES
+    (10, '06/02/2024', 'Extrusion', 6, 14, 'asignado', 'La puerta del horno de fundicion esta rota.', 'Reparar puerta.', NULL, 3),
+    (11, '06/02/2024', 'Lacados', 12, 2, 'cerrado', 'Lacado atascado.', 'Percha torcida. se recoloca y se pone en marcha.', NULL, 1),
+    (13, '22/02/2024', 'Lacados', 1, 2, 'asignado', 'Puertas de lacados horizontal no se abren.', NULL, NULL, 1),
+    (14, '26/02/2024', 'Lacados', 12, 1, 'cerrado', 'La cadena de transporte va a golpes.', NULL, NULL, 1),
+    (15, '26/02/2024', 'Lacados', 12, 2, 'cerrado', 'La malla del ciclon esta rota.', 'Cambiar la malla del ciclon\nReviar los engranajes\n', NULL, 1),
+    (16, '26/02/2024', 'Lacados', 1, 3, 'asignado', 'Las guias de los bodoques del horno estan gatadas e incluso afrietadas por el uso.', NULL, NULL, 1),
+    (17, '26/02/2024', 'Anodizados', 2, 4, 'pendiente', 'Rotura de un cable del polipasto del robot doble.', NULL, NULL, 1),
+    (18, '26/02/2024', 'Anodizados', 2, 5, 'pendiente', 'Al hacer varias pasadas los motores se calientan y saltan las protecciones.', NULL, NULL, 1),
+    (19, '26/02/2024', 'Anodizados', 2, 6, 'pendiente', 'La zona de la derecha de la granalladora tiene desgaste y pierde la granalla.', NULL, NULL, 1),
+    (20, '26/02/2024', 'Extrusion', 6, 7, 'pendiente', 'Chatarrera de la prensa esta atascada y no se mueve.', NULL, NULL, 1),
+    (21, '26/02/2024', 'Extrusion', 6, 14, 'pendiente', 'La refrigeración de la puerta del horno esta rota y pierde agua.', NULL, NULL, 1),
+    (22, '26/02/2024', 'Extrusion', 6, 15, 'pendiente', 'El alumbrado de la prensa 16 tiene muchos focos apagados.', NULL, NULL, 1),
+    (23, '29/02/2024', 'lacados', NULL, 1, 'pendiente', 'Hormo de polimerizado hecha mucha pavesa.', NULL, NULL, 14),
+    (24, '29/02/2024', 'lacados', NULL, 3, 'pendiente', 'Embolsadora no hace bien el cierre y pierde vacio en el horno.', NULL, NULL, 14),
+    (25, '29/02/2024', 'lacados', NULL, 2, 'pendiente', 'Robot numero 1 de las cubas tiene la lampara de actividad siempre apagada.', NULL, NULL, 14),
+    (26, '29/02/2024', 'lacados', NULL, 3, 'pendiente', 'Embolsadora no hace bien el cierre y pierde vacio en el horno.', NULL, NULL, 14);";
+    
+    $conPDO->exec($sql);
+    
+}
+
+
+$conPDO = null;
+
+}
