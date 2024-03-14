@@ -11,13 +11,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $id_usuario= $_SESSION['id_usuario'];
         $id_averia = $_SESSION['id_averia'];
         
+        $sql = "select solucion from parteAverias where id='$id_averia'";
+        $solucion = $conPDO->prepare($sql);
+        $sol=$solucion->fetch();
+        if($sol['solucion'] == ""){
+            $stmt = $conPDO->prepare("update  parteAveria SET solucion =CONCAT(solucion,:mensaje) WHERE ID_parte=:id_averia");
+            $stmt->bindParam(':mensaje', $mensaje);
+            $stmt->bindParam(':id_averia', $id_averia );
+            $stmt->execute();
+    
 
-        $stmt = $conPDO->prepare("update  parteAveria SET solucion =CONCAT(solucion,', ',:mensaje) WHERE ID_parte=:id_averia");
-        $stmt->bindParam(':mensaje', $mensaje);
-        $stmt->bindParam(':id_averia', $id_averia );
-        $stmt->execute();
 
-        
+        }else{
+
+            $stmt = $conPDO->prepare("update  parteAveria SET solucion =CONCAT(solucion,', ',:mensaje) WHERE ID_parte=:id_averia");
+            $stmt->bindParam(':mensaje', $mensaje);
+            $stmt->bindParam(':id_averia', $id_averia );
+            $stmt->execute();
+    
+
+        }
+
+                
     } 
     
     if(isset($_POST['cogerParte'])){

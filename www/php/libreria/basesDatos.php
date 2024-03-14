@@ -143,10 +143,13 @@ function tablaUsuariosDatos()
         ['juan', 'cliente', '1234', 'Juan', 'Magan', 'juan1@example.com', '123456789', 'anodizados'],
         ['pepe', 'tecnico', '1234', 'Pepe', 'Prado', 'juan1@example.com', '123456789', 'anodizados'],
         ['juanito', 'tecnico', '1234', 'Juan', 'Pérez', 'juan1@example.com', '123456789', 'lacados'],
-        ['maría', 'cliente', '1234', 'María', 'Gómez', 'maria2@example.com', '987654321', 'anodizados'],
+        ['maría', 'cliente', '1234', 'María', 'Gómez', 'maria2@example.com', '987654321', 'lacados'],
         ['carlos', 'tecnico', '1234', 'Carlos', 'Martínez', 'carlos3@example.com', '555555555', 'extrusion'],
-        ['laura', 'cliente', '1234', 'Laura', 'Sánchez', 'laura50@example.com', '999999999', 'anodizados']
-
+        ['vanessa', 'tecnico', '1234', 'vanessa', 'Gonzalez', 'vanessa@example.com', '999999999', 'lacados'],
+        ['jose', 'cliente', '1234', 'Jose', 'Martinez', 'Jose@example.com', '999999999', 'extrusion'],
+        ['antonio', 'cliente', '1234', 'antonio', 'Garrido', 'antonio@example.com', '999999999', 'lacados'],
+        ['raul', 'cliente', '1234', 'Raul', 'Rial', 'Raul@example.com', '999999999', 'extrusion'],
+        ['rafael', 'tecnico', '1234', 'Rafael', 'Seco', 'rafael@example.com', '999999999', 'anodizados'],
     ];
 
 

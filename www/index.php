@@ -32,7 +32,7 @@ if (!isset($_SESSION['usuario'])) {
       <div class="col-12 m-3">
         <h5>Pagina Principal</h5>
       </div>
-    </div>
+      
     <div class="row">
       <div class="col-12 mt-2 ms-4">
       <div class="row ">

@@ -13,15 +13,16 @@ $cliente = $_SESSION['id_usuario'];
 $fecha = date("d/m/Y");
 $averia = $_POST["averia"];
 $maquina_id = $_POST['maquina_id'];
-
+$solucion= "";
 if($_SESSION["rol"] == 'cliente' | $_SESSION["rol"] == 'administrador' && $_POST['maquina_id']!=0 ){
 
-    $stmt= $conPDO->prepare("INSERT INTO parteAveria(Zona,incidencia,fecha, id_cliente, maquinas_id) VALUES (:Zona,:incidencia,:fecha,:id_cliente,:maquinas_id)");
+    $stmt= $conPDO->prepare("INSERT INTO parteAveria(Zona,incidencia,fecha, id_cliente, maquinas_id,solucion) VALUES (:Zona,:incidencia,:fecha,:id_cliente,:maquinas_id,:solucion)");
     $stmt->bindParam(':Zona',$zona);
     $stmt->bindParam(':incidencia',$averia);
     $stmt->bindParam(':fecha',$fecha);
     $stmt->bindParam(':id_cliente',$cliente);
     $stmt->bindParam(':maquinas_id',$maquina_id);
+    $stmt->bindParam(':solucion', $solucion);
 
     
     if($stmt->execute()){
