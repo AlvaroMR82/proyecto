@@ -11,8 +11,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $id_usuario= $_SESSION['id_usuario'];
         $id_averia = $_SESSION['id_averia'];
         
-        $sql = "select solucion from parteAverias where id='$id_averia'";
+        $sql = "select solucion from parteAveria where ID_parte = '$id_averia'";
         $solucion = $conPDO->prepare($sql);
+        $solucion->execute();
         $sol=$solucion->fetch();
         if($sol['solucion'] == ""){
             $stmt = $conPDO->prepare("update  parteAveria SET solucion =CONCAT(solucion,:mensaje) WHERE ID_parte=:id_averia");
@@ -104,7 +105,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                     </div>
                                     <div class="d-flex justify-content-center mb-5">
                                         <input type="submit" value="Coger Parte " name="cogerParte" class="btn btn-success col-3 me-2" />
-                                        <input type="submit" value="Enviar" name="enviar" class="btn btn-primary col-3 me-2" />
+                                        <input type="submit" value="Enviar solución" name="enviar" class="btn btn-primary col-3 me-2" />
                                         <input type="submit" value="Cerrar Parte" name="cerrarParte" class="btn btn-warning col-3" />
                                     </div>
                                     <div class="d-flex justify-content-center mb-5">

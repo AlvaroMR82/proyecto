@@ -1,6 +1,5 @@
 <?php 
 session_start();
-$_SESSION["usuario"]="alvaro";
 include ("php/libreria/libreria.php");
 include ("php/libreria/basesDatos.php");
 primeraConexion();
