@@ -16,7 +16,7 @@ Esta app esta dockerizada para su fácil lanzamiento, ademas viene con un códig
    
    		git clone https://gitlab.iessanclemente.net/dawd/a20alvaromr.git
 
-2. Levantar los containers.
+2. Levantar los containers de dockers.
    
    1.  Si estas en Linux dentro del directorio del proyecto escribir en la terminal.
    
@@ -24,7 +24,7 @@ Esta app esta dockerizada para su fácil lanzamiento, ademas viene con un códig
 
    2. Si estas en windows tendrás que tener dockers instalado y levantar desde el programa los containers.
 
-3. Para ver de manera local la app desde cualquier navegador accede al  localhost.
+3. Para ver de manera local la app desde cualquier navegador accede al localhost.
 
 
 
@@ -32,8 +32,8 @@ Esta app esta dockerizada para su fácil lanzamiento, ademas viene con un códig
 
 * Copias de seguridad del sistema semanal.
 * Copias de seguridad de bases de datos semanal.
-* Gestión de usuarios periodica.
-* Gestion de seguridad y credenciales.
+* Gestión de usuarios periódica.
+* Gestión de seguridad y credenciales.
 
 
 ### Información de mantenimiento del sistema:

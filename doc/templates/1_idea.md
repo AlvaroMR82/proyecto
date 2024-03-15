@@ -8,12 +8,12 @@
 
  - Debido a los requerimientos de las isos de fabricación que muchos productores necesitan cumplir para la homologación dos sus productos. La necesidad de tener la gestión del mantenimiento completamente digitalizada para su registro y consulta. Es indispensable una digitalización de la misma. Este proyecto iría destinado a cubrir esas necesidades.
  
- - La gran industria seguramente lleve años actualizándose, pero pequeñas y medianas empresas necesitan enfocar el crecimiento del mantenimiento a traves da digitalización, y un modelo adaptabe versátil e ligero seria ideal para que pudieran comenzar este crecimiento. Este software seria el encargado de llevar a cabo esa actualización.
+ - La gran industria seguramente lleve años actualizándose, pero pequeñas y medianas empresas necesitan enfocar el crecimiento del mantenimiento a traves da digitalización, y un modelo adaptable versátil e ligero seria ideal para que pudieran comenzar este crecimiento. Este software seria el encargado de llevar a cabo esa actualización.
  
     
 ## Otros proyectos que cubrirían esas necesidades pero su coste es superior.
 
-- libra de Edisa (Aunque  tambien se ocupa de mas apartados que el mantenimiento).
+- libra de Edisa (Aunque también se ocupa de mas apartados que el mantenimiento).
 - MapexMM de Mapex.
 
 ## El objetivo de este proyecto es ser un software funcional y completamente usable/configurable para cualquier entorno industrial.
@@ -32,7 +32,7 @@
 		- MYSQL
 		- DOCKERS		
 		
-## Introdución
+## Introducción
 
 - Este sera un proyecto de una web de gestión de mantenimientos.
 - En cada apartado gestionaremos una maquina donde consultaremos manuales, planos, ultimas averías, ultimas revisiones, repuestos usados, etc...

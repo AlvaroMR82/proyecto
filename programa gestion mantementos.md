@@ -1,14 +1,13 @@
+# Introducción
 
-# Introdución
-
-- Este sera un proxecto de unha web de xestion de mantementos.
-- En cada apartado xestionaremos unha maquina donde consultaremos manuais, planos, ultimas averias, ultimas revisions, repostos usados, etc...
+- Este será un proyecto de sitio web de gestión de mantenimiento.
+- En cada apartado gestionaremos una máquina donde consultaremos manuales, planos, últimas averías, últimas revisiones, recambios usados, etc...
 
 ## Composición
 
-- Teremos o apartado dos traballadores donde xestinonaremos 
-as suas labores e información.
+- Tendremos la sección de trabajadores donde gestionaremos
+su trabajo e información.
 
-- Teremos o apartado das maquinas donde xestionaremos as revisións, averias, e toda a documentacion necesaria para o seu mantemento.
+- Dispondremos del apartado de las máquinas donde gestionaremos las revisiones, averías y toda la documentación necesaria para su mantenimiento.
 
-- Teremos o apartado do almacen donde xestionaremos a cantidade de existencias, e a sua reposición se e necesario. 
+- Dispondremos de la sección del almacén donde gestionaremos la cantidad de stock, y su reposición si fuera necesario.

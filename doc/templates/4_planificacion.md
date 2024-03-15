@@ -1,7 +1,7 @@
 # FASE DE PLANIFICACIÓN DEL PROYECTO
 
 ## Objetivos del proyecto
-
+    Conseguir un software usable con la adaptación correcta a los procesos productivos que queremos mejorar y controlar.
 ## Guía de planificación de proyectos
 
 ### Metodología
