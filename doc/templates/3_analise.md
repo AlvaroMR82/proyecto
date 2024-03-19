@@ -47,7 +47,7 @@ Requisitos en cuanto a rendimiento, seguridad, etc. si es aplicable
 ### Hardware requerido
   Servidor web conectado a la red de las instalaciones y en su caso a Internet.
   
-  ![alt text](<diagrama de instalación.png>)
+  ![alt text](<../img/diagrama de instalación.png>)
 
 ### Software
 Ser necesita un navegador web que normalmente hay en todos los sistemas operativos.
